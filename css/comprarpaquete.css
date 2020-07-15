@@ -1,0 +1,25 @@
+#img-back-compra{
+    position:absolute;
+    z-index:-1;
+    width:100%;
+    height: 90%;
+    background-image: url('../img/desktop.jpg');
+    background-repeat: repeat;
+}
+
+#fondoblanco{
+    background-color: rgba(255, 255, 255, 0.808);
+        width: 90%;
+        margin: auto;
+        border-radius: 10px;
+        transition:0.2s;
+        margin-top: 65px;
+}
+#fondoblanco:hover{
+    background-color: rgba(255, 255, 255, 0.849);
+    transition:0.2s;
+}
+#fondonegro{
+    background-color: rgba(0, 0, 0, 0.521); padding:3.05em;height: 100%;
+    font-weight: 400;
+}

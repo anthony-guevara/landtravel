@@ -1,0 +1,76 @@
+.btnestilos{
+    border-color: rgb(255, 87, 51)!important;
+    background-color: rgb(255, 87, 51)!important;
+    color: white!important;
+    margin-top: 90%;
+
+}
+#titulo{
+    padding-top: 1em;
+    margin-bottom: 1em !important;
+    text-align: center!important;
+    font-family: 'Courgette', cursive;
+    cursor: default;;
+    color:rgb(185, 104, 5);
+    font-size: 50px;
+}
+img{
+    width: 50%!important;
+    margin:auto;
+}
+
+  body {
+    height: auto;
+    padding:0;
+    margin:0;
+  }
+
+
+#modalcomprar{
+    background-color: rgb(255, 87, 51)!important;
+}
+
+.card-title{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 30%;
+}
+.row{
+    transition:0.1s;
+    margin-bottom: 25px;
+    border-width: 6px;
+    border-left: none;
+    border-right: none;
+    background-color: rgb(248, 248, 248);
+}
+.container{
+    padding-bottom:10px;  
+}
+.fila-color:hover{
+  background-color: rgba(250, 66, 25, 0.322) !important;
+  cursor: default;
+}
+img{
+    margin-left:20%;
+}
+
+@media only screen and (max-width: 1000px) {
+    .colcomprar{
+        display:none;
+    }
+  }
+
+  @media only screen and (min-width: 1000px) {
+    .colcomprar-off{
+        display:none;
+    }
+  }
+
+.spaceform{
+    margin-bottom: 5px;
+}
+
+.error-vacio{
+    color:rgb(180, 0, 0);
+    margin-left: 2px;
+}
