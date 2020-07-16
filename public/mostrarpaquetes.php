@@ -24,7 +24,7 @@ if(isset($_SESSION["usuario"])) {
       <div id="contenido-paquetes"class="row ">
 <!--===========================================-->
 
-<div class="paquetes col-md-4">
+<div class="paquetes col-md-auto">
 
 
       <div class="card" style="width: 18rem;">
