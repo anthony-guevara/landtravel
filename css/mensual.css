@@ -1,124 +1,123 @@
-.paquetes{
-    padding: 20px;
+.paquetes {
+  padding: 20px;
+  
 }
 
-#img-back-mensual{
-    position:absolute;z-index:-1;
-    width:100%;
-    height: 90%;
-    background-image: url('https://www.tallerdeempresa.com/wp-content/uploads/2018/03/1816.jpg');
-    background-repeat: repeat;
+#img-back-mensual {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 90%;
+  background-image: url("https://www.tallerdeempresa.com/wp-content/uploads/2018/03/1816.jpg");
+  background-repeat: repeat;
 }
-body{
-    padding:0;
-    margin:0;
-}
-
-#vruta{
-    color:black;
+body {
+  padding: 0;
+  margin: 0;
 }
 
-
-.rotulo{
-	width: 100%;
-	height: 9%;
+#vruta {
+  color: black;
 }
 
-.control{
-	height: 16%;
+.rotulo {
+  width: 100%;
+  height: 9%;
 }
 
-.tabla{
-	width: 100%;
-	height: auto;
-border-radius: 10px;
+.control {
+  height: 16%;
 }
 
-.table{
-	margin: auto;
+.tabla {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
-.rotulo h1{
-	text-align: center;
+.table {
+  margin: auto;
 }
 
-.guia{
-	height: 5%;
-}
-.guia label{
-	margin-left: 20px;
-	font-size: 20px;
+.rotulo h1 {
+  text-align: center;
 }
 
-.guia input{
-	margin-left: 20px;
-	width: 30em;
+.guia {
+  height: 5%;
+}
+.guia label {
+  margin-left: 20px;
+  font-size: 20px;
 }
 
-.formulario{
-	margin-top: 15px;
-	margin: auto;
+.guia input {
+  margin-left: 20px;
+  width: 30em;
 }
 
-.formularioPrincipal{
-	width: 100%;
+.formulario {
+  margin-top: 15px;
+  margin: auto;
 }
 
-.fechaInicio{
-	width: 20%;
-	height: 5%;
-	float: left; 
-}
-.fechaInicio label{
-	font-size: 20px;
-	margin-left: 20px;
+.formularioPrincipal {
+  width: 100%;
 }
 
-
-.fechaFinalizacion{
-	width: 20%;
-	height: 5%;
-	float: left;
+.fechaInicio {
+  width: 20%;
+  height: 5%;
+  float: left;
+}
+.fechaInicio label {
+  font-size: 20px;
+  margin-left: 20px;
 }
 
-.fechaFinalizacion label{
-	font-size: 20px;
+.fechaFinalizacion {
+  width: 20%;
+  height: 5%;
+  float: left;
 }
 
-.fechaFinalizacion input{
-	width: 200px;
-	text-align: center;
+.fechaFinalizacion label {
+  font-size: 20px;
 }
 
-.filtro{
-
-	float: left;
+.fechaFinalizacion input {
+  width: 200px;
+  text-align: center;
 }
 
-.filtro button{
-	width: 100px;
-	height: 40px;
-	font-weight: bold;
-	font-size: 18px;
-	margin-top: 28px;
-	line-height: 2px;
+.filtro {
+  float: left;
 }
 
-.descarga{
-	width: 10%;
-	float: left;
+.filtro button {
+  width: 100px;
+  height: 40px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 28px;
+  line-height: 2px;
 }
 
-.descarga button{
-	width: 120px;
-	height: 40px;
-	font-weight: bold;
-	font-size: 18px;
-	margin-top: 28px;
-	margin-left: 3rem;
-	line-height: 2px;
+.descarga {
+  width: 10%;
+  float: left;
 }
 
-.descarga button > a{
-	color: white;
+.descarga button {
+  width: 120px;
+  height: 40px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 28px;
+  margin-left: 3rem;
+  line-height: 2px;
+}
+
+.descarga button > a {
+  color: white;
 }
