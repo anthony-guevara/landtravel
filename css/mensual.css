@@ -1,6 +1,16 @@
 .paquetes {
   padding: 20px;
-  
+}
+
+@media only screen and (max-width:1020px) and (min-width:736px){
+	.paquetes {
+		margin-left: 60px;
+	}
+}
+@media only screen and (max-width:1440px) and (min-width:1024px){
+	.paquetes {
+		margin: auto;
+	}
 }
 
 #img-back-mensual {
