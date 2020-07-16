@@ -9,8 +9,8 @@ include_once('seguridad.php');
   <section class="hero-banner">
   <div class="container" style="text-align:justify">
   <div class="row">
-    <div class="col">
-    <h1 style="text-align:center"> <span class="orangetittle" >VISIÓN</span> </h1>
+    <div class="col-12 col-sm-12">
+    <h1 style="text-align:center; margin-top:10px"> <span class="orangetittle" >VISIÓN</span> </h1>
                         <p style="color:black">Promover el crecimiento sustentable de la organización, basado en la innovación permanente 
                            tanto en la prestación de los servicios, el acercamiento a los clientes, la calidad de la 
                            información brindada, el asesoramiento adecuado para cada necesidad.
@@ -21,7 +21,11 @@ include_once('seguridad.php');
                            organizaciones que colaboren socialmente en diversos ámbitos de la ciudad, a favor de la 
                            equidad social y el desarrollo deportivo.
                         </p>
-                    <h1 style="text-align:center"> <span class="orangetittle">MISIÓN</span> </h1>
+                
+    </div>
+
+    <div class="col-12 col-sm-12">
+    <h1 style="text-align:center"> <span class="orangetittle">MISIÓN</span> </h1>
                         <p style="color:black">La empresa brinda una asistencia profesional a todos aquellos que necesiten un servicio de viaje.
                             El esfuerzo está centrado en brindar respuestas rápidas, precisas y eficientes, buscando satisfacer 
                             a nuestros clientes con nuestro servicio, asesoramiento, compromiso, precio, solución de posibles 
@@ -34,8 +38,12 @@ include_once('seguridad.php');
                             de la zona.El manejo adecuado de bases de datos obtenidas de nuestros clientes, hace más dinámica 
                             la gestión comercial.
                         </p>
-    </div>
-    <div class="col">
+
+                
+                </div>
+
+
+    <div class="col mb-3">
     <h1 style="text-align:center"> <span class="orangetittle">VALORES EMPRESARIALES</span> </h1>
                     <p style="color:black">La empresa promueve valores que le permiten mejorar la relación con el cliente,
                        así como mejorar continuamente la calidad de sus servicios e ingresos.
@@ -51,8 +59,9 @@ include_once('seguridad.php');
                        <a>INNOVACIÓN CONSTANTE</a><br>
                        <a>IMPORTANCIA DE LOS CLIENTES</a><br>
                     </p>
+   
     </div>
-    <div class="row">
+    <div class="row col-sm-12">
     <div class="col">
   
                         <p id="tel"><img style="width:30px" id="img_tel" src="../img/tel.png"> <span  class="orangetittle">TELÉFONOS</span> </p>
@@ -69,7 +78,7 @@ include_once('seguridad.php');
                         <p>landtravel.org</p>
                         <p>travelland@outlook.com</p>
                     </div><br>
-                    <div id="ubicacion">
+                    <div id="ubicacion" class="ml-2">
                         <p id="ubicacion"><img style="width:30px" id="img_ubicacion" src="../img/ubicacion.png"> <span class="orangetittle"></span> UBICACIÓN</p>
                         <p>Centro Comercial Mall Multiplaza nivel 2, local 244 y 245. Boulevard del Sur</p>
                         <p>Colonia Palmira, pasaje Edif. Maya #4, frente al Hotel Honduras Maya, P.O.B. 30244</p>
