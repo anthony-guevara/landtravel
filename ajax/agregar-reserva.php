@@ -11,24 +11,11 @@ for($i=0;$i<count($datos);$i++){
 	}
 };
 
-            // $sql_sp = "CALL SP_Reserva($datos[0], $datos[1], $datos[2], '$datos[3]', $datos[4],$datos[5], @pmensaje, @pcodigo);";
-			// $ins_conexion = new Connection();
-			// $ins_conexion->connect();
-            // $ins_conexion->setConsulta($sql_sp);
-			// $qry = $ins_conexion->getResultConsulta();
-			// $return = $ins_conexion->getParametroSP("@pmensaje,@pcodigo");
-			// $mensajeSP[0] = $return['@pmensaje'];
-			// $mensajeSP[1] = $return['@pcodigo'];
-			
-			// echo json_encode($mensajeSP);
-			// mysqli_close($conexion);
-
 			$connexionMysqli = new ConnexionMysqli();
 
 			$mysqli =  $connexionMysqli->connect();
 
 			
-
 			$call = $mysqli->prepare('CALL SP_Reserva(?, ? , ? , ? , ?, ? , @pmensaje, @pcodigo);');
 
 			$call->bind_param('iissid',
@@ -40,8 +27,7 @@ for($i=0;$i<count($datos);$i++){
 			$datos[5],
 			);
 
-
-		
+			
 			$call->execute();
 					
 			$select = $mysqli->query('SELECT  @pmensaje, @pcodigo');
