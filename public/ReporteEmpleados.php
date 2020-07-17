@@ -12,10 +12,14 @@ $conexion=$obj->conexion();
     <title>Creacion Tours</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/ReporteEmpleados.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
     <script src="https://kit.fontawesome.com/3ac10e43fc.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/png" href="../img/favicon.ico" />
 </head>
-<nav class="navbar fixed-top navegacion">
+ <nav class="navbar fixed-top navegacion" id="na">
+ <div class="toggle">
+  <i class="fa fa-bars menu" aria-hidden="true"></i>
+</div> 
       <ul class="nav">
       <li class="nav-item naveup"> <a href="#">Administración</a>
           <ul class="nave">
@@ -37,25 +41,55 @@ $conexion=$obj->conexion();
           </ul>
         </li>
       </ul>
-    </nav>
-    <body class="fondo" style="color: white;">
+    </nav> 
+
+
+
+
+  <!-- Aqui empieza el navbar -->
+
+
+
+
+
+
+
+
+  <!-- aqui termina -->
+
+
+
+
+
+
+     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        
+        <script type="text/javascript">
+      $(document).ready(function(){
+        $('.menu').click(function(){
+          $('ul').toggleClass('active');
+          
+        })
+      })
+      </script> 
+    <body class="fondo col col-sm-12" style="color: white;">
     
-    <div class="content " style="margin-top: 2em;">
-        <div class="col col-lg-12"   style="margin-bottom:3em;">  <h1><i class="fas fa-user-alt fa-2x anarajado"></i>Reporte De Empleados</h1>
+    <div class="content col-sm-12  " style="margin-top: 2em;">
+        <div class="col col-lg-12 col-sm-12"   style="margin-bottom:3em;">  <h1><i class="fas fa-user-alt fa-2x anarajado"></i>Reporte De Empleados</h1>
           </div>
     
-            <div class="card text-center">
-              <div class="card-header estilotarjeta">
+            <div class="card text-center col col-md-12 col-sm-12">
+              <div class="card-header estilotarjeta col col-md-12 col-sm-12">
                Detalles
               </div>
-              <div class="card-body">
+              <div class="card-body col col-md-12 col-sm-12">
                 
     
     
     
+           
     
-    
-                <table class="table thead-light table-striped tablacolor table-hover divfondo  " style="margin-bottom: 5em;width: 80%;margin-left: 5em; text-align: center;">
+                <table class="table thead-light table-striped tablacolor table-hover divfondo   " style="margin-bottom: 5em;width: 80%;margin-left: 5em; text-align: center;">
                   <thead class="coloricono tableheader">
                     <tr>
                       <th scope="col">No.</th>
@@ -127,7 +161,7 @@ $conexion=$obj->conexion();
     
     
               </div>
-              <div class="card-footer text-muted  estilotarjeta">
+              <div class="card-footer text-muted col-sm-12 estilotarjeta">
                 
               </div>
             </div>
@@ -156,13 +190,13 @@ $conexion=$obj->conexion();
 <div class="MD">
     <div class="contenedor container">
       <div class="row row1">
-        <div class="col col-lg-6">
+        <div class="col col-lg-6 col-sm-12">
           <h6>
               <span style="margin-top: -10px;" id="name-logo">Land Travel</span>
             
           </h6>
         </div>
-        <div class="col col-lg-6">
+        <div class="col col-lg-6 col-sm-12">
           <H6>
             CONTACTOS
            
@@ -185,13 +219,15 @@ $conexion=$obj->conexion();
         </div>
       </div>
       <div class="row derechos row2">
-        <div class="col  col-lg-12">
+        <div class="col  col-lg-12 col-sm-12">
           <h6 style="margin-top:-30px">@Todos los derechos reservados</h6>
         </div>
       </div>
     </div>
   </div>
+  
   <script>
+   
 function validaNumericos(event) {
     if(event.charCode >= 48 && event.charCode <= 57){
       return true;
