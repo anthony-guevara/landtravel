@@ -89,7 +89,7 @@ $conexion=$obj->conexion();
     
            
     
-                <table class="table thead-light table-striped tablacolor table-hover divfondo   " style="margin-bottom: 5em;width: 80%;margin-left: 5em; text-align: center;">
+                <table class="table thead-light table-striped tablacolor table-hover divfondo table-responsive  " style="margin-bottom: 5em;width: 80%; text-align: center;">
                   <thead class="coloricono tableheader">
                     <tr>
                       <th scope="col">No.</th>
