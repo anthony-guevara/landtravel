@@ -80,7 +80,7 @@ $conexion=$obj->conexion();
      
 
 
-        <table class="table thead-light table-striped tablacolor table-hover divfondo round_table" style="width: 14rem;">
+        <table class="table thead-light table-striped tablacolor table-hover table-responsive divfondo round_table" style="width: 12rem;">
             <thead class="coloricono thead-green tableheader ">
               <tr>
                 <th scope="col">DETALLES</th>
@@ -144,7 +144,7 @@ $conexion=$obj->conexion();
          
 
 
-            <table class="table thead-light table-striped tablacolor table-hover divfondo round_table" style="width: 16rem;">
+            <table class="table thead-light table-striped tablacolor table-responsive table-hover divfondo round_table" style="width: 13rem;">
                 <thead class="coloricono thead-green  tableheader">
                   <tr>
                     <th scope="col">DETALLES</th>
@@ -221,7 +221,7 @@ $conexion=$obj->conexion();
              
 
 
-                <table class="table thead-light table-striped tablacolor table-hover divfondo round_table" style="width: 15rem;">
+                <table class="table thead-light table-striped tablacolor table-responsive table-hover divfondo round_table" style="width: 15rem;">
                     <thead class="coloricono thead-green tableheader ">
                       <tr>
                         <th scope="col">DETALLES</th>

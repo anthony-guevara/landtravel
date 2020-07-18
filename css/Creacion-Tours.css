@@ -387,3 +387,79 @@ footer{
     border-width: thin;
 }
 
+/*responsive*/
+
+.body{
+    margin:0;
+    padding:0;
+ 
+ 
+ }
+nav{
+    width: 100%;
+    display: flex;
+    
+}
+ul{
+    width: 100%;
+    margin:0 auto;
+    padding: 0;
+}
+
+ul li{
+    list-style: none;
+    display: inline-block;
+    padding :20px
+}
+
+.toggle{
+    width: 100%;
+    padding: 10px 20px;
+    text-align: right;
+    box-sizing: border-box;
+    color:#fff;
+    background-color: #001f44;
+    font-size:30px;
+    display: none;
+}
+@media(max-width:768px)
+{
+    .toggle{
+        display: block;
+    }
+
+ ul{
+    width: 100%;
+    display: none ;
+}
+ul li{
+    display: block;
+    text-align: center;
+
+}
+.fixed-top{
+    position: relative;
+}
+
+table{
+    width: 100%;
+}
+.active{
+    display: block;
+
+    
+    
+}
+
+.imgatras{
+    position: relative;
+    display: none;
+    
+}
+.btncrear{
+    align-items: center!important;
+    margin-left: 10%;
+    margin-right: auto;
+}
+}
+

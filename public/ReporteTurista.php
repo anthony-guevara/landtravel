@@ -199,11 +199,7 @@ $conexion=$obj->conexion();
             <h6>Telefono</h6>
           
         </H3></div>
-        <div class="col col-lg-4 col-md-6 col-sm-12">
-          <h6>
-            CONTACTOS
-          </h6>
-        </div>
+        
       </div>
       <div class="row derechos row2">
         <div class="col  col  col-md-6 col-sm-12 col-lg-12">

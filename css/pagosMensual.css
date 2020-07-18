@@ -425,6 +425,7 @@
         background-color: #001f44;
         font-size:30px;
         display: none;
+        margin-left:1em
     }
     @media(max-width:768px)
     {

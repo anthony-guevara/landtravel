@@ -12,11 +12,18 @@ $conexion=$obj->conexion();
     <title>Creacion Tours</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/Creacion-rutas.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
     <link rel="icon" type="image/png" href="../img/favicon.ico" />
 </head>
 
 <body>
-<nav class="navbar fixed-top navegacion">
+<a href="tours.php"><img style="width:40px; position: absolute;top:80px;left:30px;cursor:pointer;" src="../img/flecha_izquierda1.png" alt=""></a>
+    <div id="imagenFondo" style="" >
+    </div>
+<nav class="navbar  navegacion" style="margin-top:3em">
+<div class="toggle">
+  <i class="fa fa-bars menu" aria-hidden="true"></i>
+</div> 
       <ul class="nav">
       <li class="nav-item naveup"> <a href="#">Administración</a>
           <ul class="nave">
@@ -39,12 +46,23 @@ $conexion=$obj->conexion();
         </li>
       </ul>
     </nav>
-    <a href="tours.php"><img style="width:40px; position: absolute;top:80px;left:30px;cursor:pointer;" src="../img/flecha_izquierda1.png" alt=""></a>
-    <div id="imagenFondo" style="" >
-    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        
+        <script type="text/javascript">
+      $(document).ready(function(){
+        $('.menu').click(function(){
+          $('ul').toggleClass('active');
+          
+        })
+      })
+      </script> 
+
+    
     <div class="container" >
         <div class="row">
-            <div class="col-4">
+            <div class=" col col-lg-4  col-md-12 col-sm-12">
             <div class="box-create">
                 <h2>Duracion de la Ruta</h2>
                 <div id="linea"></div>
@@ -73,7 +91,7 @@ $conexion=$obj->conexion();
              </div>
          
          </div>
-         <div class="col-4 ">
+         <div class="  col col-lg-4  col-md-12 col-sm-12">
                    <div class="box-create">
                    <h2>Informaciòn de Ruta</h2>
                 <div id="linea"></div>
@@ -110,7 +128,7 @@ $conexion=$obj->conexion();
             
                   </div>
              </div>
-             <div class="col-4">
+             <div class=" col col-lg-4  col-md-12 col-sm-12">
                     <div class="box-create">
                     <h2>Informaciòn de Ruta</h2>
                 <div id="linea"></div>
@@ -163,7 +181,7 @@ padding: 9px;" type="button" class="btn btn-success">Crear</button>
         </div>
     </div>
     <h3>Rutas De Tours Creadas</h3>
-    <table id="table-tours"style="background-color:white; border-radius:10px;" class="table table-borderless">
+    <table id="table-tours"style="background-color:white; table-responsive margin-left:auto; margin-rigth:auto border-radius:10px;" class="table table-borderless">
         <thead>
           <tr>
             <th scope="col">Pais</th>

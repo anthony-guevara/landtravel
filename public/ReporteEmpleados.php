@@ -16,7 +16,10 @@ $conexion=$obj->conexion();
     <script src="https://kit.fontawesome.com/3ac10e43fc.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/png" href="../img/favicon.ico" />
 </head>
- <nav class="navbar fixed-top navegacion" id="na">
+<!-- <a href="tours.php"><img id="imgatras"; style="width:40px;position:absolute;margin-bottom:10em   top:10px;left:30px;cursor:pointer;" src="../img/flecha_izquierda1.png" alt=""></a> -->
+<!-- <div id="imagenFondo" style="" >
+    </div>  -->
+ <nav class="navbar fixed-top navegacion" style="margin-top:5em margin-bottom:3em" id="na">
  <div class="toggle">
   <i class="fa fa-bars menu" aria-hidden="true"></i>
 </div> 
