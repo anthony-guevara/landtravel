@@ -42,7 +42,7 @@ if(isset($_SESSION["usuario"])) {
         <h1 style="font-size:25px;margin-left:20px">Horario De Trabajo</h1>
 
 
-        <table id="vruta" class="table table-bordered tablacolor table-hover">
+        <table id="vruta" class="table table-bordered tablacolor table-responsive table-hover">
             <thead class="coloricono">
               <tr>
                 <th scope="col">Nombre Del Tour</th>

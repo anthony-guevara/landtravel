@@ -12,10 +12,15 @@ $conexion=$obj->conexion();
     <link rel="icon" type="image/png" href="../img/favicon.ico" />
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/visualizar-contratos.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
     <script src="https://kit.fontawesome.com/c9865cd77e.js" crossorigin="anonymous"></script>
 </head>
-<nav class="navbar fixed-top navegacion">
+<nav class="navbar  navegacion">
       <ul class="nav">
+      <div class="toggle">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+
+</div>
       <li class="nav-item naveup"> <a href="#">Administración</a>
           <ul class="nave">
             <li><a href="logout.php">Cerrar Sesión</a></li>
@@ -37,16 +42,30 @@ $conexion=$obj->conexion();
         </li>
       </ul>
     </nav>
-    <a href="tours.php"><img style="width:40px; position: absolute;top:80px;left:30px;cursor:pointer;" src="../img/flecha_izquierda1.png" alt=""></a>
-    <div id="imagenFondo" style="" >
-    </div>
+    
+    <!-- <a href="tours.php"><img style="width:40px; position: absolute;top:80px;left:30px;cursor:pointer;" src="../img/flecha_izquierda1.png" alt=""></a>
+    <div class="col col-lg-3 " id="imagenFondo" style="" >
+    </div> -->
+    
+    <<script src="https://code.jquery.com/jquery-3.5.1.js" ></script>></script>
+        
+        <script type="text/javascript">
+      $(document).ready(function(){
+        $('.menu').click(function(){
+          $('ul').toggleClass('active');
+          
+        })
+      })
+      </script> 
+    <body class="fondo col col-sm-12" style="color: white;">
+    
 <body>
     <div class="container" style="margin-top:15px;">
     <div class="row">
-        <div class="col col-lg-12" >
+        <div class="col col-lg-6  col-md-12 col-sm-12" >
         <h3 class="texto">Contrato de Empleados</h3>
         </div>  
-        <div class="col col-lg-6 ">
+        <div class="col col-lg-6 col-md-6 col-sm-12">
             <button type="button"  class='btn data-toggle="dropdown"' >
                  <h5 class="texto">Seleccione un Empleado </h5> <span class="caret"></span>
                  <select id="inputEmpleado" class="txtid form-control" style="  border-color:  rgb(189, 101, 0);
@@ -74,12 +93,12 @@ $conexion=$obj->conexion();
         </div>
     </div>
     </div> 
-
-    <h3 class="texto titulos" style="margin-left: 15em;">Informacion Empleado</h3>
-
+    <div class=" col col-lg-12 col-md-6 col-sm-12" >
+    <h3 class=" texto titulos" style="margin-left: 7">Informacion Empleado</h3>
+    </div>
  
        <div class="form-row formulario">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-6 ">
                <label class ="texto" for="inputEmail4">Identidad</label>
                <input id="vc-identidad" disabled type="text" class="form-control" class="inputEmail4" >
             </div>
@@ -122,11 +141,12 @@ $conexion=$obj->conexion();
               <input id="nacionalidad" disabled type="text" class="form-control" class="inputPassword4" >
         </div> 
     </div>
+    
     <img style="float: right;
 
 width: 317px;
 
-position: absolute;
+position:absolute;
 
 top: 290px;
 
@@ -135,6 +155,7 @@ right: 131px;
 border-radius: 10px;
 
 cursor: pointer;"src="../img/co.jpg" onclick="location.href='404.php';" alt="">
+
   <script src="../js/jquery-3.4.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
 <script src="../js/visualizarcontratos.js"> </script>

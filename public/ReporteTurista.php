@@ -12,10 +12,15 @@ $conexion=$obj->conexion();
     <title>Reporte Turista</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/ReporteTurista.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
     <script src="https://kit.fontawesome.com/3ac10e43fc.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/png" href="../img/favicon.ico" />
 </head>
-<nav class="navbar fixed-top navegacion">
+
+<nav class="navbar fixed-top navegacion menu_bar ">
+<div class="toggle">
+  <i class="fa fa-bars menu" aria-hidden="true"></i>
+</div>
       <ul class="nav">
       <li class="nav-item naveup"> <a href="#">Administración</a>
           <ul class="nave">
@@ -38,6 +43,15 @@ $conexion=$obj->conexion();
         </li>
       </ul>
     </nav>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.menu').click(function(){
+          $('ul').toggleClass('active');
+          
+        })
+      })
+      </script> 
     <body class="fondo" style="color: white;">
     
     <div class="content " style="margin-top: 2em;">
@@ -52,7 +66,7 @@ $conexion=$obj->conexion();
                 
     
     
-                <table class="table thead-light table-striped tablacolor table-hover divfondo  " style="margin-bottom: 5em;width: 80%;margin-left: 5em; text-align: center;">
+                <table class="table thead-light table-striped tablacolor table-hover table-responsive divfondo  " style="margin-bottom: 5em;width: 80%; text-align: center;">
                   <thead class="coloricono tableheader">
                     <tr>
                       <th scope="col">No.</th>
@@ -163,7 +177,7 @@ $conexion=$obj->conexion();
 <div class="MD">
     <div class="contenedor container">
       <div class="row row1">
-        <div class="col col-lg-6">
+        <div class="col  col-lg-6 col  col-md-6 col-sm-12">
           <h6>
               <span style="margin-top: -10px;" id="name-logo">Land Travel</span>
             
@@ -185,14 +199,10 @@ $conexion=$obj->conexion();
             <h6>Telefono</h6>
           
         </H3></div>
-        <div class="col col-lg-4 col-md-6 col-sm-12">
-          <h6>
-            CONTACTOS
-          </h6>
-        </div>
+        
       </div>
       <div class="row derechos row2">
-        <div class="col  col-lg-12">
+        <div class="col  col  col-md-6 col-sm-12 col-lg-12">
           <h6 style="margin-top:-30px">@Todos los derechos reservados</h6>
         </div>
       </div>

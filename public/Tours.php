@@ -8,6 +8,7 @@
   <link rel="icon" type="image/png" href="../img/favicon.ico" />
   <link rel="stylesheet" href="../css/bootstrap.min.css">
   <link rel="stylesheet" href="../css/tours.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
   <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
   <script src="../js/jquery-3.4.1.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
@@ -30,7 +31,12 @@
   
 </head>
 <header>
-<nav class="navbar fixed-top navegacion">
+<div  class="col col-lg-4 col-md-6 col-sm-12">
+<nav class="navbar fixed-top navegacion menu_bar ">
+<div class="toggle">
+  <i class="fa fa-bars menu" aria-hidden="true"></i>
+</div>
+
       <ul class="nav">
       <li class="nav-item naveup"> <a href="#">Administración</a>
           <ul class="nave">
@@ -52,7 +58,19 @@
           </ul>
         </li>
       </ul>
+  </div>
     </nav>
+    <script
+			  src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        
+        <script type="text/javascript">
+      $(document).ready(function(){
+        $('.menu').click(function(){
+          $('ul').toggleClass('active');
+        })
+      })
+      </script>
+
 
     <div class="bd-example">
       <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
@@ -95,43 +113,44 @@
       </div>
     </div>
   </header>
-<body id="body">
+
+  <body id="body">
   
   <div class="Contenedor container-fluid">
     <div class="row">
-      <div class="img-1 col col-lg-3 col-sm-1">
+      <div class="img-1 col col-lg-3 col-md-6 col-sm-1">
         <img class="pt" src="../img/r1.jpg" id="img-roatan"><br>
         <h3>Honduras</h3>
       </div>
-      <div class="img-2 col col-lg-3 col-sm-1">
+      <div class="img-2 col col-lg-3 col-md-6 col-sm-1">
         <img class="pt" src="../img/canvas.png"><br>
         <h3>EEUU</h3>
       </div>
-      <div class="img-3 col col-lg-3 col-sm-1">
+      <div class="img-3 col col-lg-3 col-md-6 col-sm-1">
         <img class="pt" src="../img/Disney.png">
         <h3>Disney</h3>
       </div><br>
 
 
-      <div class="img-4  col-lg-3 col-sm-1">
+      <div class="img-4  col-lg-3 col-md-6 col-sm-1">
         <img class="pt" src="../img/Espa_a.png"><br>
         <h3>España</h3>
       </div>
-      <div class="img-6 col col-lg-3 col-sm-1">
+      <div class="img-6 col col-lg-3  col-md-6 col-sm-1">
         <img class="pt" src="../img/Dubai.png"><br>
         <h3>Dubai</h3>
       </div>
-      <div class="img-7 col col-lg-3 col-sm-1">
+      <div class="img-7 col col-lg-3 col-md-6 col-sm-1">
       <img class="pt" src="../img/inglaterra.jpg "><br>
       <h3>Inglaterra</h3>
             
     </div>
-      <div class="img-8 col col-lg-3 col-sm-1">
+      <div class="img-8 col col-lg-3 col-md-6 col-sm-1">
       <img  class="pt" src="../img/japon.png "><br>
       <h3>Japon</h3>
     </div>
       
-      <div class="img-9 col col-lg-3 col-sm-1">
+      <div class="img-9 col col-lg-3 col-md-6 col-sm-1">
       <img class="pt"   src="../img/suiza.png"><br>
       <h3>Suiza</h3>
 
