@@ -2,16 +2,15 @@
   padding: 20px;
 }
 
-
-@media only screen and (max-width:1020px) and (min-width:736px){
-	.paquetes {
-		margin-left: 60px;
-	}
+@media only screen and (max-width: 1020px) and (min-width: 736px) {
+  .paquetes {
+    margin-left: 60px;
+  }
 }
-@media only screen and (max-width:1440px) and (min-width:1024px){
-	.paquetes {
-		margin: auto;
-	}
+@media only screen and (max-width: 1440px) and (min-width: 1024px) {
+  .paquetes {
+    margin: auto;
+  }
 }
 
 #img-back-mensual {
@@ -76,29 +75,89 @@ body {
   width: 100%;
 }
 
-.fechaInicio {
-  width: 20%;
-  height: 5%;
-  float: left;
-}
-.fechaInicio label {
-  font-size: 20px;
-  margin-left: 20px;
+@media only screen and (max-width: 1440px) and (min-width: 720px) {
+  .fechaInicio {
+    width: 23%;
+    height: 5%;
+    float: left;
+  }
+  .fechaInicio label {
+    font-size: 20px;
+    margin-left: 20px;
+  }
+
+  .fechaFinalizacion {
+    width: 25%;
+    height: 5%;
+    float: left;
+  }
+
+  .fechaFinalizacion label {
+    font-size: 20px;
+  }
+
+  .fechaFinalizacion input {
+    width: 200px;
+    text-align: center;
+  }
 }
 
-.fechaFinalizacion {
-  width: 20%;
-  height: 5%;
-  float: left;
+@media only screen and (max-width: 500px) {
+  .fechaInicio {
+    width: 100%;
+    height: 5%;
+    float: left;
+  }
+  .fechaInicio label {
+    font-size: 20px;
+    margin-left: 60px;
+  }
+
+  .fechaFinalizacion {
+    width: 100%;
+    height: 5%;
+    float: left;
+  }
+
+  .fechaFinalizacion label {
+    font-size: 20px;
+    margin-left: 40px;
+    margin-top: 5px;
+  }
+
+  .fechaFinalizacion input {
+    width: 100%;
+    text-align: left;
+  }
 }
 
-.fechaFinalizacion label {
-  font-size: 20px;
-}
+@media only screen and (max-width: 736px) and (min-width: 600px) {
+  .fechaInicio {
+    width: 100%;
+    height: 5%;
+    float: left;
+  }
+  .fechaInicio label {
+    font-size: 20px;
+    margin-left: 120px;
+  }
 
-.fechaFinalizacion input {
-  width: 200px;
-  text-align: center;
+  .fechaFinalizacion {
+    width: 100%;
+    height: 5%;
+    float: left;
+  }
+
+  .fechaFinalizacion label {
+    font-size: 20px;
+    margin-left: 100px;
+    margin-top: 5px;
+  }
+
+  .fechaFinalizacion input {
+    width: 100%;
+    text-align: left;
+  }
 }
 
 .filtro {
