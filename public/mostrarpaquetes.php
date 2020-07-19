@@ -24,7 +24,7 @@ if(isset($_SESSION["usuario"])) {
       <div id="contenido-paquetes"class="row ">
 <!--===========================================-->
 
-<div class="paquetes col-4">
+<div class="paquetes col-md-auto">
 
 
       <div class="card" style="width: 18rem;">
@@ -43,7 +43,7 @@ if(isset($_SESSION["usuario"])) {
 <!--===========================================-->
 <!--===========================================-->
 
-<div class="paquetes col-4">
+<div class="paquetes col-md-auto">
 
 
       <div class="card" style="width: 18rem;">
@@ -54,68 +54,58 @@ if(isset($_SESSION["usuario"])) {
     <div class="card-text" style="color:black"><i class="fas fa-calendar-alt"></i> <span style="margin-left:7px"> Fecha Fin: 20</span> </div>
     <div class="card-text" style="color:black"><i class="fas fa-dollar-sign"></i><span style="margin-left:10px"> Costo: 30</span></div>
     <div class="card-text" style="color:black"><i class="fas fa-users"></i> Tipo de Tour: 40</div>
-    <div class="card-text" style="color:black"><i class="fas fa-box-open"></i> Cupos: 50</div><br>
+    <div class="card-text" style="color:black"><i class="fas fa-box-open"></i> Cupos: 55</div><br>
     <button onclick="verificarsesioncompra(<?php echo $var ?>)" class="btn btn-primary">Comprar</button>    <button  href="#" style="float:right" onclick="verificarsesionreserva(<?php echo $var ?>)" class="btn btn-primary">Reservar</button>
   </div>
 </div>
 </div>
 <!--===========================================-->
 <!--===========================================-->
-<div class="paquetes col-4">
+
+<!--===========================================-->
+<!--===========================================-->
+
+<div class="paquetes col-md-auto">
 
 
       <div class="card" style="width: 18rem;">
   <img class="card-img-top" src="../img/Espa_a.png" alt="Card image cap">
   <div class="card-body">
-    <h3 class="card-title">Card title</h3>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Comprar</a>    <a style="float:right" href="#" class="btn btn-primary">Reservar</a>
+    <h1 class="card-title" style="font-size:20px">Card title</h1> <div class="button" onclick="verrutas()" style="float: right;margin-top: -52px;padding: 9px 14px;cursor:pointer"><i class="fas fa-eye"></i></div>
+    <div class="card-text" style="color:black"><i class="far fa-calendar-alt"></i> <span style="margin-left:7px"> Fecha Inicio: 10</span> </div>
+    <div class="card-text" style="color:black"><i class="fas fa-calendar-alt"></i> <span style="margin-left:7px"> Fecha Fin: 20</span> </div>
+    <div class="card-text" style="color:black"><i class="fas fa-dollar-sign"></i><span style="margin-left:10px"> Costo: 30</span></div>
+    <div class="card-text" style="color:black"><i class="fas fa-users"></i> Tipo de Tour: 40</div>
+    <div class="card-text" style="color:black"><i class="fas fa-box-open"></i> Cupos: 55</div><br>
+    <button onclick="verificarsesioncompra(<?php echo $var ?>)" class="btn btn-primary">Comprar</button>    <button  href="#" style="float:right" onclick="verificarsesionreserva(<?php echo $var ?>)" class="btn btn-primary">Reservar</button>
   </div>
 </div>
 </div>
 <!--===========================================-->
 <!--===========================================-->
-<div class="paquetes col-4">
+
+<!--===========================================-->
+<!--===========================================-->
+
+<div class="paquetes col-md-auto">
 
 
       <div class="card" style="width: 18rem;">
   <img class="card-img-top" src="../img/Espa_a.png" alt="Card image cap">
   <div class="card-body">
-    <h3 class="card-title">Card title</h3>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Comprar</a>    <a style="float:right" href="#" class="btn btn-primary">Reservar</a>
+    <h1 class="card-title" style="font-size:20px">Card title</h1> <div class="button" onclick="verrutas()" style="float: right;margin-top: -52px;padding: 9px 14px;cursor:pointer"><i class="fas fa-eye"></i></div>
+    <div class="card-text" style="color:black"><i class="far fa-calendar-alt"></i> <span style="margin-left:7px"> Fecha Inicio: 10</span> </div>
+    <div class="card-text" style="color:black"><i class="fas fa-calendar-alt"></i> <span style="margin-left:7px"> Fecha Fin: 20</span> </div>
+    <div class="card-text" style="color:black"><i class="fas fa-dollar-sign"></i><span style="margin-left:10px"> Costo: 30</span></div>
+    <div class="card-text" style="color:black"><i class="fas fa-users"></i> Tipo de Tour: 40</div>
+    <div class="card-text" style="color:black"><i class="fas fa-box-open"></i> Cupos: 55</div><br>
+    <button onclick="verificarsesioncompra(<?php echo $var ?>)" class="btn btn-primary">Comprar</button>    <button  href="#" style="float:right" onclick="verificarsesionreserva(<?php echo $var ?>)" class="btn btn-primary">Reservar</button>
   </div>
 </div>
 </div>
 <!--===========================================-->
 <!--===========================================-->
-<div class="paquetes col-4">
 
-
-      <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="../img/Espa_a.png" alt="Card image cap">
-  <div class="card-body">
-    <h3 class="card-title">Card title</h3>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Comprar</a>    <a style="float:right" href="#" class="btn btn-primary">Reservar</a>
-  </div>
-</div>
-</div>
-<!--===========================================-->
-<!--===========================================-->
-<div class="paquetes col-4">
-
-
-      <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="../img/Espa_a.png" alt="Card image cap">
-  <div class="card-body">
-    <h3 class="card-title">Card title</h3>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a onclick="verificarsesion()" class="btn btn-primary">Comprar</a>    <a style="float:right" href="#" class="btn btn-primary">Reservar</a>
-  </div>
-</div>
-</div>
-<!--===========================================-->
 
 
 

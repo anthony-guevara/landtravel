@@ -42,6 +42,8 @@ if (($_SESSION["tipo"]=="Admin"))
   <link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
   <link rel="stylesheet" href="../css/header.css">
 
+  <link rel="stylesheet" href="../css/historial.css">
+
 
 
 </head>
