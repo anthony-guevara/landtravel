@@ -75,6 +75,42 @@ border-radius: 10px;
 }
 
 
+@media(max-width:768px){
+
+
+
+	.fechaInicio{
+		width: 20%;
+		height: 5%;
+		float: left; 
+	}
+	.fechaInicio label{
+		font-size: 10px;
+	
+	}
+	
+	
+	
+	
+	
+	.fechaFinalizacion{
+		width: 20%;
+		height: 5%;
+		float: left;
+	}
+	
+	.fechaFinalizacion label{
+		font-size: 10px;
+	}
+	
+	.fechaFinalizacion input{
+		width: 200px;
+		text-align: center;
+	}
+
+}
+
+
 .fechaFinalizacion{
 	width: 20%;
 	height: 5%;

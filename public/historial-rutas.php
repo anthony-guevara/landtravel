@@ -15,28 +15,30 @@ if(isset($_SESSION["usuario"])) {
 <div style="background-color: rgba(0, 0, 0, 0.521); width: 100%;">
    
 <section class="hero-banner">
-  <div class="container" style="text-align:justify;margin-bottom: 20px;">
+  <div class="container col-md-12 col-sm-12" style="text-align:justify;margin-bottom: 20px;">
   <div style="background-color: rgba(255, 255, 255, 0.911);
     width: 90%;
     margin: auto;border-radius: 10px;padding: 20px;">
       <h1  id="titulo" style="text-align: center;">Historial de Rutas</h1>
     
-      <div class="row control">
-		<div class="col">
+      <div class="row control col col-lg-12 col-md-12 col-sm-12">
+		<div class="col  col-md-12 col-sm-12">
 		
-				<div class="formularioPrincipal">
+				<div class="formularioPrincipal  col col-lg-12 col-md-12 col-sm-12 ">
 
-					<div class="fechaInicio">
-						<label for="fecha">Fecha de Inicio</label>
-						<input id="fechainicio" class="form-control" type="date" name="start">
+					<div class="fechaInicio col col-lg-12 col-md-12 col-sm-12" >
+						<label for="fecha" >Fecha  Inicio</label>
+						<input id="fechainicio" style="width:10em" class="form-control" type="date" name="start">
 					</div>
 
-					<div class="fechaFinalizacion">
-						<label for="fecha">Fecha de Finalización</label>
-						<input id="fechafin" style="margin-left:10px" class="form-control" type="date" name="end">
+				
+
+					<div class="fechaFinalizacion col col-lg-12 col-md-12 col-sm-12">
+						<label for="fecha">Fecha  Finalización</label>
+						<input id="fechafin"  style="margin-left:10px"   class="form-control" type="date" name="end">
 					</div>
 
-					<div class="filtro">
+					<div class="filtro col col-lg-12 col-md-12 col-sm-12">
 						<button style="margin-left: 45px;" id="filtro" class="btn btn-primary">Filtrar</button>
 					</div>
 
@@ -45,7 +47,7 @@ if(isset($_SESSION["usuario"])) {
 	</div>
 
 	<div class="tabla">
-		<table class="table table-sm mt-5">
+		<table class="table table-sm mt-5 table-responsive">
 			<thead class="thead-dark">
 				<tr>
 					<th scope="col">Nombre del Tour</th>
