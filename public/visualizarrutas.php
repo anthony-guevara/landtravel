@@ -11,7 +11,7 @@ if(isset($_SESSION["usuario"])) {
 <input id="user" value="<?php echo $var?>" style="display:none" type="text">
   <!--================Header Menu Area =================-->
 <img id="img-back-vruta" style="">
-<div style="background-color: rgba(0, 0, 0, 0.521); width: 100%;">
+<div style="background-color: rgba(0, 0, 0, 0.521); width: 100%; margin-top:20px;">
    
 <section class="hero-banner">
   <div class="container" style="text-align:justify;margin-bottom: 20px;">
@@ -41,8 +41,8 @@ if(isset($_SESSION["usuario"])) {
       <div class="col col-lg-12 tablacolor" style="margin-top:3em ;">
         <h1 style="font-size:25px;margin-left:20px">Horario De Trabajo</h1>
 
-
-        <table id="vruta" class="table table-bordered tablacolor table-hover">
+      <div class="tableTextr">
+        <table id="vruta" class="table table-bordered tablacolor table-hover table-responsive">
             <thead class="coloricono">
               <tr>
                 <th scope="col">Nombre Del Tour</th>
@@ -56,7 +56,7 @@ if(isset($_SESSION["usuario"])) {
              
             </tbody>
           </table>
-
+  </div>
     
 
 

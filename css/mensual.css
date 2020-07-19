@@ -2,6 +2,7 @@
   padding: 20px;
 }
 
+
 @media only screen and (max-width:1020px) and (min-width:736px){
 	.paquetes {
 		margin-left: 60px;
