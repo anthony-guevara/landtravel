@@ -15,7 +15,7 @@ if(isset($_SESSION["usuario"])) {
 <div style="background-color: rgba(0, 0, 0, 0.521); width: 100%;">
    
 <section class="hero-banner">
-  <div class="container" style="text-align:justify;margin-bottom: 20px;">
+  <div class="container col-md-12 col-sm-12" style="text-align:justify;margin-bottom: 20px;">
   <div style="background-color: rgba(255, 255, 255, 0.911);
     width: 90%;
     margin: auto;border-radius: 10px;padding: 20px; margin-top:10px;">
@@ -36,7 +36,7 @@ if(isset($_SESSION["usuario"])) {
 						<input id="fechafin" class="form-control" type="date" name="end">
 					</div>
 
-					<div class="filtro">
+					<div class="filtro col col-lg-12 col-md-12 col-sm-12">
 						<button style="margin-left: 45px;" id="filtro" class="btn btn-primary">Filtrar</button>
 					</div>
 

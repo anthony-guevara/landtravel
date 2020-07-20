@@ -12,10 +12,15 @@ $conexion=$obj->conexion();
     <title>Pago Mensual</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/pagosMensual.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
     <script src="https://kit.fontawesome.com/3ac10e43fc.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/png" href="../img/favicon.ico" />
 </head>
 <nav class="navbar fixed-top navegacion">
+<div class="toggle">
+  <i class="fa fa-bars menu" aria-hidden="true"></i>
+</div> 
+ 
       <ul class="nav">
       <li class="nav-item naveup"> <a href="#">Administración</a>
           <ul class="nave">
@@ -38,6 +43,18 @@ $conexion=$obj->conexion();
         </li>
       </ul>
     </nav>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        
+        <script type="text/javascript">
+      $(document).ready(function(){
+        $('.menu').click(function(){
+          $('ul').toggleClass('active');
+          
+        })
+      })
+      </script> 
+
     <body class="fondo" style="color: white;">
     
     <div class="content " style="margin-top: 2em;">
@@ -63,7 +80,7 @@ $conexion=$obj->conexion();
      
 
 
-        <table class="table thead-light table-striped tablacolor table-hover divfondo round_table" style="width: 16rem;">
+        <table class="table thead-light table-striped tablacolor table-hover table-responsive divfondo round_table" style="width: 12rem;">
             <thead class="coloricono thead-green tableheader ">
               <tr>
                 <th scope="col">DETALLES</th>
@@ -127,7 +144,7 @@ $conexion=$obj->conexion();
          
 
 
-            <table class="table thead-light table-striped tablacolor table-hover divfondo round_table" style="width: 18rem;">
+            <table class="table thead-light table-striped tablacolor table-responsive table-hover divfondo round_table" style="width: 13rem;">
                 <thead class="coloricono thead-green  tableheader">
                   <tr>
                     <th scope="col">DETALLES</th>
@@ -204,7 +221,7 @@ $conexion=$obj->conexion();
              
 
 
-                <table class="table thead-light table-striped tablacolor table-hover divfondo round_table" style="width: 15rem;">
+                <table class="table thead-light table-striped tablacolor table-responsive table-hover divfondo round_table" style="width: 15rem;">
                     <thead class="coloricono thead-green tableheader ">
                       <tr>
                         <th scope="col">DETALLES</th>

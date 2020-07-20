@@ -16,7 +16,13 @@ $conexion=$obj->conexion();
 </head>
 
 <body>
-<nav class="navbar fixed-top navegacion">
+<a href="tours.php"><img id="imgatras"; style="width:40px;  position: absolute;top:10px;left:30px;cursor:pointer;" src="../img/flecha_izquierda1.png" alt=""></a>
+<div id="imagenFondo" style="" >
+    </div> 
+<nav class="navbar  navegacion" style="margin-top:2em">
+<div class="toggle">
+  <i class="fa fa-bars menu" aria-hidden="true"></i>
+</div> 
       <ul class="nav">
       <li class="nav-item naveup"> <a href="#">Administración</a>
           <ul class="nave">
@@ -39,9 +45,23 @@ $conexion=$obj->conexion();
         </li>
       </ul>
     </nav>
-    <a href="tours.php"><img style="width:40px; position: absolute;top:80px;left:30px;cursor:pointer;" src="../img/flecha_izquierda1.png" alt=""></a>
-    <div id="imagenFondo" style="" >
-    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        
+        <script type="text/javascript">
+      $(document).ready(function(){
+        $('.menu').click(function(){
+          $('ul').toggleClass('active');
+          
+        })
+      })
+      </script> 
+
+
+
+
+    
     <div class="container" >
     <form action="../ajax/agregar-tour.php"  method="POST">
         <div class="row">
@@ -70,7 +90,7 @@ $conexion=$obj->conexion();
                     <option value="Familiar">Familiar</option>
                     </select>
         </p>
-        <button style="margin-left: 40%;width: 150px;border-color: green;background-color: green !important;" type="submit" class="btn btn-success">Crear Tour</button>
+        <button id="btncrear" style="margin-left: auto; margin-rith: auto;width: 150px;border-color: green;background-color: green !important;" type="submit" class="btn btn-success">Crear Tour</button>
 </div>
 </div></div></div>
 </form>

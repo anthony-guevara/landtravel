@@ -8,6 +8,7 @@
   <link rel="icon" type="image/png" href="../img/favicon.ico" />
   <link rel="stylesheet" href="../css/bootstrap.min.css">
   <link rel="stylesheet" href="../css/tours.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
   <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
   <script src="../js/jquery-3.4.1.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
@@ -32,9 +33,9 @@
 <header>
 <div  class="col col-lg-4 col-md-6 col-sm-12">
 <nav class="navbar fixed-top navegacion menu_bar ">
-  <div class="toggle">
-  <i class="fas fa-bars menu"></i>
-  </div>
+<div class="toggle">
+  <i class="fa fa-bars menu" aria-hidden="true"></i>
+</div>
 
       <ul class="nav">
       <li class="nav-item naveup"> <a href="#">Administración</a>

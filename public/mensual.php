@@ -16,14 +16,14 @@ if(isset($_SESSION["usuario"])) {
    
 <section class="hero-banner">
   <div class="container" style="text-align:justify;margin-bottom: 20px;">
-  <div style="background-color: rgba(255, 255, 255, 0.911);
-    width: 90%;
+  <div class="col col-lg-12 col-md-12 col-sm-12" style="background-color: rgba(255, 255, 255, 0.911);
+    width: 60%;
     margin: auto;border-radius: 10px;padding: 20px;">
       <h1  id="titulo" style="text-align: center;">Pago Mensual</h1>
     
     
 
-      <table class="table thead-light table-striped tablacolor table-hover divfondo  " style="margin-bottom: 5em;width: 80%;margin-left: 5em; text-align: center;">
+      <table class="table thead-light table-striped tablacolor table-responsive table-hover divfondo  " style="margin-bottom: 5em;width: 80%;margin-left: 3em; text-align: center;">
                   <thead class="coloricono tableheader">
                     <tr>
                       <th scope="col">DESCRIPCION</th>
