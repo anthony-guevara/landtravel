@@ -46,7 +46,7 @@ function paquetesTour(){
                 console.log("Holis");
     for(var i=0; i<=res.length-1; i++) {
         $("#contenido-paquetes").append(`
-        <div class="paquetes col-4">
+        <div class="paquetes col-md-auto">
     <div class="card" style="width: 18rem;">
     <img class="card-img-top" src="../img/Espa_a.png" alt="Card image cap">
     <div class="card-body">
