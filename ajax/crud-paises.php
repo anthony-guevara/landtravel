@@ -15,7 +15,7 @@ switch($_POST['accion']){
     case "traerpaises":
 
 
-        $call = $mysqli->prepare('select id, nombre, gentilicio from pais where estado=1;');
+        $call = $mysqli->prepare('select id, nombre, gentilicio ,codigo from pais where estado=1;');
 
         $call->execute();
         $result = $call->get_result();
@@ -60,6 +60,41 @@ switch($_POST['accion']){
 
     break;
     case "editarpais":
+
+
+        //parametros
+        $idPais =  (int) $_POST['idpais'];
+        $nombre=$_POST['nombre'];
+        $gentilicio=$_POST['gentilicio'];
+        $codigo=$_POST['codigo'];
+
+        $call = $mysqli->prepare('update pais set nombre=?,gentilicio=?,codigo =? where  id=?;');
+        $call->bind_param('sssi', 
+                $nombre,$gentilicio,$codigo,$idPais
+            
+        
+        );
+
+        $call->execute();
+        
+        $filasAfectadas = $call->affected_rows;
+
+        if($filasAfectadas>0){
+            echo json_encode(
+                array(
+                    "codigo"=>1,
+                    "mensaje"=>"Se edito correctamente"
+                )
+                );
+        }else{
+            
+            echo json_encode(
+                array(
+                    "codigo"=>0,
+                    "mensaje"=>"Ocurrió un error"
+                )
+                );
+        }
 
     break;
 }
