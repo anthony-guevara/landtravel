@@ -36,21 +36,8 @@ input[type="text"]{
     color:black;
 }
 
-.buttones{
-    background-color: rgb(185, 72, 7)!important;
-  
-    color: #fff;
-    border: transparent;
-    
-    font-size: 1.2em;
-   
-    transition:0.5s;
+
+thead{
+    max-width: 100%!important;
 }
-.buttones:hover{
-    background-color: rgb(145, 56, 5)!important;
-    
-    color: #fff;
-    border: transparent;
-    transition:0.5s;
-    cursor:pointer;
-}
+
