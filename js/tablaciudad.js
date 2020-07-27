@@ -2,12 +2,9 @@ $(document).ready(function () {
     console.log("Carga js");
 
     cargarciudades();
-    editarCiudad();
-
 });
 
 function cargarciudades() {
-
     var parametros = {
         accion: "traerciudades",
     };
@@ -28,8 +25,8 @@ function cargarciudades() {
                   <td>${respuesta[i].nombre}</td>
                   <td>${respuesta[i].descripcion}</td>
                   <td>
-                  <button class="btn buttones"  onclick="eliminarciudad()">Eliminar <i class="fas fa-window-close"></i></button>
-                  <button class="btn buttones"  onclick="editarciudad()">editar <i class="fas fa-edit"></i></button>
+                  <button class="btn buttones"  onclick="eliminarCiudad()">Eliminar<i class="fas fa-window-close"></i></button>
+                  <button class="btn buttones"  onclick="editarCiudad()">editar<i class="fas fa-edit"></i></button>
                   <td>
                 </tr>
                 `
@@ -42,10 +39,6 @@ function cargarciudades() {
     });
 }
 
-
-
-
-
 function eliminarCiudad() {
     console.log("eliminando");
 
@@ -54,5 +47,3 @@ function eliminarCiudad() {
 function editarCiudad() {
     console.log("editando");
 }
-
-

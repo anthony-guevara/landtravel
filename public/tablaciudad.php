@@ -1,8 +1,10 @@
+
 <?php 
 require_once "../clases/conexion.php";
 $obj= new conectar();
 $conexion=$obj->conexion();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
