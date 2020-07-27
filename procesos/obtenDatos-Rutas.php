@@ -18,9 +18,11 @@
 	
 	$result=mysqli_query($conexion,$sql);
 
+	$results =  array();
+
 	while (	$ver=mysqli_fetch_row($result))
 	{	
-	  $results[] = $ver;
+		array_push( $results, $ver);
 	}
-	echo json_encode($results);
+	echo json_encode(isset($results)?$results: array());
  ?>
