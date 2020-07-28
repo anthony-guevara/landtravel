@@ -94,7 +94,7 @@ switch ($_POST['accion']) {
     case "agregarciudad":
 
         $idpais = (int)$_POST['idpais'];
-        $nombreCiudad = $_POST['nombreciudad'];
+        $nombreciudad = $_POST['nombreciudad'];
         $descripcion  = $_POST['descripcion'];
 
 
@@ -103,7 +103,7 @@ switch ($_POST['accion']) {
 
         $call = $mysqli->prepare($query);
 
-        $call->bind_param("iss", $idpais, $nombreCiudad, $descripcion);
+        $call->bind_param("iss", $idpais, $nombreciudad, $descripcion);
         
         $call->execute();
 
