@@ -25,7 +25,7 @@ function cargarciudades() {
                   <td>${respuesta[i].nombre}</td>
                   <td>${respuesta[i].descripcion}</td>
                   <td>
-                  <button class=""  onclick="eliminarCiudad()">Eliminar<i class="fas fa-window-close"></i></button>
+                  <button class=""  onclick="eliminarCiudad(${respuesta[i].id})">Eliminar<i class="fas fa-window-close"></i></button>
                   <button class=""  onclick="editarCiudad('${respuesta[i].nombre}','${respuesta[i].nombre}','${respuesta[i].descripcion}',${respuesta[i].id})">editar<i class="fas fa-edit"></i></button>
                   <td>
                 </tr>
@@ -39,8 +39,38 @@ function cargarciudades() {
     });
 }
 
-function eliminarCiudad() {
-    console.log("eliminando");
+function eliminarCiudad(idciudad) {
+    console.log(idciudad);
+
+    var parametros = {
+        accion: "eliminarciudad",
+        id: idciudad,
+      };
+
+
+      $.ajax({
+        url: "../ajax/crud-ciudades.php",
+        method: "POST",
+        dataType: "json",
+        data: parametros,
+        success: function (respuesta) {
+          console.log(respuesta);
+          if (respuesta.codigo == 1) {
+            cargarciudades();
+          } else {
+            alert(respuesta.mensaje);
+          }
+
+        },
+        error: function (error) {
+          console.log(error);
+        },
+      });
+
+
+
+
+
 
 }
 
