@@ -27,7 +27,7 @@ function cargarPaises() {
             <td>${respuesta[i].gentilicio}</td>
             <td>
             <button class="btn buttones"  onclick="eliminarPais(${respuesta[i].id})">Eliminar <i class="fas fa-window-close"></i></button>
-            <button class="btn buttones"   data-toggle="modal" data-target="#modalpais" onclick="editarPais(${respuesta[i].id},'${respuesta[i].nombre}','${respuesta[i].gentilicio}','${respuesta[i].codigo}')">editar <i class="fas fa-edit"></i></button>
+            <button class="btn buttones"   data-toggle="modal" data-target="#modalciudad" onclick="editarPais(${respuesta[i].id},'${respuesta[i].nombre}','${respuesta[i].gentilicio}','${respuesta[i].codigo}')">editar <i class="fas fa-edit"></i></button>
             <td>
           </tr>
           `
