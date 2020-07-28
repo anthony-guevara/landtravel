@@ -1,19 +1,19 @@
-<?php 
+<?php
 
 
-class ConnexionMysqli extends Config {
-
-    function ConnexionMysqli() {
-        
+class ConnexionMysqli extends Config
+{
+    public function __construct()
+    {
     }
 
-
-    function connect() {
+    public function connect()
+    {
         return new mysqli(
-            parent::getServer(), parent::getUser(), parent::getPass(), parent::getDataBase()
+            parent::getServer(),
+            parent::getUser(),
+            parent::getPass(),
+            parent::getDataBase()
         );
     }
 }
-
-
-?>
