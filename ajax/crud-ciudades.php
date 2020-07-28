@@ -13,7 +13,7 @@ switch ($_POST['accion']) {
 
 
     case "traerciudades":
-        $call = $mysqli->prepare('select destino.id,pais.nombre,destino.nombre,destino.descripcion from destino
+        $call = $mysqli->prepare('select destino.id,pais.nombre nombrepais,destino.nombre,destino.descripcion from destino
         inner join pais on destino.pais_id=pais.id
         where pais.estado=1 and destino.estado=1;');
 
