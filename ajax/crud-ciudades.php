@@ -98,32 +98,26 @@ switch ($_POST['accion']) {
         $descripcion  = $_POST['descripcion'];
 
 
-        $query = "INSERT INTO destino ( pais_id, nombre, descripcion, estado) VALUES(?, ?, ?, 1);";
+        $call = $mysqli->prepare('CALL SP_CIUDAD(?, ? , ?, @mensaje, @codigo);');
 
-
-        $call = $mysqli->prepare($query);
-
-        $call->bind_param("iss", $idpais, $nombreciudad, $descripcion);
-        
+        $call->bind_param(
+            'iss',
+            $idpais,
+            $nombreCiudad,
+            $descripcion
+        );
         $call->execute();
+                
+        $select = $mysqli->query('SELECT  @mensaje, @codigo');
+                
+        $result = $select->fetch_assoc();
+        $codigo = $result['@codigo'];
+        $mensaje = $result['@mensaje'];
+        echo json_encode(array(
+            $codigo,
+            $mensaje
+        ));
 
-        $filasAfectadas = $call->affected_rows;
-
-        if ($filasAfectadas>0) {
-            echo json_encode(
-                array(
-                    "codigo"=>1,
-                    "mensaje"=>"Se agregó correctamente"
-                )
-            );
-        } else {
-            echo json_encode(
-                array(
-                    "codigo"=>0,
-                    "mensaje"=>"Ocurrió un error"
-                )
-            );
-        }
 
     break;
 
