@@ -58,7 +58,7 @@ function eliminarlugarturistico(idlugar) {
     };
 
     $.ajax({
-        url: "../ajax/crud-ciudades.php",
+        url: "../ajax/crud-lugaresturisticos.php",
         method: "POST",
         dataType: "json",
         data: parametros,
@@ -116,7 +116,7 @@ $("#guardarlugar").on("click", () => {
 
 
 $.ajax({
-    url: "../ajax/crud-ciudades.php",
+    url: "../ajax/crud-lugaresturisticos.php",
      method:"POST",
     dataType:"json",
     data:parametros,
@@ -139,6 +139,94 @@ $.ajax({
 
 
 });
+
+
+
+
+function generarCiudades() {
+
+    var parametros = {
+        accion: "traerciudades",
+
+    };
+
+    $.ajax({
+        url: "../ajax/crud-lugaresturisticos.php",
+        method: "POST",
+        dataType: "json",
+        data: parametros,
+        success: function (respuesta) {
+            console.log(respuesta);
+
+            for (var i = 0; i < respuesta.length; i++) {
+                $("#listaciudades").append(
+
+                    `<option id="option" value="${respuesta[i].id}" >${respuesta[i].nombre}</option><br>`
+
+
+
+
+                );
+
+
+            }
+
+        },
+        error: function (error) {
+            console.log(error);
+        },
+    });
+
+
+
+}
+
+
+
+
+
+/*nuevo lugar turistico*/
+
+function agregarLugar(){
+   var ciudad= $("#listaciudades").val();
+  var lugar=  $("#nombrenuevolugar").val();
+   var descripcion= $("#descripcionnueva").val();
+
+   var parametros={
+       accion:"nuevolugar",
+       ciudad:ciudad,
+       lugar:lugar,
+       descripcion:descripcion,
+
+   };
+
+   $.ajax({
+       url:"../ajax/crud-lugaresturisticos.php",
+       method:"POST",
+       dataType:"json",
+       data:parametros,
+       success: function (respuesta) {
+        console.log(respuesta);
+        if (respuesta.codigo == 1) {
+            cargarLugares();
+        } else {
+            alert(respuesta.mensaje);
+        }
+    },
+    error: function (error) {
+        console.log(error);
+    },
+
+
+   });
+
+
+
+}
+
+
+
+
 
 
 
