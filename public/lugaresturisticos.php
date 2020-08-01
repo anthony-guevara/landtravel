@@ -1,3 +1,10 @@
+
+<?php 
+require_once "../clases/conexion.php";
+$obj= new conectar();
+$conexion=$obj->conexion();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,7 +70,7 @@
               <form id="informacionlugar">
                 <div class="row">
                     <div class="col-6">
-                            <input  type="text" id="nombreciudad" placeholder="Nombre Ciudad"><br>
+                            <select   type="text" id="nombreciudad" ></select><br>
                     </div>
                     <div class="col-6">
                             <input  type="text" id="lugar" placeholder="Lugar Turisticos"><br>
