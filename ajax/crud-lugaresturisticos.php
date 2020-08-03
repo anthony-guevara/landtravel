@@ -26,8 +26,8 @@ switch ($_POST['accion']) {
 
     break;
 
-    case "eliminarlugar":
-        $idlugar = (int)$_POST['idlugar'];
+    case "eliminarlugarturistico":
+        $idlugar = (int)$_POST['id'];
 
         $call = $mysqli->prepare('UPDATE lugar  SET estado=0 WHERE id=?;');
 
@@ -58,8 +58,8 @@ switch ($_POST['accion']) {
 
 
     case "editarlugar":
-        $idlugar = (int)$_POST['idlugar'];
-        $nombre = $_POST['nombre'];
+        $idlugar = (int)$_POST['id'];
+        $nombre = $_POST['nombrelugar'];
         $descripcion  = $_POST['descripcion'];
 
         $call = $mysqli->prepare("
@@ -90,10 +90,10 @@ switch ($_POST['accion']) {
     break;
 
 
-    case "agregarlugar":
+    case "nuevolugar":
 
-        $idCiudad = (int)$_POST['idCiudad'];
-        $nombre = $_POST['nomre$nombre'];
+        $idCiudad = (int)$_POST['ciudad'];
+        $nombre = $_POST['lugar'];
         $descripcion  = $_POST['descripcion'];
 
 
@@ -102,7 +102,7 @@ switch ($_POST['accion']) {
         $call->bind_param(
             'iss',
             $idCiudad,
-            $nombreCiudad,
+            $nombre,
             $descripcion
         );
         $call->execute();
@@ -110,11 +110,11 @@ switch ($_POST['accion']) {
         $select = $mysqli->query('SELECT  @mensaje, @codigo');
                 
         $result = $select->fetch_assoc();
-        $codigo = $result['@codigo'];
+        $codigo = (int)$result['@codigo'];
         $mensaje = $result['@mensaje'];
         echo json_encode(array(
-            $codigo,
-            $mensaje
+            "codigo"=>$codigo,
+            "mensaje"=>$mensaje
         ));
     break;
 
