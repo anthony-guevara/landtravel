@@ -21,7 +21,7 @@ $conexion=$obj->conexion();
     <link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css">
     <link rel="stylesheet" href="../vendors/flat-icon/font/flaticon.css">
     <link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
-    <link rel="stylesheet" href="../css/lugaresturisticos.css.css">
+    <link rel="stylesheet" href="../css/lugaresturisticos.css">
 
     <title>Rutas</title>
 </head>
