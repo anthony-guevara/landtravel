@@ -15,7 +15,8 @@ switch ($_POST['accion']) {
     case "traerciudades":
         $call = $mysqli->prepare('select destino.id,pais.nombre nombrepais,destino.nombre,destino.descripcion from destino
         inner join pais on destino.pais_id=pais.id
-        where pais.estado=1 and destino.estado=1;');
+        where pais.estado=1 and destino.estado=1
+        order by destino .id asc;');
 
         $call->execute();
         $result = $call->get_result();
@@ -60,13 +61,13 @@ switch ($_POST['accion']) {
 
     case "editarciudad":
         $idciudad = (int)$_POST['idciudad'];
-        $nombreCiudad = $_POST['nombreciudad'];
+        $nombreciudad = $_POST['nombreciudad'];
         $descripcion  = $_POST['descripcion'];
 
         $call = $mysqli->prepare("
         UPDATE landtravel.destino SET  nombre=?,  descripcion=? WHERE id=?;");
 
-        $call->bind_param("ssi", $nombreCiudad, $descripcion, $idciudad);
+        $call->bind_param("ssi", $nombreciudad, $descripcion, $idciudad);
         
         $call->execute();
 
@@ -97,33 +98,26 @@ switch ($_POST['accion']) {
         $nombreciudad = $_POST['nombreciudad'];
         $descripcion  = $_POST['descripcion'];
 
+        $call = $mysqli->prepare('CALL SP_CIUDAD(?, ? , ?, @mensaje, @codigo);');
 
-        $query = "INSERT INTO destino ( pais_id, nombre, descripcion, estado) VALUES(?, ?, ?, 1);";
-
-
-        $call = $mysqli->prepare($query);
-
-        $call->bind_param("iss", $idpais, $nombreciudad, $descripcion);
-        
+        $call->bind_param(
+            'iss',
+            $idpais,
+            $nombreciudad,
+            $descripcion
+        );
         $call->execute();
+                
+        $select = $mysqli->query('SELECT  @mensaje, @codigo');
+                
+        $result = $select->fetch_assoc();
+        $codigo = (int)$result['@codigo'];
+        $mensaje = $result['@mensaje'];
+        echo json_encode(array(
+            "codigo"=>$codigo,
+            "mensaje"=>$mensaje
+        ));
 
-        $filasAfectadas = $call->affected_rows;
-
-        if ($filasAfectadas>0) {
-            echo json_encode(
-                array(
-                    "codigo"=>1,
-                    "mensaje"=>"Se agregó correctamente"
-                )
-            );
-        } else {
-            echo json_encode(
-                array(
-                    "codigo"=>0,
-                    "mensaje"=>"Ocurrió un error"
-                )
-            );
-        }
 
     break;
 
