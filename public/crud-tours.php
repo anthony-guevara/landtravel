@@ -39,8 +39,9 @@ $conexion=$obj->conexion();
       </ul>
         <ul class="sidebar-nav" id="sidebar">     
           <li><a href="rutas.php">Rutas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-          <li><a>Ciudad<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+          <li><a href="tablaciudad.php">Ciudad<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
           <li><a href="lugaresTuristicos.php">Turísticos<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+          <li><a href="tablaPais.php">Paises<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
         </ul>
       </div>
           

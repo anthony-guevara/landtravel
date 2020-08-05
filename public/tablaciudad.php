@@ -15,12 +15,40 @@ $conexion=$obj->conexion();
   <link rel="stylesheet" href="../vendors/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../vendors/themify-icons/themify-icons.css">
   <link rel="stylesheet" href="../css/ciudad.css">
-    <title>Ciudades</title>
-</head>
-<body>
-    
+  <link rel="stylesheet" href="../css/sidebar.css">
 
-    <div class="container" style="text-align:center">
+
+  <!-- Sidebar recursos -->
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <div id="wrapper" class="active">
+      
+      <!-- Sidebar -->
+            <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+      <ul id="sidebar_menu" class="sidebar-nav">
+           <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon" class="glyphicon glyphicon-align-justify"></span></a></li>
+      </ul>
+        <ul class="sidebar-nav" id="sidebar">     
+          <li><a href="rutas.php">Rutas<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+          <li><a href="crud-tours.php">Tours<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+          <li><a href="tablaPais.php">Paises<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+          <li><a href="lugaresTuristicos.php">Turísticos<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+        </ul>
+      </div>
+          
+      <!-- Page content -->
+      <div id="page-content-wrapper">
+        <!-- Keep all page content within the page-content inset div! -->
+        <div class="page-content inset">
+          <div class="row">
+              <div class="col-md-12">
+              
+                <!--aqui va todo el crud -->
+                
+                <div class="container" style="text-align:center">
         <div class="row">
           <div class="col col-sm-12">
             <h1 id="titulo" style="text-align: center; margin-top: 4px; margin-bottom:4rem;"> Gestion Ciudades <button type="button"  onclick="GenerarPaises()" data-toggle="modal" data-target="#modalnuevaciudad"
@@ -145,6 +173,23 @@ $conexion=$obj->conexion();
         </div>
       </div>
     </div>
+  
+                <!--aqui termina el crud -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+
+    <title>Ciudades</title>
+</head>
+<body>
+    
+
+   
 
 
 
@@ -159,6 +204,7 @@ $conexion=$obj->conexion();
       <script src="../js/jquery-3.4.1.min.js"></script>
       <script src="../js/bootstrap.min.js"></script>
       <script src="../js/tablaciudad.js"></script>
-  
+      <script src="../js/sidebar.js"></script>
+
 </body>
 </html>
