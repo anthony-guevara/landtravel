@@ -40,6 +40,9 @@
       <ul class="nav">
       <li class="nav-item naveup"> <a href="#">Administración</a>
           <ul class="nave">
+            <li><a href="crud-tours.php">Mantenimiento</a></li>
+          </ul>
+          <ul class="nave">
             <li><a href="logout.php">Cerrar Sesión</a></li>
           </ul>
         </li>

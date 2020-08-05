@@ -40,10 +40,11 @@ $conexion=$obj->conexion();
            <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon" class="glyphicon glyphicon-align-justify"></span></a></li>
       </ul>
         <ul class="sidebar-nav" id="sidebar">     
-          <li><a href="crud-tours.php">Tours<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-          <li><a href="tablaciudad.php">Ciudad<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-          <li><a href="lugaresTuristicos.php">Turísticos<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-          <li><a href="tablaPais.php">Paises<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+          <li><a href="crud-tours.php">Tours<span class="sub_icon glyphicon glyphicon-wrench"></span></a></li>
+          <li><a href="tablaciudad.php">Ciudad<span class="sub_icon glyphicon glyphicon-wrench"></span></a></li>
+          <li><a href="lugaresTuristicos.php">Turísticos<span class="sub_icon glyphicon glyphicon-wrench"></span></a></li>
+          <li><a href="tablaPais.php">Paises<span class="sub_icon glyphicon glyphicon-wrench"></span></a></li>
+          <li><a href="Tours.php">Salir<span class="sub_icon glyphicon glyphicon-log-out"></span></a></li>
         </ul>
       </div>
           
