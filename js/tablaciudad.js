@@ -17,21 +17,72 @@ function cargarciudades() {
       console.log(respuesta);
 
       $("#contenido-ciudades").html("");
+      // for (var i = 0; i < respuesta.length; i++) {
+      //   $("#contenido-ciudades").append(
+      //     `
+      //           <tr>
+      //             <td>${respuesta[i].nombrepais}</td>
+      //             <td>${respuesta[i].nombre}</td>
+      //             <td>${respuesta[i].descripcion}</td>
+      //             <td>
+      //             <button class=""  onclick="eliminarCiudad(${respuesta[i].id})">Eliminar<i class="fas fa-window-close"></i></button>
+      //             <button class=""  onclick="editarCiudad('${respuesta[i].nombrepais}','${respuesta[i].nombre}','${respuesta[i].descripcion}',${respuesta[i].id})">editar<i class="fas fa-edit"></i></button>
+      //             <td>
+      //           </tr>
+      //           `
+      //   );
+      // }
+
       for (var i = 0; i < respuesta.length; i++) {
-        $("#contenido-ciudades").append(
-          `
-                <tr>
-                  <td>${respuesta[i].nombrepais}</td>
-                  <td>${respuesta[i].nombre}</td>
-                  <td>${respuesta[i].descripcion}</td>
-                  <td>
-                  <button class=""  onclick="eliminarCiudad(${respuesta[i].id})">Eliminar<i class="fas fa-window-close"></i></button>
-                  <button class=""  onclick="editarCiudad('${respuesta[i].nombrepais}','${respuesta[i].nombre}','${respuesta[i].descripcion}',${respuesta[i].id})">editar<i class="fas fa-edit"></i></button>
-                  <td>
-                </tr>
-                `
-        );
+        respuesta[i].opciones = "";
       }
+
+      $("#tabla-ciudades").DataTable().destroy();
+
+      $("#tabla-ciudades").DataTable({
+        data: respuesta,
+        responsive: true,
+        columnDefs: [
+          {
+            targets: -1,
+            data: "id",
+            render: function (data, type, row, meta) {
+              return `<button class="" onclick="eliminarCiudad(${row.id})">Eliminar<i class="fas fa-window-close"></i></button>
+              <button class="" onclick="editarCiudad('${row.nombrepais}','${row.nombre}','${row.descripcion}',${row.id})">editar<i class="fas fa-edit"></i></button>
+              `;
+            },
+          },
+        ],
+
+        columns: [
+          {
+            data: "nombre",
+          },
+
+          {
+            data: "nombrepais",
+          },
+          {
+            data: "descripcion",
+          },
+          {
+            data: "opciones",
+          },
+        ],
+
+        language: {
+          lengthMenu: "Mostrar _MENU_ registros por página",
+          zeroRecords: "No existe la búsqueda seleccionada.",
+          info: "Mostrando página _PAGE_ of _PAGES_",
+          infoEmpty: "No existen registros disponibles",
+          infoFiltered: "(filtrado de _MAX_  registros totales)",
+          search: "Búsqueda: ",
+          paginate: {
+            previous: "Anterior",
+            next: "Siguente",
+          },
+        },
+      });
     },
     error: function (error) {
       console.log(error);

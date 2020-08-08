@@ -1,9 +1,6 @@
-
-
-
-@media only screen and (max-width:450px)  {
+@media only screen and (max-width:450px) {
     .tableText {
-        font-size:12px;
+        font-size: 12px;
     }
 
     .tableText2 {
@@ -11,9 +8,9 @@
     }
 }
 
-@media only screen and (max-width:736px) and (min-width:460px)  {
+@media only screen and (max-width:736px) and (min-width:460px) {
     .tableText {
-        font-size:20px;
+        font-size: 20px;
     }
 
     .tableText2 {
@@ -21,7 +18,7 @@
     }
 }
 
-input[type="text"]{
+input[type="text"] {
     width: 100%;
     font-size: 1.2em;
     padding: 10px 11px;
@@ -33,30 +30,38 @@ input[type="text"]{
     border-left: none;
     border-right: none;
     background-color: rgba(0, 0, 0, 0.103);
-    color:black;
+    color: black;
 }
 
 
-thead{
-    max-width: 100%!important;
+thead {
+    max-width: 100% !important;
 }
 
 
-.buttones{
-    background-color: rgb(185, 72, 7)!important;
-  
+.buttones {
+    background-color: rgb(185, 72, 7) !important;
+
     color: #fff;
     border: transparent;
-    
+
     font-size: 1.2em;
-   
-    transition:0.5s;
+
+    transition: 0.5s;
 }
-.buttones:hover{
-    background-color: rgb(145, 56, 5)!important;
-    
+
+.buttones:hover {
+    background-color: rgb(145, 56, 5) !important;
+
     color: #fff;
     border: transparent;
-    transition:0.5s;
-    cursor:pointer;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+
+
+#tabla-ciudades_wrapper {
+    width: 80% !important;
+    margin: auto !important;
 }
