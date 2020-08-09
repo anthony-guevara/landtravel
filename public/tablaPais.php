@@ -50,7 +50,7 @@ $conexion=$obj->conexion();
       </div>
           
       <!-- Page content -->
-      <div id="page-content-wrapper">
+      <div id="page-content-wrapper" class="fondo">
         <!-- Keep all page content within the page-content inset div! -->
         <div class="page-content inset">
           <div class="row">
@@ -61,10 +61,10 @@ $conexion=$obj->conexion();
                 <div class="container" style="text-align:center">
       <div class="row">
         <div class="col col-sm-12">
-          <h1 id="titulo" style="text-align: center; margin-top: 4px; margin-bottom:4rem;"> Gestion Paises</h1>
+          <h1  class="colorletra" id="titulo" style="text-align: center; margin-top: 4px; margin-bottom:4rem; "> Gestion Paises</h1>
           <div class="tableText col col-lg-12 col-md-12 col-sm-12">
-            <table class="table "> 
-              <thead class="thead-dark">
+            <table class="table fondotabla"  style="width:100%" > 
+              <thead class="estilotarjeta" style="width:100%">
 
                 <tr>
                   <th scope="col">Nombre</th>
