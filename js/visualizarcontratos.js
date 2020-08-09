@@ -106,7 +106,44 @@ error: function (error) {
 }
 
 
+function eliminar(){
+  
+  var id=$("#inputEmpleado option:selected").val();
 
+
+  parametros({
+    accion:"eliminarContrato ",
+   
+    id:id,
+  
+  
+  })
+
+
+  $.ajax({
+    url: "../procesos/getContrato-Empleado.php",
+    method: "POST",
+    dataType: "json",
+    data: parametros,
+    success: function (respuesta) {
+      console.log(respuesta);
+      if (respuesta.codigo == 1) {
+        
+      } else {
+        alert(respuesta.mensaje);
+      }
+    },
+    error: function (error) {
+      console.log(error);
+    },
+  });
+
+
+
+
+
+
+}
 
 
 
