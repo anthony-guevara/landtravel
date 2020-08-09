@@ -26,3 +26,9 @@ $("select#inputEmpleado").change(function() {
       }  
     });
     });
+
+    function cerrar() {
+        $("#modalpais").modal({
+          show: "false",
+        });
+      }
