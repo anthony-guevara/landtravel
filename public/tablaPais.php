@@ -24,15 +24,41 @@ $conexion=$obj->conexion();
   <link rel="stylesheet" href="../vendors/flat-icon/font/flaticon.css">
   <link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
   <link rel="stylesheet" href="../css/tablaPais.css">
-  
-  <title>Pais</title>
-</head>
+  <link rel="stylesheet" href="../css/sidebar.css">
 
-<body>
 
-  
-   
-    <div class="container" style="text-align:center">
+  <!-- Sidebar recursos -->
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <div id="wrapper" class="active">
+      
+      <!-- Sidebar -->
+            <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+      <ul id="sidebar_menu" class="sidebar-nav">
+           <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon" class="glyphicon glyphicon-align-justify"></span></a></li>
+      </ul>
+        <ul class="sidebar-nav" id="sidebar">     
+          <li><a href="rutas.php">Rutas<span class="sub_icon glyphicon glyphicon-wrench"></span></a></li>
+          <li><a href="tablaciudad.php">Ciudad<span class="sub_icon glyphicon glyphicon-wrench"></span></a></li>
+          <li><a href="crud-tours.php">Tours<span class="sub_icon glyphicon glyphicon-wrench"></span></a></li>
+          <li><a href="lugaresTuristicos.php">Turísticos<span class="sub_icon glyphicon glyphicon-wrench"></span></a></li>
+          <li><a href="Tours.php">Salir<span class="sub_icon glyphicon glyphicon-log-out"></span></a></li>
+        </ul>
+      </div>
+          
+      <!-- Page content -->
+      <div id="page-content-wrapper">
+        <!-- Keep all page content within the page-content inset div! -->
+        <div class="page-content inset">
+          <div class="row">
+              <div class="col-md-12">
+              
+                <!--aqui va todo el crud -->
+                
+                <div class="container" style="text-align:center">
       <div class="row">
         <div class="col col-sm-12">
           <h1 id="titulo" style="text-align: center; margin-top: 4px; margin-bottom:4rem;"> Gestion Paises</h1>
@@ -108,12 +134,31 @@ $conexion=$obj->conexion();
         </div>
       </div>
     </div>
+  
+                <!--aqui termina el crud -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+  
+  <title>Pais</title>
+</head>
+
+<body>
+
+  
+   
+   
 
 
     <script src="../js/jquery-3.4.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/tablaPais.js"></script>
-
+    <script src="../js/sidebar.js"></script>
 
 </body>
 
