@@ -144,7 +144,9 @@ $conexion=$obj->conexion();
 
     <div class="col-lg-12 col-md-6" style="" >
     <button class="buttones"  >Eliminar<i class="fas fa-window-close"></i></button>
-    <button class="buttones" >editar<i class="fas fa-edit"></i></button>
+   
+    <button class="buttones" onclick="editarContrato()" >editar<i class="fas fa-edit"></i></button>
+    <button class="buttones" onclick="guardarContrato()" >Guardar<i class="fas fa-save"></i></button>
         </div> 
         
 

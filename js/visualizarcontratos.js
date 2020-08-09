@@ -1,9 +1,30 @@
 $(document).ready(function (){
     console.log("Carga JS!");
+   
+   
 });
 
 
+
+
+
+function cambiar(){
+  $('#direccion').attr("disabled", true);
+   
+   $('#telefono').attr("disabled", true);
+   console.log("cambio de empleado");
+
+
+   
+
+};
+
+// $('#inputEmpleado').change(cambiar());
+
+
+
 $("select#inputEmpleado").change(function() {
+
  
     $.ajax({
         type: 'POST',
@@ -25,7 +46,70 @@ $("select#inputEmpleado").change(function() {
 
       }  
     });
-    });
+    cambiar()});
+
+
+    function editarContrato(){
+     
+
+
+      $('#direccion').attr("disabled", false);
+      
+      $('#telefono').attr("disabled", false);
+     console.log("hago click desde editar");
+    
+   
+    
+   };
+   function guardarContrato(){
+    var direccion =$('#direccion').val();
+    var telefono =$('#telefono').val();
+    var id=$("#inputEmpleado option:selected").val();
+    console.log(id);
+
+  //   var identidad =$("#vc-identidad").val();
+  //   var contrato=$("#vc-ncontrato").val();
+  //  var nombre=$("#vc-pnombre").val();
+  //   var apellido=$("#vc-papellido").val();
+  //  var tipoempleado=$("#tipo_empleado").val();
+  //  var tipocontrato= $("#tipo_contrato").val("Trabajo");
+  //   var fecha=$("#fechanac").val();
+  // var  nacionalidad= $("#nacionalidad").val();
+
+
+parametros({
+  accion:"guardarContrato ",
+  direccion:direccion,
+  telefono:telefono,
+  id:id,
+
+
+})
+
+$.ajax({
+url:"../procesos/getContrato-Empleado.php",
+method:"POST",
+dataType: "json",
+data:parametros,
+success: function (respuesta) {
+  console.log(respuesta);
+  if (respuesta.codigo == 1) {
+    
+  } else {
+    alert(respuesta.mensaje);
+  }
+},
+error: function (error) {
+  console.log(error);
+},
+});
+}
+
+
+
+
+
+
 
     function cerrar() {
         $("#modalpais").modal({
