@@ -23,13 +23,14 @@ $conexion=$obj->conexion();
     <link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
     <link rel="stylesheet" href="../css/lugaresturisticos.css">
     <link rel="stylesheet" href="../css/sidebar.css">
+    </head>
+<body>
 
 
-
-    <!-- Sidebar recursos -->
+    <!-- BORRADO POR CONFLICTO 
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
 
     <div id="wrapper" class="active">
       
@@ -37,14 +38,14 @@ $conexion=$obj->conexion();
             <!-- Sidebar -->
       <div id="sidebar-wrapper">
       <ul id="sidebar_menu" class="sidebar-nav">
-           <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon" class="glyphicon glyphicon-align-justify"></span></a></li>
+           <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon" class="fas fa-bars"></span></a></li>
       </ul>
         <ul class="sidebar-nav" id="sidebar">     
-          <li><a href="crud-tours.php">Tours<span class="sub_icon glyphicon glyphicon-wrench"></span></a></li>
-          <li><a href="tablaciudad.php">Ciudad<span class="sub_icon glyphicon glyphicon-wrench"></span></a></li>
-          <li><a href="lugaresTuristicos.php">Turísticos<span class="sub_icon glyphicon glyphicon-wrench"></span></a></li>
-          <li><a href="tablaPais.php">Paises<span class="sub_icon glyphicon glyphicon-wrench"></span></a></li>
-          <li><a href="Tours.php">Salir<span class="sub_icon glyphicon glyphicon-log-out"></span></a></li>
+          <li><a href="crud-tours.php">Tours<span class="sub_icon fas fa-plane"></span></a></li>
+          <li><a href="tablaciudad.php">Ciudad<span class="sub_icon fas fa-hotel"></span></a></li>
+          <li><a href="lugaresTuristicos.php">Turísticos<span class="sub_icon fas fa-map-marked-alt"></span></a></li>
+          <li><a href="tablaPais.php">Paises<span class="sub_icon fas fa-globe-americas"></span></a></li>
+          <li><a href="Tours.php">Salir<span class="sub_icon fas fa-sign-out-alt"></span></a></li>
         </ul>
       </div>
           
@@ -143,8 +144,7 @@ $conexion=$obj->conexion();
 
 
     <title>Rutas</title>
-</head>
-<body>
+    
 
 
    
