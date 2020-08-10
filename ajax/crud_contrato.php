@@ -11,11 +11,10 @@ $mysqli =  $connexionMysqli->connect();
 
 switch ($_POST['accion']) {
 
-    case "eliminarcontrato":
+    case "eliminarContrato":
         $id  = (int)$_POST['id'];
 
-        $call = $mysqli->prepare('UPDATE guia SET habilitado=0 WHERE id=?;
-        ');
+        $call = $mysqli->prepare('UPDATE usuario SET habilitado=0 WHERE id=?;');
 
         $call->bind_param("i", $id);
         
@@ -43,13 +42,12 @@ switch ($_POST['accion']) {
     break;
 
 
-    case "guardarcontrato":
+    case "guardarContrato":
         $direccion = $_POST['direccion'];
         $telefono = $_POST['telefono'];
         $id  = (int)$_POST['id'];
 
-        $call = $mysqli->prepare("
-        UPDATE persona SET telefono=?, direccion=?  WHERE id=?;");
+        $call = $mysqli->prepare("  UPDATE persona SET telefono=?, direccion=?  WHERE usuario_id=?;");
 
         $call->bind_param("ssi", $telefono, $direccion, $id);
         
@@ -74,6 +72,8 @@ switch ($_POST['accion']) {
         }
         
     break;
+
+    
 
 }
 

@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once "../clases/conexion.php";
 $obj= new conectar();
 $conexion=$obj->conexion();
@@ -71,21 +71,20 @@ $conexion=$obj->conexion();
                  <select id="inputEmpleado" class="txtid form-control" style="  border-color:  rgb(189, 101, 0);
     border-style: groove;" >
                  <option value="" disabled selected hidden>-</option>
-			      	<?php 
+			      	<?php
                         $sql="select * from usuario usu
                         inner join persona per on per.usuario_id=usu.id
-                        where tipo_usuario='Guia' and usu.id!=6
-                        ";
+                        where tipo_usuario='Guia' and usu.id!=6 and usu.habilitado != 0;";
                                         $conexion=$obj->conexion();
-                                        $result=mysqli_query($conexion,$sql);
+                                        $result=mysqli_query($conexion, $sql);
                                        
-			                while ($mostrar=mysqli_fetch_row($result)) {
-				?>
+                            while ($mostrar=mysqli_fetch_row($result)) {
+                                ?>
                                         <option value="<?php echo $mostrar[0] ?>"><?php echo $mostrar[10].' '.$mostrar[11] ?></option>
-				<?php 
-			}
-			mysqli_close($conexion);
-			?>  
+				<?php
+                            }
+            mysqli_close($conexion);
+            ?>  
                 </select>
                 </button></div>
        
@@ -142,8 +141,8 @@ $conexion=$obj->conexion();
         </div> 
     </div>
 
-    <div class="col-lg-12 col-md-6" style="" >
-    <button class="buttones"  >Eliminar<i class="fas fa-window-close"></i></button>
+    <div class="col-lg-12 col-md-6"  >
+    <button class="buttones"  onclick="eliminar()">Eliminar<i class="fas fa-window-close"></i></button>
    
     <button class="buttones" onclick="editarContrato()" >editar<i class="fas fa-edit"></i></button>
     <button class="buttones" onclick="guardarContrato()" >Guardar<i class="fas fa-save"></i></button>
