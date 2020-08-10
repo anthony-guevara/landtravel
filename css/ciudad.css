@@ -1,9 +1,6 @@
-
-
-
-@media only screen and (max-width:450px)  {
+@media only screen and (max-width:450px) {
     .tableText {
-        font-size:12px;
+        font-size: 12px;
     }
 
     .tableText2 {
@@ -11,9 +8,9 @@
     }
 }
 
-@media only screen and (max-width:736px) and (min-width:460px)  {
+@media only screen and (max-width:736px) and (min-width:460px) {
     .tableText {
-        font-size:20px;
+        font-size: 20px;
     }
 
     .tableText2 {
@@ -21,7 +18,7 @@
     }
 }
 
-input[type="text"]{
+/* input[type="text"] {
     width: 100%;
     font-size: 1.2em;
     padding: 10px 11px;
@@ -33,30 +30,83 @@ input[type="text"]{
     border-left: none;
     border-right: none;
     background-color: rgba(0, 0, 0, 0.103);
-    color:black;
+    color: black;
+} */
+
+
+thead {
+    max-width: 100% !important;
+}
+
+.botonagregar{
+    background-color: #2A5A24!important;
+    color: white!important;
 }
 
 
-thead{
-    max-width: 100%!important;
+.eliminar{
+    color :white;
+    background-color:#CB3535!important ;
 }
 
 
-.buttones{
-    background-color: rgb(185, 72, 7)!important;
-  
+.buttones {
+    background-color: rgb(185, 72, 7) !important;
+
     color: #fff;
     border: transparent;
-    
+
     font-size: 1.2em;
-   
-    transition:0.5s;
+
+    transition: 0.5s;
 }
-.buttones:hover{
-    background-color: rgb(145, 56, 5)!important;
-    
+
+.buttones:hover {
+    background-color: rgb(145, 56, 5) !important;
+
     color: #fff;
     border: transparent;
-    transition:0.5s;
-    cursor:pointer;
+    transition: 0.5s;
+    cursor: pointer;
 }
+
+
+
+#tabla-ciudades_wrapper {
+    width: 80% !important;
+    margin: auto !important;
+}
+
+
+.estilotarjeta{
+    background-image: url('https://images.unsplash.com/photo-1543005472-1b1d37fa4eae?ixlib=rb-1.2.1&w=1000&q=80')!important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+
+    
+}
+
+.colorletra{
+color: white;
+}
+
+label{
+    color: white;  
+}
+
+.fondo{
+
+    background-image: url('https://userscontent2.emaze.com/images/50b09f05-c065-41f4-b4d3-43ae1d3ad744/3bca2bae5db42a7550a20043238139d0.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: black;
+    
+    
+    padding: 50px 100px;
+    text-align: center;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    }
