@@ -36,14 +36,14 @@ $conexion=$obj->conexion();
             <!-- Sidebar -->
       <div id="sidebar-wrapper">
       <ul id="sidebar_menu" class="sidebar-nav">
-           <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon" class="glyphicon glyphicon-align-justify"></span></a></li>
+           <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon" class="fas fa-bars"></span></a></li>
       </ul>
         <ul class="sidebar-nav" id="sidebar">     
-          <li><a href="rutas.php">Rutas<span class="sub_icon glyphicon glyphicon-wrench"></span></a></li>
+          <li><a href="rutas.php">Rutas<span class="sub_icon fas fa-route"></span></a></li>
           <li><a href="tablaciudad.php">Ciudad<span class="sub_icon glyphicon glyphicon-wrench"></span></a></li>
           <li><a href="tablaPais.php">Paises<span class="sub_icon glyphicon glyphicon-wrench"></span></a></li>
           <li><a href="crud-tours.php">Tours<span class="sub_icon glyphicon glyphicon-wrench"></span></a></li>
-          <li><a href="Tours.php">Salir<span class="sub_icon glyphicon glyphicon-log-out"></span></a></li>
+          <li><a href="Tours.php">Salir<span class="sub_icon fas fa-sign-out-alt"></span></a></li>
         </ul>
       </div>
           

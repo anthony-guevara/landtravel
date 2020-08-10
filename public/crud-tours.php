@@ -47,9 +47,9 @@ function pre_r( $array ){
       
       <!-- Sidebar -->
       <div id="sidebar-wrapper">
-        <ul id="sidebar_menu" class="sidebar-nav">
-          <li class="sidebar-brand"><a id="menu-toggle">Menu<span id="main_icon" class="fas fa-bars"></span></a></li>
-        </ul>
+      <ul id="sidebar_menu" class="sidebar-nav">
+           <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon" class="fas fa-bars"></span></a></li>
+      </ul>
         <ul class="sidebar-nav" id="sidebar">     
           <li><a href="rutas.php">Rutas<span class="sub_icon fas fa-route"></span></a></li>
           <li><a href="tablaciudad.php">Ciudad<span class="sub_icon fas fa-hotel"></span></a></li>
