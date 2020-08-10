@@ -141,20 +141,42 @@ $conexion=$obj->conexion();
               <input id="nacionalidad" disabled type="text" class="form-control" class="inputPassword4" >
         </div> 
     </div>
+
+    <div class="col-lg-12 col-md-6" style="" >
+    <button class="buttones"  >Eliminar<i class="fas fa-window-close"></i></button>
+   
+    <button class="buttones" onclick="editarContrato()" >editar<i class="fas fa-edit"></i></button>
+    <button class="buttones" onclick="guardarContrato()" >Guardar<i class="fas fa-save"></i></button>
+        </div> 
+        
+
     
     <img style="float: right;
 
-width: 317px;
+width: 250px;
 
 position:absolute;
 
 top: 290px;
 
-right: 131px;
+right: 100px;
 
 border-radius: 10px;
 
 cursor: pointer;"src="../img/co.jpg" onclick="location.href='404.php';" alt="">
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <script src="../js/jquery-3.4.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>

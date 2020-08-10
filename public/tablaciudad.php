@@ -38,7 +38,7 @@ $conexion=$obj->conexion();
 
 
 
-  <div id="wrapper" class="active">
+  <div id="wrapper" class="active  ">
 
     <!-- Sidebar -->
     <!-- Sidebar -->
@@ -57,7 +57,7 @@ $conexion=$obj->conexion();
     </div>
 
     <!-- Page content -->
-    <div id="page-content-wrapper">
+    <div id="page-content-wrapper" class="fondo">
       <!-- Keep all page content within the page-content inset div! -->
       <div class="page-content inset">
         <div class="row">
@@ -68,9 +68,9 @@ $conexion=$obj->conexion();
             <div class="container" style="text-align:center">
               <div class="row">
                 <div class="col col-sm-12">
-                  <h1 id="titulo" style="text-align: center; margin-top: 4px; margin-bottom:4rem;"> Gestion Ciudades
+                  <h1 id="titulo" class="colorletra" style="text-align: center; margin-top: 4px; margin-bottom:4rem;"> Gestion Ciudades
                     <button type="button" onclick="GenerarPaises()" data-toggle="modal" data-target="#modalnuevaciudad"
-                      class=" buttones" id="agregarciudad"><i class="fas fa-plus-circle"></i></button> </h1>
+                      class=" botonagregar" id="agregarciudad"><i class="fas fa-plus-circle"></i></button> </h1>
                   <div class="tableText col col-lg-12 col-md-12 col-sm-12">
 
 
@@ -91,7 +91,7 @@ $conexion=$obj->conexion();
 
                     <table id="tabla-ciudades" class="table table-striped table-bordered dt-responsive nowrap"
                       style="width: 100%;">
-                      <thead class="thead-dark">
+                      <thead class="estilotarjeta">
                         <tr>
                           <th>Nombre</th>
                           <th>País</th>
