@@ -46,22 +46,27 @@ $conexion=$obj->conexion();
     <!-- Sidebar -->
     <div id="sidebar-wrapper">
       <ul id="sidebar_menu" class="sidebar-nav">
-        <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon"
-              class="glyphicon glyphicon-align-justify"></span></a></li>
+           <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon" class="fas fa-bars"></span></a></li>
       </ul>
-      <ul class="sidebar-nav" id="sidebar">
-        <li><a href="rutas.php">Rutas<span class="sub_icon glyphicon glyphicon-wrench"></span></a></li>
-        <li><a href="tablaciudad.php">Ciudad<span class="sub_icon glyphicon glyphicon-wrench"></span></a></li>
-        <li><a href="tablaPais.php">Paises<span class="sub_icon glyphicon glyphicon-wrench"></span></a></li>
-        <li><a href="crud-tours.php">Tours<span class="sub_icon glyphicon glyphicon-wrench"></span></a></li>
-        <li><a href="Tours.php">Salir<span class="sub_icon glyphicon glyphicon-log-out"></span></a></li>
-      </ul>
-    </div>
-
-    <!-- Page content -->
-    <div id="page-content-wrapper">
-      <!-- Keep all page content within the page-content inset div! -->
-      <div class="page-content inset">
+        <ul class="sidebar-nav" id="sidebar">     
+          <li><a href="rutas.php">Rutas<span class="sub_icon fas fa-route"></span></a></li>
+          <li><a href="tablaciudad.php">Ciudad<span class="sub_icon fas fa-hotel"></span></a></li>
+          <li><a href="tablaPais.php">Paises<span class="sub_icon fas fa-globe-americas"></span></a></li>
+          <li><a href="crud-tours.php">Tours<span class="sub_icon fas fa-plane"></span></a></li>
+          <li><a href="Tours.php">Salir<span class="sub_icon fas fa-sign-out-alt"></span></a></li>
+        </ul>
+      </div>
+          
+      <!-- Page content -->
+      <div id="page-content-wrapper">
+        <!-- Keep all page content within the page-content inset div! -->
+        <div class="page-content inset">
+          <div class="row">
+              <div class="col-md-12">
+              
+                <!--aqui va todo el crud -->
+                
+                <div class="container" style="text-align:center">
         <div class="row">
           <div class="col-md-12">
 
