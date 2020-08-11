@@ -36,6 +36,7 @@ function pre_r( $array ){
     <link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
     <link rel="stylesheet" href="../css/lugaresturisticos.css">
     <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/crud-tours-rutas.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css">  <!-- CAMBIO A BOOTSTRAP v4 -->
 </head> 
 <body>
@@ -68,11 +69,11 @@ function pre_r( $array ){
               <div class="container" style="text-align:center">
                 <div class="row">
                   <div class="col col-sm-12">
-                    <h1 id="titulo" style="text-align: center; margin-top: 3%; margin-bottom:2%;">Tours</h1>
+                    <h1 id="titulo" style="text-align: center; margin-top: 3%; margin-bottom:2%;">Gestión de Tours <button type="button" class="fas fa-plus-circle"  data-toggle="modal" data-target="#modalAdd"></button></h1>
                     <br>
                     <div class="container">
                       <div class="row justify-content-end">
-                          <div class="col-2"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalAdd">Agregar &nbsp<i class="fas fa-plus"></i></button></div>
+                         
                           <div class="modal fade" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
                               <div class="modal-content">
@@ -115,8 +116,8 @@ function pre_r( $array ){
                                     </div>
                                   </div>
                                   <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                    <button type="submit" class="btn btn-success" name="save">Agregar</button>
+                                    <button type="button" class="btn btn-secondary"   data-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn btn-success" style="background-color:#e65b02" name="save">Agregar</button>
                                   </div>
                                 </form>
                               </div>
@@ -125,9 +126,10 @@ function pre_r( $array ){
                       </div>
                     </div>
                     <br>
+        
                     <div class="tableText col col-lg-12 col-md-12 col-sm-12">
-                      <table class="table table-striped"> 
-                        <thead class="thead-dark">
+                      <table class="table table-striped bordeado"> 
+                        <thead class="estilotarjeta">
                           <tr>
                             <th style="text-align: center !important;">Nombre</th>
                             <th style="text-align: center !important;">Costo</th>
@@ -147,8 +149,8 @@ function pre_r( $array ){
                               <td>1/2/20</td>
                               <td>1/3/20</td>
                               <td>  
-                                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">Editar &nbsp<i class="fas fa-pen"></i></button> 
-                                <button type="button" class="btn btn-danger">Eliminar &nbsp<i class="fas fa-trash"></i></button>
+                                <button type="button" class="btn btn-secondary" style="background-color: #e65b02" data-toggle="modal" data-target="#exampleModal">Editar &nbsp<i class="fas fa-pen"></i></button> 
+                                <button type="button" class="btn btn-danger" style="background-color: #e65b02">Eliminar &nbsp<i class="fas fa-trash"></i></button>
                               </td>
                             </tr>           
                               <!-- AGREGAR DATOS DE TABLA FORMA DINAMICA -->
@@ -161,9 +163,9 @@ function pre_r( $array ){
                                     <td id="<?php echo 'nombre'?>"><?php echo $row['TipoTour']; ?></td>
                                     <td id="<?php echo 'nombre'?>"><?php echo $row['Cupos']; ?></td>
                                     <td>
-                                      <a href="crud-tours.php?edit=<?php echo $row['id']?>" type="button" class="btn btn-secondary">Editar &nbsp<i class="fas fa-pen"></i></a>
+                                      <a href="crud-tours.php?edit=<?php echo $row['id']?>" type="button" class="btn btn-secondary" style="background-color: #e65b02">Editar &nbsp<i class="fas fa-pen"></i></a>
                                       <!-- href="crud-tours.php?delete=<?php //echo $row['id']?>" -->
-                                      <a href="crud-tours.php?delete=<?php echo $row['id']?>" type="button" class="btn btn-danger">Eliminar &nbsp<i class="fas fa-trash"></i></a>
+                                      <a href="crud-tours.php?delete=<?php echo $row['id']?>" type="button" class="btn btn-danger" style="background-color: #e65b02">Eliminar &nbsp<i class="fas fa-trash"></i></a>
                                     </td>
                               <?php endwhile;?>
                             </tr>

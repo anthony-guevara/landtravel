@@ -22,6 +22,7 @@ $conexion=$obj->conexion();
     <link rel="stylesheet" href="../vendors/flat-icon/font/flaticon.css">
     <link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
     <link rel="stylesheet" href="../css/lugaresturisticos.css">
+    <link rel="stylesheet" href="../css/crud-tours-rutas.css">
     <link rel="stylesheet" href="../css/sidebar.css">
     </head>
 <body>
@@ -63,8 +64,8 @@ $conexion=$obj->conexion();
           <div class="col col-sm-12">
             <h1 id="titulo" style="text-align: center; margin-top: 4px; margin-bottom:4rem;">Rutas</h1>
             <div class="tableText col col-lg-12 col-md-12 col-sm-12">
-              <table class="table "> 
-                <thead class="thead-dark">
+              <table class="table bordeado"> 
+                <thead class="estilotarjeta">
   
                   <tr>
                     <th scope="col">Costo</th>
