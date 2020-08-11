@@ -59,3 +59,26 @@ thead{
     transition:0.5s;
     cursor:pointer;
 }
+
+
+.botonagregar{
+    background-color: #2A5A24!important;
+    color: white!important;
+}
+.estilotarjeta{
+    background-image: url('https://images.unsplash.com/photo-1543005472-1b1d37fa4eae?ixlib=rb-1.2.1&w=1000&q=80')!important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+
+    
+}
+
+.colorletra{
+color: black;
+}
+
+label{
+    color: black;  
+}
+
