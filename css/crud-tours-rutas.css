@@ -16,4 +16,17 @@
 }
 @media only screen and (max-width:1440px) and (min-width:1024px){
 	
+    
+}
+
+.org-btn{
+    background-color: #e65b02 !important; 
+    border-color: #e65b02 !important;
+    color: white !important;
+}
+
+.org-btn-drk{
+    background-color: #535353 !important; 
+    border-color: #535353 !important;
+    color: white !important;
 }

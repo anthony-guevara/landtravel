@@ -32,7 +32,7 @@
 </head>
 <header>
 <div  class="col col-lg-4 col-md-6 col-sm-12">
-<nav class="navbar fixed-top navegacion menu_bar ">
+<nav class="navbar fixed-top navegacion menu_bar" style="padding: 0px; background-color: black">                         <!-- CAMBIO ANA -->
 <div class="toggle">
   <i class="fa fa-bars menu" aria-hidden="true"></i>
 </div>
