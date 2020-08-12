@@ -155,11 +155,11 @@ function pre_r( $array ){
                         <thead class="estilotarjeta" style="background: linear-gradient(90deg, rgba(230,91,2,1) 16%, rgba(180,70,0,1) 40%, rgba(94,37,0,1) 90%) !important;">
                           <tr>
                             <th style="text-align: center !important;">Nombre</th>
-                            <th style="text-align: center !important;">Costo</th>
-                            <th style="text-align: center !important;">Cupos</th>
-                            <th style="text-align: center !important;">Tipo Tour</th>
                             <th style="text-align: center !important;">Fecha inicio</th>
                             <th style="text-align: center !important;">Fecha Salida</th>
+                            <th style="text-align: center !important;">Costo</th>
+                            <th style="text-align: center !important;">Tipo Tour</th>
+                            <th style="text-align: center !important;">Cupos</th>
                             <th style="text-align: center !important;">Accion</th>
                           </tr>
                         </thead>
