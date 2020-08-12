@@ -1,23 +1,23 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <?php 
-require_once "../clases/conexion.php";
-require_once "../ajax/crud-tours.php";
+  require_once "../clases/conexion.php";
+  require_once "../ajax/crud-tours.php";
   $obj= new conectar();
   $conexion=$obj->conexion();
 
-
-include_once("../bd/config.php");                                                                       //OBTENER DATOS DE DB
-include_once("../bd/conexion_mysqli.php");
+  include_once("../bd/config.php");                                                                       //OBTENER DATOS DE DB
+  include_once("../bd/conexion_mysqli.php");
 
   $connexionMysqli = new ConnexionMysqli();
   $mysqli =  $connexionMysqli->connect();
+  $mysqli->set_charset("utf8");
   $result = $mysqli->query("SELECT id, NOMBRE, fecha_inicio, fecha_salida,COSTO, TipoTour,Cupos FROM tour") or die($mysqli->error);
 
-function pre_r( $array ){
-    echo '<pre>';
-    print_r($array);
-    echo '<pre>';
-}
+  function pre_r( $array ){
+      echo '<pre>';
+      print_r($array);
+      echo '<pre>';
+  }
 ?>
 
 <!DOCTYPE html>
