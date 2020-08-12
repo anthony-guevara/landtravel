@@ -11,3 +11,15 @@
     border: rgb(133, 125, 125) 0.2px solid;
     
 }
+
+.org-btn{
+    background-color: #e65b02 !important; 
+    border-color: #e65b02 !important;
+    color: white !important;
+}
+
+.org-btn-drk{
+    background-color: #535353 !important; 
+    border-color: #535353 !important;
+    color: white !important;
+}
