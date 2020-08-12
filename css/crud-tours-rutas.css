@@ -9,5 +9,11 @@
 
 .bordeado{
     border: rgb(133, 125, 125) 0.2px solid;
-    
+}
+
+@media only screen and (max-width:1024px) and (min-width:736px){
+	
+}
+@media only screen and (max-width:1440px) and (min-width:1024px){
+	
 }
