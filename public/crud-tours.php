@@ -80,12 +80,20 @@ function pre_r( $array ){
                         <div class="modal fade" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                           <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
+                              <form action="../ajax/crud-tours.php" method="POST"> <!-- Formulario para agregar tours -->
                               <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Agregar Tour</h5>
+                                <?php 
+                                  if($update == true):
+                                ?>
+                                  <h5 class="modal-title" id="exampleModalLabel">Editar Tour</h5>
+                                <?php 
+                                  else:
+                                ?>
+                                  <h5 class="modal-title" id="exampleModalLabel">Agregar Tour</h5>
+                                <?php endif; ?>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                               </div>
                               <div class="modal-body">
-                                <form action="../ajax/crud-tours.php" method="POST"> <!-- Formulario para agregar tours -->
                                   <div class="form-row">
                                     <div class="form-group col-md-4">
                                       <label class="d-flex justify-content-start">Nombre</label>

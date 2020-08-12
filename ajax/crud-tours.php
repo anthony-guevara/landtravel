@@ -19,7 +19,7 @@ $fecha_salida = '';
 $COSTO = '';
 $TipoTour = '';
 $Cupos = '';
-$id;
+$id=0;
 $update=false;
 
 if(isset($_POST['save'])){
@@ -39,7 +39,8 @@ if(isset($_POST['save'])){
 if (isset($_GET['delete'])){
     $id = $_GET['delete'];
     $mysqli->query("DELETE FROM TOUR WHERE id=$id") or die ($mysqli->error());
-
+   
+    header("location: ../public/crud-tours.php");   
 }
 
 if (isset($_GET['edit'])){
@@ -48,6 +49,15 @@ if (isset($_GET['edit'])){
                 $('#modalAdd').modal();
             });
         </script>";
+
+    echo "<script>
+    $(document).ready(function(){
+        $('#modalAdd').on('hidden.bs.modal', function (e) {
+            window.history.back();
+        })
+    });
+    </script>";
+    
     $id = $_GET['edit'];
     $update=true;
     $result = $mysqli->query("SELECT * 
