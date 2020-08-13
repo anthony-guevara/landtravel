@@ -79,6 +79,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="../img/favicon.ico" type="image/png">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css">   <!-- CAMBIO A BOOTSTRAP v4 -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="../vendors/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../vendors/themify-icons/themify-icons.css">
   <link rel="stylesheet" href="../vendors/linericon/style.css">
@@ -108,7 +109,7 @@
       <!-- Page content -->
       <div id="page-content-wrapper">
         <!-- Keep all page content within the page-content inset div! -->
-        <div class="page-content inset">
+        <div class="page-content inset" style="margin-bottom: 50px !important;">
           <div class="row">
             <div class="col-md-12">
               <!--aqui va todo el crud -->    
@@ -119,10 +120,7 @@
                       <br>
                     <div class="col col-lg-12 col-md-12 col-sm-12">
                       <form class="form-inline" style="justify-content: flex-end; margin-bottom: 0px;">
-                        <div class="form-group mx-sm-3 mb-2">
-                          <input class="form-control" placeholder="Buscar">
-                        </div>
-                        <button type="button" class="btn btn-primary mb-2" style="background-color: #e65b02; border-color: #e65b02;" data-toggle="modal" data-target="#modalAddRutas">Agregar &nbsp; <i class="fas fa-plus"></i></button>
+                        <button type="button" class="btn btn-primary mb-2" style="background-color: #e65b02; border-color: #e65b02; margin-right: 16px; width: 174px;" data-toggle="modal" data-target="#modalAddRutas">Agregar &nbsp; <i class="fas fa-plus"></i></button>
                       </form>
                       <div class="row justify-content-end">
                         <div class="modal fade" id="modalAddRutas" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
@@ -249,7 +247,7 @@
                       </div>
                     </div>
                     <div class="tableText col col-lg-12 col-md-12 col-sm-12">
-                      <table class="table table-striped bordeado"> 
+                      <table class="table table-striped bordeado" id="tb-rutas"> 
                         <thead class="estilotarjeta" style="background: linear-gradient(90deg, rgba(230,91,2,1) 16%, rgba(180,70,0,1) 40%, rgba(94,37,0,1) 90%) !important;">
                           <tr>
                             <th style="text-align: center !important;">Ruta</th>
@@ -307,10 +305,18 @@
   <!-- <script src="../js/jquery-3.4.1.min.js"></script>
   <script src="../js/bootstrap.min.js"></script> -->
   <!-- <script src="../js/rutas.js"></script> -->
+<script>
+  $(document).ready(function() {
+    $('#tb-rutas').DataTable();
+} );
+</script>
   <script src="../js/sidebar.js"></script>  
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"></script>
+  
 </body>
 </html>
 
