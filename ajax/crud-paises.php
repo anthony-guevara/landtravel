@@ -9,7 +9,7 @@ $connexionMysqli = new ConnexionMysqli();
 $mysqli =  $connexionMysqli->connect();
 
 
-switch($_POST['accion']){
+switch ($_POST['accion']) {
 
   
     case "traerpaises":
@@ -19,7 +19,7 @@ switch($_POST['accion']){
 
         $call->execute();
         $result = $call->get_result();
-        //$paises = $result->fetch_assoc(); 
+        //$paises = $result->fetch_assoc();
         $paises = $result->fetch_all(MYSQLI_ASSOC);
 
         echo json_encode($paises);
@@ -33,29 +33,29 @@ switch($_POST['accion']){
 
         
         $call = $mysqli->prepare('update pais set estado=0 where id=?;');
-        $call->bind_param('i', 
-                $idPais
+        $call->bind_param(
+            'i',
+            $idPais
         );
 
         $call->execute();
         
         $filasAfectadas = $call->affected_rows;
 
-        if($filasAfectadas>0){
+        if ($filasAfectadas>0) {
             echo json_encode(
                 array(
                     "codigo"=>1,
                     "mensaje"=>"Se eliminó correctamente"
                 )
-                );
-        }else{
-            
+            );
+        } else {
             echo json_encode(
                 array(
                     "codigo"=>0,
                     "mensaje"=>"Ocurrió un error"
                 )
-                );
+            );
         }
 
     break;
@@ -69,37 +69,62 @@ switch($_POST['accion']){
         $codigo=$_POST['codigo'];
 
         $call = $mysqli->prepare('update pais set nombre=?,gentilicio=?,codigo =? where  id=?;');
-        $call->bind_param('sssi', 
-                $nombre,$gentilicio,$codigo,$idPais
-            
-        
+        $call->bind_param(
+            'sssi',
+            $nombre,
+            $gentilicio,
+            $codigo,
+            $idPais
         );
 
         $call->execute();
         
         $filasAfectadas = $call->affected_rows;
 
-        if($filasAfectadas>0){
+        if ($filasAfectadas>0) {
             echo json_encode(
                 array(
                     "codigo"=>1,
                     "mensaje"=>"Se edito correctamente"
                 )
-                );
-        }else{
-            
+            );
+        } else {
             echo json_encode(
                 array(
                     "codigo"=>0,
                     "mensaje"=>"Ocurrió un error"
                 )
-                );
+            );
         }
 
+    break;
+
+    case "agregarpais":
+        $nombre = $_POST['nombre'];
+        $gentilicio  = $_POST['gentilicio'];
+        $codigo  = $_POST['codigo'];
+
+        $call = $mysqli->prepare('CALL SP_PAIS(?, ? , ?, @mensaje, @codigo);');
+
+        $call->bind_param(
+            'sss',
+            $nombre,
+            $gentilicio,
+            $codigo
+        );
+        $call->execute();
+                
+        $select = $mysqli->query('SELECT  @mensaje, @codigo');
+                
+        $result = $select->fetch_assoc();
+        $codigoOut = (int)$result['@codigo'];
+        $mensaje = $result['@mensaje'];
+        echo json_encode(array(
+            "codigo"=>$codigoOut,
+            "mensaje"=>$mensaje
+        ));
     break;
 }
 
 
 $mysqli -> close();
-
-?>
