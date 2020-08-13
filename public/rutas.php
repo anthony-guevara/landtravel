@@ -221,8 +221,7 @@
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label class="d-flex justify-content-start">Costo</label>
-                                        <input class="form-control" placeholder="###" type="number" id="COSTO" name="COSTO" 
-                                              value="<?php echo $COSTO;?>">
+                                        <input class="form-control" placeholder="###" type="number" id="COSTO" name="COSTO">
                                     </div>
                                   </div>
                               </div>
