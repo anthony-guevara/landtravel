@@ -75,7 +75,7 @@ if (isset($_GET['edit'])){
     }
 }
 
-if (isset($_POST['update'])){
+if (isset($_POST['update'])){ //AGREGAR
     $id=$_POST['id'];
     $NOMBRE = $_POST['NOMBRE'];
     $fecha_inicio = $_POST['fecha_inicio'];

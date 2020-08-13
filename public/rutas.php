@@ -1,17 +1,14 @@
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <?php 
   require_once "../clases/conexion.php";
+  require_once "../ajax/crud-rutas.php";
+
   $obj= new conectar();
   $conexion=$obj->conexion();
 
-  // header('Content-Type: text/html; charset=utf-8');
-  // function utf8_for_xml($string)
-  // {
-  //   return preg_replace('/[^\x{0009}\x{000a}\x{000d}\x{0020}-\x{D7FF}\x{E000}-\x{FFFD}]+/u',
-  //                       ' ', $string);
-  // }
-
   include_once("../bd/config.php");                                                                       //OBTENER DATOS DE DB
   include_once("../bd/conexion_mysqli.php");
+
   $connexionMysqli = new ConnexionMysqli();
   $mysqli =  $connexionMysqli->connect();
   $mysqli->set_charset("utf8");
@@ -44,24 +41,43 @@
                             AND		r.idguia    = g.id
                             AND		g.persona_id = p.id") or die ($mysqli->error);
 
-  // pre_r($result);
-  
-  // pre_r($result->fetch_assoc());
+  $rtours=$mysqli->query("SELECT	id AS tour_id,
+                                  nombre AS tours
+                          FROM    tour") or die($mysqli->error);
 
-  function pre_r($array){
-    echo '<pre>';
-    print_r($array);
-    echo '</pre>';
-  }
+  $rviajes = $mysqli->query("SELECT	id AS viaje_id, 
+                                    titulo AS viaje
+                            FROM	  viaje") or die($mysqli->error);
+  
+  $rmet = $mysqli->query("SELECT  id AS met,
+                                  nombre AS metodo
+                          FROM    metodo") or die($mysqli->error);
+
+  $ror = $mysqli->query("SELECT	id AS id_or,
+                                nombre AS origen
+                         FROM   destino") or die($mysqli->error);
+  $rdes = $mysqli->query("SELECT	id AS id_or,
+                                nombre AS origen
+                         FROM   destino") or die($mysqli->error);
+
+  $rlug = $mysqli->query("SELECT  id AS id_lug,
+                                  nombre AS lugares
+                          FROM    lugar") or die($mysqli->error);
+
+  $rguia = $mysqli->query("SELECT g.id AS id_guia,
+                                  concat(p.pnombre,' ',p.papellido) AS guia
+                          FROM	  guia AS g, 
+                                  persona AS p
+                          WHERE	  g.persona_id = p.id") or die($mysqli->error);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Rutas</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="../img/favicon.ico" type="image/png">
-  <!-- <link rel="stylesheet" href="../vendors/bootstrap/bootstrap.min.css"> -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css">   <!-- CAMBIO A BOOTSTRAP v4 -->
   <link rel="stylesheet" href="../vendors/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../vendors/themify-icons/themify-icons.css">
@@ -106,72 +122,125 @@
                         <div class="form-group mx-sm-3 mb-2">
                           <input class="form-control" placeholder="Buscar">
                         </div>
-                        <button type="button" class="btn btn-primary mb-2" style="background-color: #e65b02; border-color: #e65b02;" data-toggle="modal" data-target="#modalAdd">Agregar &nbsp; <i class="fas fa-plus"></i></button>
+                        <button type="button" class="btn btn-primary mb-2" style="background-color: #e65b02; border-color: #e65b02;" data-toggle="modal" data-target="#modalAddRutas">Agregar &nbsp; <i class="fas fa-plus"></i></button>
                       </form>
                       <div class="row justify-content-end">
-                        <div class="modal fade" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="modalAddRutas" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
                           <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
-                              <form action="../ajax/crud-tours.php" method="POST"> <!-- Formulario para agregar tours -->
+                              <form action="../ajax/crud-rutas.php" method="POST"> <!-- Formulario para agregar tours -->
+                                <input type="hidden" name="id" value="<?php echo $id; ?>">
                               <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Agregar Rutas</h5>
+                                <?php if($actualizar==true):?>
+                                  <h5 class="modal-title" id="exampleModalLabel">Actualizar Ruta</h5>
+                                <?php else: ?>
+                                  <h5 class="modal-title" id="exampleModalLabel">Agregar Ruta</h5>
+                                <?php endif; ?>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                               </div>
                               <div class="modal-body">
                                   <div class="form-row">
                                     <div class="form-group col-md-4">
-                                      <label class="d-flex justify-content-start">Nombre</label>
-                                      <input type="hidden" name="id" value="">
-                                      <input class="form-control"  placeholder="nombre x" name="NOMBRE" value="">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label class="d-flex justify-content-start">Costo</label>
-                                        <input class="form-control" placeholder="###" type="number" name="COSTO" value="">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label class="d-flex justify-content-start">Cupos</label>
-                                        <input class="form-control"  placeholder="###" type="number" name="Cupos" value="">
-                                    </div>
-                                  </div>
-                                  <div class="form-row">
-                                    <div class="form-group col-md-4">
-                                      <label class="d-flex justify-content-start">Tipo tour</label>
-                                      <select class="custom-select" name="TipoTour">
-                                        <option value="Familiar" value="" name="Familiar">Familiar</option>
-                                        <option value="Individual" value="" name="Individual">Individual</option>
+                                      <label class="d-flex justify-content-start">Viaje</label>
+                                      <select class="custom-select" id="s-viaje" name="viaje_id">
+                                        <option value="" name="">-- --</option>
+                                        <?php while($rowv = $rviajes->fetch_assoc()):?>
+                                          <option value="<?php echo $rowv['viaje_id'];?>" name=""><?php echo $rowv['viaje'];?></option>
+                                        <?php endwhile;?>
                                       </select>
                                     </div>
                                     <div class="form-group col-md-4">
-                                      <label class="d-flex justify-content-start">Fecha inicio</label>
-                                      <input type="date" class="form-control"  placeholder="nombre x" name="fecha_inicio" value="">
+                                        <label class="d-flex justify-content-start">Metodo</label>
+                                        <select class="custom-select" id="s-metodo" name="metodo_id">
+                                          <option value="" name="">-- --</option>
+                                          <?php while($rowm = $rmet->fetch_assoc()):?>
+                                            <option value="<?php echo $rowm['met'];?>" name=""><?php echo $rowm['metodo'];?></option>
+                                          <?php endwhile;?>
+                                      </select>
                                     </div>
                                     <div class="form-group col-md-4">
-                                      <label class="d-flex justify-content-start">Fecha fin</label>
-                                      <input type="date" class="form-control"  placeholder="nombre x" name="fecha_salida" value="">
+                                        <label class="d-flex justify-content-start">Paquete</label>
+                                        <input class="form-control"  placeholder="1" name="paquete" value="1" disabled="disabled">
                                     </div>
                                   </div>
                                   <div class="form-row">
                                     <div class="form-group col-md-4">
-                                      <label class="d-flex justify-content-start">Nombre</label>
-                                      <input type="hidden" name="id" value="<?php echo $id;?>">
-                                      <input class="form-control"  placeholder="nombre x" name="NOMBRE" 
-                                                  value="<?php echo $NOMBRE;?>">
+                                      <label class="d-flex justify-content-start">Tour</label>
+                                      <select class="custom-select" id="s-tour" name="tour_id">
+                                        <option value="" name="">-- --</option>
+                                        <?php while($rowt = $rtours->fetch_assoc()):?>
+                                          <option value="<?php echo $rowt['tour_id'];?>"><?php echo $rowt['tours'];?></option>
+                                        <?php endwhile;?>
+                                      </select>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                      <label class="d-flex justify-content-start">Origen</label>
+                                      <select class="custom-select" id="s-origen" name="inicio">
+                                        <option value="" name="">-- --</option>
+                                        <?php while($rowr = $ror->fetch_assoc()):?>
+                                          <option value="<?php echo $rowr['id_or'];?>"><?php echo $rowr['origen'];?></option>
+                                        <?php endwhile;?>
+                                      </select>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                      <label class="d-flex justify-content-start">Destino</label>
+                                      <select class="custom-select" id="s-destino" name="destino">
+                                        <option value="" name="">-- --</option>
+                                        <?php while($rowd = $rdes->fetch_assoc()):?>
+                                          <option value="<?php echo $rowd['id_or'];?>"><?php echo $rowd['origen'];?></option>
+                                        <?php endwhile;?>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                      <label class="d-flex justify-content-start">Fecha Llegada</label>
+                                      <input type="date" class="form-control" id="fecha_llegada" value="" name="fecha_llegada">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                      <label class="d-flex justify-content-start">Fecha Salida</label>
+                                      <input type="date" class="form-control" id="fecha_salida" value="" name="fecha_salida">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                      <label class="d-flex justify-content-start">Lugar</label>
+                                      <select class="custom-select" id="s-lugar" name="idlugar">
+                                        <option value="" name="">-- --</option>
+                                        <?php while($rowl = $rlug->fetch_assoc()):?>
+                                          <option value="<?php echo $rowl['id_lug'];?>"><?php echo $rowl['lugares'];?></option>
+                                        <?php endwhile;?>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="form-row" style="justify-content: space-evenly;">
+                                    <div class="form-group col-md-4">
+                                      <label class="d-flex justify-content-start">Guia</label>
+                                      <select class="custom-select" id="s-guia" name="idguia">
+                                        <option value="" name="">-- --</option>
+                                        <?php while($rowl = $rguia->fetch_assoc()):?>
+                                          <option value="<?php echo $rowl['id_guia'];?>"><?php echo $rowl['guia'];?></option>
+                                        <?php endwhile;?>
+                                      </select>
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label class="d-flex justify-content-start">Costo</label>
-                                        <input class="form-control" placeholder="###" type="number" name="COSTO" 
+                                        <input class="form-control" placeholder="###" type="number" id="COSTO" name="COSTO" 
                                               value="<?php echo $COSTO;?>">
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label class="d-flex justify-content-start">Cupos</label>
-                                        <input class="form-control"  placeholder="###" type="number" name="Cupos" 
-                                              value="<?php echo $Cupos;?>">
                                     </div>
                                   </div>
                               </div>
                                   <div class="modal-footer">
                                     <button type="button" class="btn org-btn-drk"   data-dismiss="modal">Cancelar</button>
-                                    <button type="submit" class="btn org-btn" style="background-color:#e65b02" name="update">Actualizar</button>
+                                    <?php 
+                                      if($actualizar==true):
+                                    ?>
+                                      <button type="submit" class="btn org-btn" style="background-color:#e65b02" name="update">Actualizar</button>
+                                    <?php 
+                                      else:
+                                    ?>
+                                      <button type="submit" class="btn org-btn" style="background-color:#e65b02" name="save">Guardar</button>
+                                    <?php 
+                                      endif;
+                                    ?>
                                   </div>
                                 </form>
                             </div>
@@ -204,21 +273,21 @@
                             while($row = $result->fetch_assoc()):
                           ?>
                             <tr>
-                              <td id=""><?php echo $row['id'];?></td>
-                              <td id=""><?php echo $row['viaje'];?></td>
-                              <td id=""><?php echo $row['metodo'];?></td>
-                              <td id=""><?php echo $row['paquete_id'];?></td>
-                              <td id=""><?php echo $row['tour'];?></td>
-                              <td id=""><?php echo $row['inicio'];?></td>
-                              <td id=""><?php echo $row['destino'];?></td>
-                              <td id=""><?php echo $row['fecha_llegada'];?></td>
-                              <td id=""><?php echo $row['fecha_salida'];?></td>
-                              <td id=""><?php echo $row['lugar'];?></td>
-                              <td id=""><?php echo $row['guia'];?></td>
-                              <td id=""><?php echo $row['costo'];?></td>
+                              <td id="" value=""><?php echo $row['id'];?></td>
+                              <td id="" value=""><?php echo $row['viaje'];?></td>
+                              <td id="" value=""><?php echo $row['metodo'];?></td>
+                              <td id="" value=""><?php echo $row['paquete_id'];?></td>
+                              <td id="" value=""><?php echo $row['tour'];?></td>
+                              <td id="" value=""><?php echo $row['inicio'];?></td>
+                              <td id="" value=""><?php echo $row['destino'];?></td>
+                              <td id="" value=""><?php echo $row['fecha_llegada'];?></td>
+                              <td id="" value=""><?php echo $row['fecha_salida'];?></td>
+                              <td id="" value=""><?php echo $row['lugar'];?></td>
+                              <td id="" value=""><?php echo $row['guia'];?></td>
+                              <td id="" value=""><?php echo $row['costo'];?></td>
                               <td>
-                                <a href="" type="button" class="btn org-btn btn-rutas" style="margin-bottom: 6px;">Editar &nbsp<i class="fas fa-pen"></i></a>
-                                <a href="" type="button" class="btn org-btn-drk btn-rutas">Eliminar &nbsp<i class="fas fa-trash"></i></a>
+                                <a href="rutas.php?edit=<?php echo $row['id'];?>" type="button" class="btn org-btn btn-rutas" style="margin-bottom: 15px;">Editar &nbsp<i class="fas fa-pen"></i></a>
+                                <a href="rutas.php?delete=<?php echo $row['id']?>" type="button" class="btn org-btn-drk btn-rutas">Eliminar &nbsp<i class="fas fa-trash"></i></a>
                               </td>
                             </tr>
                           <?php 
@@ -235,10 +304,13 @@
         </div>
       </div>
     </div>    
-  <script src="../js/jquery-3.4.1.min.js"></script>
-  <script src="../js/bootstrap.min.js"></script>
-  <script src="../js/rutas.js"></script>
+  <!-- <script src="../js/jquery-3.4.1.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script> -->
+  <!-- <script src="../js/rutas.js"></script> -->
   <script src="../js/sidebar.js"></script>  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"></script>
 </body>
 </html>
 
