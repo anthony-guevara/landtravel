@@ -61,8 +61,13 @@ $conexion=$obj->conexion();
                 <div class="container" style="text-align:center">
       <div class="row">
         <div class="col col-sm-12">
-          <h1  class="colorletra" id="titulo" style="text-align: center; margin-top: 4px; margin-bottom:4rem; "> Gestion Paises</h1>
+          <h1  class="colorletra" id="titulo" style="text-align: center; margin-top: 4px; margin-bottom:4rem; "> Gestion Paises
+        
+          <button type="button" class=" btn botonagregar" onclick="nuevoPais()" data-toggle="modal" data-target="#modalnuevopais"
+                       id="agregarPais"><i class="fas fa-plus-circle"></i></button>
+        </h1>
           <div class="tableText col col-lg-12 col-md-12 col-sm-12">
+          
             <table class="table fondotabla"  style="width:100%" > 
               <thead class="estilotarjeta" style="width:100%">
 
@@ -134,6 +139,58 @@ $conexion=$obj->conexion();
         </div>
       </div>
     </div>
+
+
+
+
+
+
+
+          <!-- agregar  -->
+          <div class="modal" id="modalnuevopais" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Agregar pais</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+
+                  <form id="informacionnuevopais">
+                    <div class="row">
+                      
+                      <div class="col-6">
+                        <input type="text" id="nombrepais" placeholder="nombrepais"><br>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12">
+                        <input type="text" id="Gentilicio" placeholder="Gentilicio"><br>
+                      </div>
+                    </div>
+
+
+
+                    <input type="text" id="idciudad" style="display:none;" placeholder="id">
+
+
+
+
+                  </form>
+
+                </div>
+                <button type="button" class=" buttones" id="guardarnuevopais" onclick="nuevoPais()">Guardar<i
+                    class="fas fa-save"></i></button>
+                <button type="button" class=" buttones" data-dismiss="modal" onclick="cerrar()">Cerrar<i
+                    class="fas fa-window-close"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
   
                 <!--aqui termina el crud -->
 

@@ -27,7 +27,7 @@ function cargarPaises() {
             <td>${respuesta[i].gentilicio}</td>
             <td>
             <button class="btn buttones"  onclick="eliminarPais(${respuesta[i].id})"> <i class="fas fa-window-close"></i></button>
-            <button class="btn buttones"   data-toggle="modal" data-target="#modalciudad" onclick="editarPais(${respuesta[i].id},'${respuesta[i].nombre}','${respuesta[i].gentilicio}','${respuesta[i].codigo}')"> <i class="fas fa-edit"></i></button>
+            <button class="btn buttones"   data-toggle="modal" data-target="#modalpais" onclick="editarPais(${respuesta[i].id},'${respuesta[i].nombre}','${respuesta[i].gentilicio}','${respuesta[i].codigo}')"> <i class="fas fa-edit"></i></button>
             <td>
           </tr>
           `
@@ -176,3 +176,45 @@ function cerrar() {
   });
 
 }
+
+
+ function nuevoPais(){
+   console.log("hola nuevo")
+
+
+    var nombrepais = $("#nombrepais").val();
+    var gentilicio = $("#Gentilicio").val();
+   console.log(nombrepais,gentilicio);
+  
+    var parametros = {
+      nombrepais: nombrepais,
+      gentilicio : gentilicio,
+      accion: "agregarpais",
+    };
+  
+  
+    $.ajax({
+      url: "../ajax/crud-paises.php",
+      method: "POST",
+      dataType: "json",
+      data: parametros,
+      success: function (respuesta) {
+        console.log(respuesta);
+        if (respuesta.codigo == 1) {
+          cargarPaises();
+        } else {
+          alert(respuesta.mensaje);
+        }
+      },
+      error: function (error) {
+        console.log(error);
+      },
+    });
+  }
+
+
+
+
+
+
+ 
