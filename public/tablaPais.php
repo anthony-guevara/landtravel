@@ -68,7 +68,7 @@ $conexion=$obj->conexion();
         </h1>
           <div class="tableText col col-lg-12 col-md-12 col-sm-12">
           
-            <table class="table fondotabla"  style="width:100%" > 
+            <!-- <table class="table fondotabla"  style="width:100%" > 
               <thead class="estilotarjeta" style="width:100%">
 
                 <tr>
@@ -82,7 +82,24 @@ $conexion=$obj->conexion();
 
 
               </tbody>
-            </table>
+            </table> -->
+
+
+
+            <table id="tabla-paises" class="table table-striped table-bordered dt-responsive nowrap"
+                      style="width: 100%;">
+                      <thead class="estilotarjeta">
+                        <tr>
+                          <th>Nombre</th>
+                          <th>Gentilicio</th>
+                          <th>Opciones</th>
+                        </tr>
+                      </thead>
+                    </table>
+
+
+
+
           </div>
         </div>
       </div>
@@ -214,6 +231,18 @@ $conexion=$obj->conexion();
 
     <script src="../js/jquery-3.4.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+
+
+
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.2.5/js/responsive.bootstrap4.min.js"></script>
+
+
+
+
+
     <script src="../js/tablaPais.js"></script>
     <script src="../js/sidebar.js"></script>
 

@@ -19,26 +19,93 @@ function cargarPaises() {
       console.log(respuesta);
 
       $("#contenido-paises").html("");
-      for (var i = 0; i < respuesta.length; i++) {
-        $("#contenido-paises").append(
-          `
-          <tr>
-            <td>${respuesta[i].nombre}</td>
-            <td>${respuesta[i].gentilicio}</td>
-            <td>
-            <button class="btn buttones"  onclick="eliminarPais(${respuesta[i].id})"> <i class="fas fa-window-close"></i></button>
-            <button class="btn buttones"   data-toggle="modal" data-target="#modalpais" onclick="editarPais(${respuesta[i].id},'${respuesta[i].nombre}','${respuesta[i].gentilicio}','${respuesta[i].codigo}')"> <i class="fas fa-edit"></i></button>
-            <td>
-          </tr>
-          `
-        );
-      }
-    },
-    error: function (error) {
-      console.log(error);
-    },
-  });
+//       for (var i = 0; i < respuesta.length; i++) {
+//         $("#contenido-paises").append(
+//           `
+//           <tr>
+//             <td>${respuesta[i].nombre}</td>
+//             <td>${respuesta[i].gentilicio}</td>
+//             <td>
+//             <button class="btn buttones"  onclick="eliminarPais(${respuesta[i].id})"> <i class="fas fa-window-close"></i></button>
+//             <button class="btn buttones"   data-toggle="modal" data-target="#modalpais" onclick="editarPais(${respuesta[i].id},'${respuesta[i].nombre}','${respuesta[i].gentilicio}','${respuesta[i].codigo}')"> <i class="fas fa-edit"></i></button>
+//             <td>
+//           </tr>
+//           `
+//         );
+//       }
+//     },
+//     error: function (error) {
+//       console.log(error);
+//     },
+//   });
+// }
+
+
+/*paginacion*/
+
+
+for( var i=0; i<respuesta.length; i++){
+  respuesta[i].opciones = "";
+
 }
+
+$("#tabla-paises").DataTable().destroy();
+
+$("#tabla-paises").DataTable({
+  data: respuesta,
+  responsive: true,
+  columnDefs: [
+    {
+      targets: -1,
+      data: "id",
+      render: function (data, type, row, meta) {
+        return `<button class=" btn buttones" onclick="eliminarPais(${row.id})"><i class="fas fa-window-close "></i></button>          <button class=" btn buttones" data-toggle="modal" data-target="#modalpais" onclick="editarPais('${row.nombre}','${row.gentilicio}','${row.codigo}',${row.id})"><i class="fas fa-edit"></i></button>
+        `;
+      },
+    },
+  ],
+
+  columns: [
+    {
+      data: "nombre",
+    },
+
+    {
+      data: "gentilicio",
+    },
+   
+    {
+      data: "opciones",
+    },
+  ],
+
+  language: {
+    lengthMenu: "Mostrar _MENU_ registros por página",
+    zeroRecords: "No existe la búsqueda seleccionada.",
+    info: "Mostrando página _PAGE_ of _PAGES_",
+    infoEmpty: "No existen registros disponibles",
+    infoFiltered: "(filtrado de _MAX_  registros totales)",
+    search: "Búsqueda: ",
+    paginate: {
+      previous: "Anterior",
+      next: "Siguente",
+    },
+  },
+});
+},
+error: function (error) {
+console.log(error);
+},
+});
+}
+
+
+
+
+
+
+
+
 
 function eliminarPais(idPais) {
   console.log(idPais);
