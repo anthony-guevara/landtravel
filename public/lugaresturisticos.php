@@ -30,7 +30,7 @@ $conexion=$obj->conexion();
   <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.bootstrap4.min.css">
 
 
-  <link rel="stylesheet" href="../css/lugaresturisticos.css.css">
+  <link rel="stylesheet" href="../css/lugaresturisticos.css">
   <link rel="stylesheet" href="../css/sidebar.css">
 
 
@@ -75,10 +75,10 @@ $conexion=$obj->conexion();
             <div class="container" style="text-align:center">
               <div class="row">
                 <div class="col col-sm-12">
-                  <h1 id="titulo" style="text-align: center; margin-top: 4px; margin-bottom:4rem;">Lugares Turisticos
+                  <h1 id="titulo"  class="colorletra" style="text-align: center; margin-top: 4px; margin-bottom:4rem;">Lugares Turisticos
 
                     <button type="button" onclick="generarCiudades()" data-toggle="modal" data-target="#modalnuevolugar"
-                      class=" buttones" id="agregarlugar"><i class="fas fa-plus-circle"></i></button>
+                      class=" botonagregar" id="agregarlugar"><i class="fas fa-plus-circle"></i></button>
                   </h1>
                   <div class="tableText col col-lg-12 col-md-12 col-sm-12">
                     <!-- <table class="table ">
@@ -98,11 +98,10 @@ $conexion=$obj->conexion();
                     </table> -->
 
                     <table id="tabla-lugares" class="table table-striped table-bordered dt-responsive nowrap" style="width: 100%;">
-                      <thead class="thead-dark">
+                      <thead class="estilotarjeta">
                         <tr>
                           <th>Ciudad</th>
                           <th>Nombre</th>
-                          <th>Descripcion</th>
                           <th>Opciones</th>
                         </tr>
                       </thead>
@@ -137,11 +136,7 @@ $conexion=$obj->conexion();
                         </div>
                       </div>
                       <div class="row">
-                        <div class="col-12">
-                          <input type="text" id="Descripcion" placeholder="Descripcion"><br>
-                        </div>
-                      </div>
-
+                      
 
 
                       <input type="text" id="idlugar" style="display:none;" placeholder="id">
