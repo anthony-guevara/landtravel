@@ -102,7 +102,6 @@ $conexion=$obj->conexion();
                         <tr>
                           <th>Ciudad</th>
                           <th>Nombre</th>
-                          <th>Descripcion</th>
                           <th>Opciones</th>
                         </tr>
                       </thead>
@@ -137,11 +136,7 @@ $conexion=$obj->conexion();
                         </div>
                       </div>
                       <div class="row">
-                        <div class="col-12">
-                          <input type="text" id="Descripcion" placeholder="Descripcion"><br>
-                        </div>
-                      </div>
-
+                      
 
 
                       <input type="text" id="idlugar" style="display:none;" placeholder="id">

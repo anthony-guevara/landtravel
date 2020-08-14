@@ -61,9 +61,7 @@ function cargarLugares() {
           {
             data: "nombre",
           },
-          {
-            data: "descripcion",
-          },
+         
           {
             data: "opciones",
           },
@@ -140,7 +138,6 @@ $("#guardarLugar").on("click", () => {
   var parametros = {
     accion: "editarlugar",
     nombrelugar: nombrelugar,
-    descripcion: descripcion,
     id: idlugar,
   };
 
