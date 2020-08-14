@@ -116,7 +116,7 @@ $conexion=$obj->conexion();
 
             <!-- modal editar lugaresturisticos -->
             <div class="modal" id="modallugar" tabindex="-1" role="dialog">
-              <div class="modal-dialog" role="document">
+              <div class="modal-dialog modales" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title">Editar Lugar Turisticos</h5>

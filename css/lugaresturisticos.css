@@ -8,6 +8,12 @@
     .tableText2 {
         font-size: 7px;
     }
+
+    .modales{
+        background-color: green;
+        max-width: 225px;
+        margin-left:170px;
+    }
 }
 
 @media only screen and (max-width:736px) and (min-width:460px)  {
@@ -17,6 +23,11 @@
 
     .tableText2 {
         font-size: 12px;
+    }
+
+    .modales{
+        max-width: 225px;
+        margin-left:170px !important;
     }
 }
 
