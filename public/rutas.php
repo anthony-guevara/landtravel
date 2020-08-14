@@ -124,7 +124,7 @@
                       </form>
                       <div class="row justify-content-end">
                         <div class="modal fade" id="modalAddRutas" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
-                          <div class="modal-dialog modal-lg" role="document">
+                          <div class="modal-dialog modales modal-lg" role="document">
                             <div class="modal-content">
                               <form action="../ajax/crud-rutas.php" method="POST"> <!-- Formulario para agregar tours -->
                                 <input type="hidden" name="id" value="<?php echo $id; ?>">

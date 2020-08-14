@@ -30,7 +30,7 @@ $conexion=$obj->conexion();
   <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.bootstrap4.min.css">
 
 
-  <link rel="stylesheet" href="../css/lugaresturisticos.css.css">
+  <link rel="stylesheet" href="../css/lugaresturisticos.css">
   <link rel="stylesheet" href="../css/sidebar.css">
 
 
@@ -117,7 +117,7 @@ $conexion=$obj->conexion();
 
             <!-- modal editar lugaresturisticos -->
             <div class="modal" id="modallugar" tabindex="-1" role="dialog">
-              <div class="modal-dialog" role="document">
+              <div class="modal-dialog modales" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title">Editar Lugar Turisticos</h5>
