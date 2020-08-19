@@ -47,8 +47,8 @@ function cargarciudades() {
             targets: -1,
             data: "id",
             render: function (data, type, row, meta) {
-              return `<button class=" btn buttones" onclick="eliminarCiudad(${row.id})"><i class="fas fa-window-close "></i></button>          <button class=" btn buttones" onclick="editarCiudad('${row.nombrepais}','${row.nombre}','${row.descripcion}',${row.id})"><i class="fas fa-edit"></i></button>
-              `;
+              return `<button class=" btn org-btn" onclick="editarCiudad('${row.nombrepais}','${row.nombre}','${row.descripcion}',${row.id})">Editar &nbsp<i class="fas fa-pen"></i></button>
+              <button class=" btn org-btn-drk" onclick="eliminarCiudad(${row.id})">Eliminar &nbsp<i class="fas fa-trash"></i></button>          `;
             },
           },
         ],

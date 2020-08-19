@@ -33,9 +33,9 @@ $conexion=$obj->conexion();
 
   <!-- Sidebar recursos -->
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-
+  <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css">
 
 
   <div id="wrapper" class="active  ">
@@ -73,10 +73,11 @@ $conexion=$obj->conexion();
             <div class="container" style="text-align:center">
               <div class="row">
                 <div class="col col-sm-12">
-                  <h1 id="titulo" class="colorletra" style="text-align: center; margin-top: 4px; margin-bottom:4rem;"> Gestion Ciudades
-                    <button type="button" onclick="GenerarPaises()" data-toggle="modal" data-target="#modalnuevaciudad"
-                      class=" botonagregar" id="agregarciudad"><i class="fas fa-plus-circle"></i></button> </h1>
+                  <h1 id="titulo" class="titulo" style="text-align: center; margin-top: 3%; margin-bottom:2%;"> Gestion Ciudades</h1>
                   <div class="tableText col col-lg-12 col-md-12 col-sm-12">
+                    <form class="agg-estilo" style="">
+                      <button type="button" onclick="GenerarPaises()" data-toggle="modal" data-target="#modalnuevaciudad" class=" btn org-btn mb-2" id="agregarciudad" style="width: 176px; padding-right: 42px;">Agregar &nbsp; <i class="fas fa-plus"></i></button> </h1>
+                    </form>  
 
 
 
