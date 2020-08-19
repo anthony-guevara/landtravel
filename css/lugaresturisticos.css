@@ -11,12 +11,12 @@
 
     .modales{
         
-        max-width: 550px;
+        max-width: 185px;
         margin-left:170px!important;
     }
 
     .espacioBotonesM{
-        font-size: 10px!important;
+        font-size: 8px!important;
     }
 }
 
@@ -30,8 +30,8 @@
     }
 
     .modales{
-        max-width: 700px;
-        margin-left:200px!important;
+        max-width: 300px;
+        margin-left:180px!important;
     }
 }
 
@@ -45,8 +45,8 @@
     }
 
     .modales{
-        width: 600px!important;
-        margin-left:400px!important;
+        width: 300px!important;
+        margin-left:200px!important;
     }
 }
 
