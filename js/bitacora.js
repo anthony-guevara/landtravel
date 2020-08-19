@@ -3,15 +3,15 @@ console.log(" vitacora");
 $(document).ready(function () {
     console.log("Carga js");
   
-    cargarvitacora();
+    cargarbitacora();
   });
   
-  function cargarvitacora(){
+  function cargarbitacora(){
     var parametros = {
         accion: "traervitacora",
       };
       $.ajax({
-        url: "../ajax/vitacora.php",
+        url: "../ajax/verbitacora.php",
         method: "POST",
         dataType: "json",
         data: parametros,
@@ -25,9 +25,9 @@ for( var i=0; i<respuesta.length; i++){
   
   }
   
-  $("#tabla-vitacora").DataTable().destroy();
+  $("#tabla-bitacora").DataTable().destroy();
   
-  $("#tabla-vitacora").DataTable({
+  $("#tabla-bitacora").DataTable({
     data: respuesta,
     responsive: true,
     columnDefs: [
@@ -51,6 +51,9 @@ for( var i=0; i<respuesta.length; i++){
      
       {
         data: "Descripcion",
+      },
+      {
+        data: "opciones",
       },
     ],
   

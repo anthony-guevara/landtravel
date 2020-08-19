@@ -1,3 +1,9 @@
+
+<?php 
+require_once "../clases/conexion.php";
+$obj= new conectar();
+$conexion=$obj->conexion();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +25,7 @@
       
 
   
-    <title>Vitacora</title>
+    <title>Bitacora</title>
 </head>
 <body>
 
@@ -43,7 +49,7 @@
         <li><a href="tablaciudad.php">Ciudad<span class="sub_icon fas fa-hotel"></span></a></li>
         <li><a href="crud-tours.php">Tours<span class="sub_icon fas fa-plane"></span></a></li>
         <li><a href="lugaresTuristicos.php">Turísticos<span class="sub_icon fas fa-map-marked-alt"></span></a></li>
-        <li><a href="vitacora.html">Vitacora<span class="sub_icon fas fa-sign-out-alt"></span></a></li>
+        <li><a href="bitacora.php">Bitacora<span class="sub_icon fas fa-sign-out-alt"></span></a></li>
         <li><a href="Tours.php">Salir<span class="sub_icon fas fa-sign-out-alt"></span></a></li>
         
       </ul>
@@ -65,13 +71,14 @@
                 </div>
                 <div class="tableText col col-lg-12 col-md-12 col-sm-12" style="margin-top: 10em;">
 
-                <table id="tabla-vitacora" class="table table-striped table-bordered dt-responsive nowrap"
+                <table id="tabla-bitacora" class="table table-striped table-bordered dt-responsive nowrap"
                 style="width: 100%;">
                 <thead class="estilotarjeta">
                   <tr>
                     <th>Fecha</th>
                     <th>usuario</th>
                     <th>Descripcion</th>
+                    
                   </tr>
                 </thead>
               </table>
@@ -79,7 +86,7 @@
                 </div>
               </div>
               
-    <script src="../js/vitacora.js"></script>
+    <script src="../js/bitacora.js"></script>
     <script src="../js/sidebar.js"></script>
     
 </body>
