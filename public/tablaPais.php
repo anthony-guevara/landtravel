@@ -68,7 +68,7 @@ $conexion=$obj->conexion();
          
         
                     <form class="form-inline" style="justify-content: flex-end; margin-bottom: 0px;margin-top:50px;">
-          <button type="button" class=" btn btn-primary mb-2" onclick="nuevoPais()"     style="background-color: #e65b02; border-color: #e65b02; margin-rigth: 16px; width: 198px; margin-bottom:0px !important;" data-toggle="modal" data-target="#modalnuevopais"
+          <button id="btpais" type="button" class=" btn btn-primary mb-2" onclick="nuevoPais()"     style="background-color: #e65b02; border-color: #e65b02;  width: 198px; margin-bottom:0px !important;" data-toggle="modal" data-target="#modalnuevopais"
                        id="agregarPais"><i class="fas fa-plus-circle"></i>Agregar</button>
                        </form>
         </h1>
