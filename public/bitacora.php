@@ -67,7 +67,7 @@ $conexion=$obj->conexion();
               <div class="container" style="text-align:center">
                 <div class="col col-sm-12"  >
         
-                <h1  class="colorletra" id="titulo" style="text-align: center; margin-top: 4px; margin-bottom:4rem; ">Vitacora</h1>
+                <h1  class="colorletra" id="titulo" style="text-align: center; margin-top: 4px; margin-bottom:4rem; ">Bitacora</h1>
                 </div>
                 <div class="tableText col col-lg-12 col-md-12 col-sm-12" style="margin-top: 10em;">
 
@@ -86,6 +86,17 @@ $conexion=$obj->conexion();
                 </div>
               </div>
               
+              <script src="../js/jquery-3.4.1.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+
+ <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js">
+  </script>
+  <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.2.5/js/responsive.bootstrap4.min.js"></script>
+
+  
     <script src="../js/bitacora.js"></script>
     <script src="../js/sidebar.js"></script>
     
