@@ -62,9 +62,15 @@ $conexion=$obj->conexion();
       <div class="row">
         <div class="col col-sm-12">
           <h1  class="colorletra" id="titulo" style="text-align: center; margin-top: 4px; margin-bottom:4rem; "> Gestion Paises
+
+
+
+         
         
-          <button type="button" class=" btn botonagregar" onclick="nuevoPais()" data-toggle="modal" data-target="#modalnuevopais"
-                       id="agregarPais"><i class="fas fa-plus-circle"></i></button>
+                    <form class="form-inline" style="justify-content: flex-end; margin-bottom: 0px;margin-top:50px;">
+          <button type="button" class=" btn btn-primary mb-2" onclick="nuevoPais()"     style="background-color: #e65b02; border-color: #e65b02; margin-left: 10px; width: 198px; margin-bottom:0px !important;" data-toggle="modal" data-target="#modalnuevopais"
+                       id="agregarPais"><i class="fas fa-plus-circle"></i>Agregar</button>
+                       </form>
         </h1>
           <div class="tableText col col-lg-12 col-md-12 col-sm-12">
           

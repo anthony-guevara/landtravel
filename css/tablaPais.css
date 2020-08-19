@@ -97,3 +97,10 @@ label{
     background-repeat: no-repeat;
     position: relative;
     }
+
+
+    div.dataTables_wrapper div.dataTables_filter input {
+        margin-left: 0.5em!important;
+        display: inline-block;
+        width: auto;
+    }
