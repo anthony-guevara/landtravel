@@ -46,8 +46,8 @@ function cargarLugares() {
             targets: -1,
             data: "id",
             render: function (data, type, row, meta) {
-              return `<button class="buttones" onclick="eliminarlugarturistico(${row.id})"><i class="fas fa-window-close"></i></button>
-              <button class="buttones" onclick="editarlugarturistico('${row.destino}','${row.nombre}','${row.descripcion}',${row.id})"><i class="fas fa-edit"></i></button>
+              return `<button class="btn org-btn" onclick="editarlugarturistico('${row.destino}','${row.nombre}','${row.descripcion}',${row.id})">Editar &nbsp<i class="fas fa-pen"></i></button>
+              <button class="btn org-btn-drk" onclick="eliminarlugarturistico(${row.id})">Eliminar &nbsp<i class="fas fa-trash"></i></button>
               `;
             },
           },
