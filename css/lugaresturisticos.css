@@ -10,9 +10,13 @@
     }
 
     .modales{
-        background-color: green;
-        max-width: 225px;
-        margin-left:170px;
+        
+        max-width: 550px;
+        margin-left:170px!important;
+    }
+
+    .espacioBotonesM{
+        font-size: 10px!important;
     }
 }
 
@@ -26,8 +30,23 @@
     }
 
     .modales{
-        max-width: 225px;
-        margin-left:170px !important;
+        max-width: 700px;
+        margin-left:200px!important;
+    }
+}
+
+@media only screen and (max-width:1366px) and (min-width:1024px)  {
+    .tableText {
+        font-size:20px;
+    }
+
+    .tableText2 {
+        font-size: 12px;
+    }
+
+    .modales{
+        width: 600px!important;
+        margin-left:400px!important;
     }
 }
 

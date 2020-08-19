@@ -132,10 +132,10 @@ $conexion=$obj->conexion();
                     <form id="informacionlugar">
                       <div class="row">
                         <div class="col-6">
-                          <select type="text" id="nombreciudad"></select><br>
+                          <select class="custom-select" type="text" id="nombreciudad"></select><br>
                         </div>
                         <div class="col-6">
-                          <input type="text" id="lugar" placeholder="Lugar Turisticos"><br>
+                          <input class="form-control" type="text" id="lugar" placeholder="Lugar Turisticos"><br>
                         </div>
                       </div>
                       <div class="row">
@@ -150,10 +150,13 @@ $conexion=$obj->conexion();
                     </form>
 
                   </div>
-                  <button type="button" class=" buttones" id="guardarLugar" onclick="cerrar()">Guardar<i
+
+                  <div class="modal-footer">
+                  <button type="button" class="btn org-btn" id="guardarLugar" onclick="cerrar()">Guardar &nbsp<i
                       class="fas fa-save"></i></button>
-                  <button type="button" class=" buttones" data-dismiss="modal">Cerrar<i
+                  <button type="button" class="btn org-btn-drk" data-dismiss="modal">Cerrar &nbsp<i
                       class="fas fa-window-close"></i></button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -165,7 +168,7 @@ $conexion=$obj->conexion();
 
 
           <div class="modal" id="modalnuevolugar" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog modales" role="document">
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title">Agregar Lugar Turistico</h5>
@@ -242,10 +245,10 @@ $conexion=$obj->conexion();
                   </form>  -->
 
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn org-btn" id="guardarnuevolugar" onclick="agregarLugar()">Guardar &nbsp<i
+                <div class="modal-footer ">
+                  <button type="button" class="btn org-btn espacioBotonesM" id="guardarnuevolugar" onclick="agregarLugar()">Guardar &nbsp<i
                     class="fas fa-save"></i></button>
-                  <button type="button" class="btn org-btn-drk" data-dismiss="modal" onclick="cerrar()">Cerrar &nbsp<i
+                  <button type="button" class="btn org-btn-drk espacioBotonesM" data-dismiss="modal" onclick="cerrar()">Cerrar &nbsp<i
                     class="fas fa-window-close"></i></button>
                 </div>
               </div>
