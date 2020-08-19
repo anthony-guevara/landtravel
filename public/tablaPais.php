@@ -68,7 +68,7 @@ $conexion=$obj->conexion();
          
         
                     <form class="form-inline" style="justify-content: flex-end; margin-bottom: 0px;margin-top:50px;">
-          <button type="button" class=" btn btn-primary mb-2" onclick="nuevoPais()"     style="background-color: #e65b02; border-color: #e65b02; margin-left: 10px; width: 198px; margin-bottom:0px !important;" data-toggle="modal" data-target="#modalnuevopais"
+          <button type="button" class=" btn btn-primary mb-2" onclick="nuevoPais()"     style="background-color: #e65b02; border-color: #e65b02; margin-rigth: 16px; width: 198px; margin-bottom:0px !important;" data-toggle="modal" data-target="#modalnuevopais"
                        id="agregarPais"><i class="fas fa-plus-circle"></i>Agregar</button>
                        </form>
         </h1>
@@ -121,7 +121,7 @@ $conexion=$obj->conexion();
 
 
     <div class="modal" id="modalpais" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog modales" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">Editar Pais</h5>
@@ -170,8 +170,8 @@ $conexion=$obj->conexion();
 
 
           <!-- agregar  -->
-          <div class="modal" id="modalnuevopais" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
+          <div class="modal  col col-sm-12  "  style="width:100%" id="modalnuevopais" tabindex="-1" role="dialog">
+            <div class=" modal-dialog  modales" role="document">
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title">Agregar pais</h5>

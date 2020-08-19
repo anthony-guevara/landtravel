@@ -245,6 +245,13 @@ function cerrar() {
 }
 
 
+
+
+
+$('#modalnuevopais').on('shown.bs.modal', function () {
+  $(this).find('.modal-dialog').addClass('modal-lg');
+});
+
  function nuevoPais(){
    console.log("hola nuevo")
 
