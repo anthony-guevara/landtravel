@@ -3,7 +3,7 @@
 include_once("../bd/config.php");
 include_once("../bd/conexion_mysqli.php");
 
-
+session_start();
 $connexionMysqli = new ConnexionMysqli();
 
 $mysqli =  $connexionMysqli->connect();
@@ -30,30 +30,24 @@ switch ($_POST['accion']) {
 
     case "eliminarciudad":
         $idciudad = (int)$_POST['idciudad'];
+        $usuario_id = (int)$_SESSION["id"];
 
-        $call = $mysqli->prepare('UPDATE DESTINO  SET estado=0 WHERE id=?;');
+        
+        $call = $mysqli->prepare("CALL landtravel.SP_CIUDAD(1, ?, 'null','null', ?, 'eliminar',@mensaje,@codigo);");
 
-        $call->bind_param("i", $idciudad);
+        $call->bind_param("ii", $idciudad, $usuario_id);
         
         $call->execute();
 
-        $filasAfectadas = $call->affected_rows;
-
-        if ($filasAfectadas>0) {
-            echo json_encode(
-                array(
-                    "codigo"=>1,
-                    "mensaje"=>"Se eliminó correctamente"
-                )
-            );
-        } else {
-            echo json_encode(
-                array(
-                    "codigo"=>0,
-                    "mensaje"=>"Ocurrió un error"
-                )
-            );
-        }
+        $select = $mysqli->query('SELECT  @mensaje, @codigo');
+                
+        $result = $select->fetch_assoc();
+        $codigo = (int)$result['@codigo'];
+        $mensaje = $result['@mensaje'];
+        echo json_encode(array(
+            "codigo"=>$codigo,
+            "mensaje"=>$mensaje
+        ));
 
 
     break;
@@ -63,31 +57,24 @@ switch ($_POST['accion']) {
         $idciudad = (int)$_POST['idciudad'];
         $nombreciudad = $_POST['nombreciudad'];
         $descripcion  = $_POST['descripcion'];
+        $usuario_id = (int)$_SESSION["id"];
 
-        $call = $mysqli->prepare("
-        UPDATE landtravel.destino SET  nombre=?,  descripcion=? WHERE id=?;");
+        $call = $mysqli->prepare("CALL landtravel.SP_CIUDAD(1, ?, ?, ?, ?, 'editar', @mensaje, @codigo);");
 
-        $call->bind_param("ssi", $nombreciudad, $descripcion, $idciudad);
+
+        $call->bind_param("issi", $idciudad, $nombreciudad, $descripcion, $usuario_id);
         
         $call->execute();
 
-        $filasAfectadas = $call->affected_rows;
-
-        if ($filasAfectadas>0) {
-            echo json_encode(
-                array(
-                    "codigo"=>1,
-                    "mensaje"=>"Se editó correctamente"
-                )
-            );
-        } else {
-            echo json_encode(
-                array(
-                    "codigo"=>0,
-                    "mensaje"=>"Ocurrió un error"
-                )
-            );
-        }
+        $select = $mysqli->query('SELECT  @mensaje, @codigo');
+                
+        $result = $select->fetch_assoc();
+        $codigo = (int)$result['@codigo'];
+        $mensaje = $result['@mensaje'];
+        echo json_encode(array(
+            "codigo"=>$codigo,
+            "mensaje"=>$mensaje
+        ));
         
     break;
 
@@ -97,14 +84,16 @@ switch ($_POST['accion']) {
         $idpais = (int)$_POST['idpais'];
         $nombreciudad = $_POST['nombreciudad'];
         $descripcion  = $_POST['descripcion'];
+        $usuario_id = (int)$_SESSION["id"];
 
-        $call = $mysqli->prepare('CALL SP_CIUDAD(?, ? , ?, @mensaje, @codigo);');
+        $call = $mysqli->prepare("CALL landtravel.SP_CIUDAD(?, 1, ?, ?, ?, 'agregar',  @mensaje, @codigo);");
 
         $call->bind_param(
-            'iss',
+            'issi',
             $idpais,
             $nombreciudad,
-            $descripcion
+            $descripcion,
+            $usuario_id
         );
         $call->execute();
                 
@@ -122,7 +111,7 @@ switch ($_POST['accion']) {
     break;
 
     case "traerpaises":
-        $call = $mysqli->prepare('SELECT id, nombre FROM pais  WHERE estado = 1;');
+        $call = $mysqli->prepare('SELECT id, nombre FROM pais  WHERE estado = 1  ORDER  BY nombre ASC;');
 
         $call->execute();
         $result = $call->get_result();
