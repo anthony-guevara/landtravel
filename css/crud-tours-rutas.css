@@ -1,0 +1,51 @@
+.estilotarjeta{
+    background-image: url('https://images.unsplash.com/photo-1543005472-1b1d37fa4eae?ixlib=rb-1.2.1&w=1000&q=80')!important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+
+    
+}
+
+.org-btn{
+    background-color: #e65b02 !important; 
+    border-color: #e65b02 !important;
+    color: white !important;
+}
+
+.org-btn-drk{
+    background-color: #535353 !important; 
+    border-color: #535353 !important;
+    color: white !important;
+}
+
+.contenedor-rutas{          /* todavia no se esta usando */
+    text-align:center; 
+    width: 1300px !important; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.bordeado{
+    border: rgb(133, 125, 125) 0.2px solid;
+}
+
+.contenido-rutas{
+    text-align: center ;
+}
+
+.btn-rutas{
+    width: 108px;
+}
+
+#tabla-rutas td{
+    vertical-align: middle;
+}
+
+@media only screen and (max-width:1024px) and (min-width:736px){
+	
+}
+@media only screen and (max-width:1440px) and (min-width:1024px){
+	
+    
+}

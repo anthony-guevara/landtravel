@@ -45,7 +45,9 @@ $conexion=$obj->conexion();
           <li><a href="tablaciudad.php">Ciudad<span class="sub_icon fas fa-hotel"></span></a></li>
           <li><a href="crud-tours.php">Tours<span class="sub_icon fas fa-plane"></span></a></li>
           <li><a href="lugaresTuristicos.php">Turísticos<span class="sub_icon fas fa-map-marked-alt"></span></a></li>
+          <li><a href="bitacora.php">Bitacora<span class="sub_icon fas fa-sign-out-alt"></span></a></li>
           <li><a href="Tours.php">Salir<span class="sub_icon fas fa-sign-out-alt"></span></a></li>
+
         </ul>
       </div>
           
@@ -62,13 +64,19 @@ $conexion=$obj->conexion();
       <div class="row">
         <div class="col col-sm-12">
           <h1  class="colorletra" id="titulo" style="text-align: center; margin-top: 4px; margin-bottom:4rem; "> Gestion Paises
+
+
+
+         
         
-          <button type="button" class=" btn botonagregar" onclick="nuevoPais()" data-toggle="modal" data-target="#modalnuevopais"
-                       id="agregarPais"><i class="fas fa-plus-circle"></i></button>
+                    <form class="form-inline" style="justify-content: flex-end; margin-bottom: 0px;margin-top:50px;">
+          <button id="btpais" type="button" class=" btn btn-primary mb-2" onclick="nuevoPais()"     style="background-color: #e65b02; border-color: #e65b02;  width: 198px; margin-bottom:0px !important;" data-toggle="modal" data-target="#modalnuevopais"
+                       id="agregarPais"><i class="fas fa-plus-circle"></i>Agregar</button>
+                       </form>
         </h1>
           <div class="tableText col col-lg-12 col-md-12 col-sm-12">
           
-            <table class="table fondotabla"  style="width:100%" > 
+            <!-- <table class="table fondotabla"  style="width:100%" > 
               <thead class="estilotarjeta" style="width:100%">
 
                 <tr>
@@ -82,7 +90,24 @@ $conexion=$obj->conexion();
 
 
               </tbody>
-            </table>
+            </table> -->
+
+
+
+            <table id="tabla-paises" class="table table-striped table-bordered dt-responsive nowrap"
+                      style="width: 100%;">
+                      <thead class="estilotarjeta">
+                        <tr>
+                          <th>Nombre</th>
+                          <th>Gentilicio</th>
+                          <th>Opciones</th>
+                        </tr>
+                      </thead>
+                    </table>
+
+
+
+
           </div>
         </div>
       </div>
@@ -98,7 +123,7 @@ $conexion=$obj->conexion();
 
 
     <div class="modal" id="modalpais" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog modales" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">Editar Pais</h5>
@@ -147,8 +172,8 @@ $conexion=$obj->conexion();
 
 
           <!-- agregar  -->
-          <div class="modal" id="modalnuevopais" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
+          <div class="modal  col col-sm-12  "  style="width:100%" id="modalnuevopais" tabindex="-1" role="dialog">
+            <div class=" modal-dialog  modales" role="document">
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title">Agregar pais</h5>
@@ -214,6 +239,18 @@ $conexion=$obj->conexion();
 
     <script src="../js/jquery-3.4.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+
+
+
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.2.5/js/responsive.bootstrap4.min.js"></script>
+
+
+
+
+
     <script src="../js/tablaPais.js"></script>
     <script src="../js/sidebar.js"></script>
 

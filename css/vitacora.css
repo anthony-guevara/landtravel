@@ -1,0 +1,36 @@
+.estilotarjeta{
+    background-image: url('https://images.unsplash.com/photo-1543005472-1b1d37fa4eae?ixlib=rb-1.2.1&w=1000&q=80')!important; 
+   background-size: cover;
+   background-repeat: no-repeat;
+   color: white;
+
+   
+}
+
+.colorletra{
+color:black;
+}
+
+label{
+   color: white;  
+}
+
+
+.fondotabla{
+   background-color: white;
+}
+.fondo{
+
+   /* background-image: url('https://userscontent2.emaze.com/images/50b09f05-c065-41f4-b4d3-43ae1d3ad744/3bca2bae5db42a7550a20043238139d0.jpg'); */
+   background-size: cover;
+   background-repeat: no-repeat;
+   color: black;
+   
+   
+   padding: 50px 100px;
+   text-align: center;
+   background-position: center center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   position: relative;
+   }
