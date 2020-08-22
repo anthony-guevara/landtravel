@@ -6,7 +6,6 @@ $conexion=$obj->conexion();
 
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,57 +35,7 @@ $conexion=$obj->conexion();
           </ul>
         </div> 
       </div>          
-=======
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../vendors/bootstrap/bootstrap.min.css">
-  <link rel="stylesheet" href="../vendors/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="../vendors/themify-icons/themify-icons.css">
-
-
-  <!-- datatable -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.bootstrap4.min.css">
-
-
-  <link rel="stylesheet" href="../css/ciudad.css">
-  <link rel="stylesheet" href="../css/sidebar.css">
-
-
-  <!-- datatable -->
-
-
-
-  <!-- Sidebar recursos -->
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-
-
-
-  <div id="wrapper" class="active  ">
-
-    <!-- Sidebar -->
-    <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-      <ul id="sidebar_menu" class="sidebar-nav">
-           <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon" class="fas fa-bars"></span></a></li>
-      </ul>
-        <ul class="sidebar-nav" id="sidebar">     
-          <li><a href="rutas.php">Rutas<span class="sub_icon fas fa-route"></span></a></li>
-          <li><a href="crud-tours.php">Tours<span class="sub_icon fas fa-plane"></span></a></li>
-          <li><a href="tablaPais.php">Paises<span class="sub_icon fas fa-globe-americas"></span></a></li>
-          <li><a href="lugaresTuristicos.php">Turísticos<span class="sub_icon fas fa-map-marked-alt"></span></a></li>
-          <li><a href="bitacora.php">Bitacora<span class="sub_icon fas fa-sign-out-alt"></span></a></li>
-          <li><a href="Tours.php">Salir<span class="sub_icon fas fa-sign-out-alt"></span></a></li>
-        </ul>
-      </div>
-          
->>>>>>> c0167e3368825a219202ec2008018a321926cb1b
       <!-- Page content -->
       <div id="page-content-wrapper">
         <!-- Keep all page content within the page-content inset div! -->
