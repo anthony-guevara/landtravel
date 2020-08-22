@@ -54,6 +54,7 @@ $conexion=$obj->conexion();
           <li><a href="tablaciudad.php">Ciudad<span class="sub_icon fas fa-hotel"></span></a></li>
           <li><a href="tablaPais.php">Paises<span class="sub_icon fas fa-globe-americas"></span></a></li>
           <li><a href="crud-tours.php">Tours<span class="sub_icon fas fa-plane"></span></a></li>
+          <li><a href="bitacora.php">Bitacora<span class="sub_icon fas fa-sign-out-alt"></span></a></li>
           <li><a href="Tours.php">Salir<span class="sub_icon fas fa-sign-out-alt"></span></a></li>
         </ul>
       </div>

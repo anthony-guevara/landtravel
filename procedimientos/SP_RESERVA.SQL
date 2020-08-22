@@ -50,7 +50,10 @@ DECLARE monto float;
             select costo into monto from tour where id=nidtour;
 			
             INSERT INTO factura(idfactura,tipo_pago,usuario_id,tipotarjeta,NumeroTarjeta,CVV,fechaexp) VALUES (ultima_factura,0,nusuario,"Variable",ntarjeta,ncvv,nfechaexp);
+
             INSERT INTO detalle_factura(iddetalle_factura,cantidad,monto,factura_idfactura,tour_id,prima) VALUES (ultima_detalle,1,monto,ultima_factura,nidtour,nreserva);
+
+			INSERT INTO log (fecha, usuario_id, descripcion) VALUES(NOW(), nusuario, CONCAT ('Reservó paquete con factura: ', ultima_factura));
 	
 
     set pMensaje="Si crea factura";

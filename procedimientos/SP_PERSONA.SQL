@@ -46,6 +46,9 @@ IN_tipo_usuario,
 "1");
 
 
+INSERT INTO log (fecha, usuario_id, descripcion) VALUES(NOW(), ultimo_usuario, "Usuario registrado.");
+
+
 INSERT INTO persona
 (`id`,
 `pais_id`,

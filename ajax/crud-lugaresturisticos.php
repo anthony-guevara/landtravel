@@ -3,7 +3,7 @@
 include_once("../bd/config.php");
 include_once("../bd/conexion_mysqli.php");
 
-
+session_start();
 $connexionMysqli = new ConnexionMysqli();
 
 $mysqli =  $connexionMysqli->connect();
@@ -28,30 +28,24 @@ switch ($_POST['accion']) {
 
     case "eliminarlugarturistico":
         $idlugar = (int)$_POST['id'];
+        $usuario_id = (int)$_SESSION["id"];
 
-        $call = $mysqli->prepare('UPDATE lugar  SET estado=0 WHERE id=?;');
+        $call = $mysqli->prepare("CALL landtravel.SP_LUGAR(1, ?, 'null', 'null', ?, 'eliminar', @mensaje,@codigo);");
 
-        $call->bind_param("i", $idlugar);
+        $call->bind_param("ii", $idlugar, $usuario_id);
         
         $call->execute();
 
-        $filasAfectadas = $call->affected_rows;
+        $select = $mysqli->query('SELECT  @mensaje, @codigo');
+                
+        $result = $select->fetch_assoc();
+        $codigo = (int)$result['@codigo'];
+        $mensaje = $result['@mensaje'];
+        echo json_encode(array(
+            "codigo"=>$codigo,
+            "mensaje"=>$mensaje
+        ));
 
-        if ($filasAfectadas>0) {
-            echo json_encode(
-                array(
-                    "codigo"=>1,
-                    "mensaje"=>"Se eliminó correctamente"
-                )
-            );
-        } else {
-            echo json_encode(
-                array(
-                    "codigo"=>0,
-                    "mensaje"=>"Ocurrió un error"
-                )
-            );
-        }
 
 
     break;
@@ -61,31 +55,27 @@ switch ($_POST['accion']) {
         $idlugar = (int)$_POST['id'];
         $nombre = $_POST['nombrelugar'];
         $descripcion  = $_POST['descripcion'];
+        $usuario_id = (int)$_SESSION["id"];
 
-        $call = $mysqli->prepare("
-        UPDATE landtravel.lugar SET  nombre=?,  descripcion=? WHERE id=?;");
+        $call = $mysqli->prepare("CALL landtravel.SP_LUGAR(1, ?, ?, ?, ?, 'editar', @mensaje, @codigo);");
 
-        $call->bind_param("ssi", $nombre, $descripcion, $idlugar);
+        //$call = $mysqli->prepare("
+        //UPDATE landtravel.lugar SET  nombre=?,  descripcion=? WHERE id=?;");
+
+        $call->bind_param("issi", $idlugar, $nombre, $descripcion, $usuario_id);
         
         $call->execute();
 
-        $filasAfectadas = $call->affected_rows;
-
-        if ($filasAfectadas>0) {
-            echo json_encode(
-                array(
-                    "codigo"=>1,
-                    "mensaje"=>"Se editó correctamente."
-                )
-            );
-        } else {
-            echo json_encode(
-                array(
-                    "codigo"=>0,
-                    "mensaje"=>"Ocurrió un error."
-                )
-            );
-        }
+        
+        $select = $mysqli->query('SELECT  @mensaje, @codigo');
+                
+        $result = $select->fetch_assoc();
+        $codigo = (int)$result['@codigo'];
+        $mensaje = $result['@mensaje'];
+        echo json_encode(array(
+            "codigo"=>$codigo,
+            "mensaje"=>$mensaje
+        ));
         
     break;
 
@@ -95,15 +85,17 @@ switch ($_POST['accion']) {
         $idCiudad = (int)$_POST['ciudad'];
         $nombre = $_POST['lugar'];
         $descripcion  = $_POST['descripcion'];
+        $usuario_id = (int)$_SESSION["id"];
 
+        $call = $mysqli->prepare("CALL landtravel.SP_LUGAR(?, 1, ?, ?, ?, 'agregar', @mensaje, @codigo);");
 
-        $call = $mysqli->prepare('CALL SP_LUGAR(?, ? , ?, @mensaje, @codigo);');
 
         $call->bind_param(
-            'iss',
+            'issi',
             $idCiudad,
             $nombre,
-            $descripcion
+            $descripcion,
+            $usuario_id
         );
         $call->execute();
                 
@@ -116,10 +108,11 @@ switch ($_POST['accion']) {
             "codigo"=>$codigo,
             "mensaje"=>$mensaje
         ));
+        
     break;
 
     case "traerciudades":
-        $call = $mysqli->prepare('SELECT id, nombre FROM destino d WHERE estado = 1;');
+        $call = $mysqli->prepare('SELECT id, nombre FROM destino d WHERE estado = 1 ORDER  BY nombre ASC;');
 
         $call->execute();
         $result = $call->get_result();
