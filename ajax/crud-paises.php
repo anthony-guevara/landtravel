@@ -3,7 +3,7 @@
 include_once("../bd/config.php");
 include_once("../bd/conexion_mysqli.php");
 
-
+session_start();
 $connexionMysqli = new ConnexionMysqli();
 
 $mysqli =  $connexionMysqli->connect();
@@ -11,7 +11,6 @@ $mysqli =  $connexionMysqli->connect();
 
 switch ($_POST['accion']) {
 
-  
     case "traerpaises":
 
 
@@ -30,11 +29,13 @@ switch ($_POST['accion']) {
 
         //parametros
         $idPais =  (int) $_POST['id'];
-        $usuario_id = (int)$_SESSION["id"];
+        $usuario_id = (int) $_SESSION["id"];
 
-        $call = $mysqli->prepare("CALL landtravel.SP_PAIS('null', 'null', '1','?', ?, 'eliminar',null,@mensaje,@codigo);");
+        $call = $mysqli->prepare("CALL SP_PAIS('null', 'null', ?, ?, 'eliminar', 'null', @mensaje, @codigo);");
+        //{ CALL landtravel.SP_PAIS(:pNombre,:pGentilicio,:pIdPais,:pusuarioId,:paccion,:pCodigo,?,?) }
 
-        $call->bind_param("ii", $idpais, $usuario_id);
+
+        $call->bind_param("ii", $idPais, $usuario_id);
         
         $call->execute();
 
@@ -47,28 +48,22 @@ switch ($_POST['accion']) {
             "codigo"=>$codigo,
             "mensaje"=>$mensaje
         ));
-
-     
-
-   
-        
-       
-            
     break;
+
     case "editarpais":
-
-
         //parametros
         $idPais =  (int) $_POST['idpais'];
         $nombre=$_POST['nombre'];
         $gentilicio=$_POST['gentilicio'];
-         $codigo=$_POST['codigo'];
-        $usuario_id = (int)$_SESSION["id"];
-
-        $call = $mysqli->prepare("CALL landtravel.SP_PAIS(?, ?, 1,?, 'editar',?, @mensaje, @codigo);");
+        $codigo=$_POST['codigo'];
+        $usuario_id = (int) $_SESSION["id"];
 
 
-        $call->bind_param("ssis", $idpais, $nombre, $gentilicio,$codigo ,$usuario_id);
+        $call = $mysqli->prepare("CALL landtravel.SP_PAIS(?, ?, ?, ?, 'editar', ?, @mensaje, @codigo);");
+        //{ CALL landtravel.SP_PAIS(:pNombre,:pGentilicio,:pIdPais,:pusuarioId,:paccion,:pCodigo,?,?) }
+
+
+        $call->bind_param("ssiis", $nombre, $gentilicio, $idPais, $usuario_id, $codigo);
         
         $call->execute();
 
@@ -85,20 +80,17 @@ switch ($_POST['accion']) {
     break;
 
     case "agregarpais":
-        $nombre = $_POST['nombre'];
+        $nombre = $_POST['nombrepais'];
         $gentilicio  = $_POST['gentilicio'];
-        $codigo  = $_POST['codigo'];
         $usuario_id = (int)$_SESSION["id"];
-       
-        $call = $mysqli->prepare("CALL landtravel.SP_PAIS(?, ?, 1, ?, 'agregar','?',  @mensaje, @codigo);");
+
+        $call = $mysqli->prepare("CALL landtravel.SP_PAIS(?, ?, 1, ?, 'agregar','null',  @mensaje, @codigo);");
+        //{ CALL landtravel.SP_PAIS(:pNombre,:pGentilicio,:pIdPais,:pusuarioId,:paccion,:pCodigo,?,?) }
 
         $call->bind_param(
-            'ssis',
-    
+            'ssi',
             $nombre,
             $gentilicio,
-            $codigo,
-
             $usuario_id
         );
         $call->execute();
