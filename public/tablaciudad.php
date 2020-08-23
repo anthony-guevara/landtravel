@@ -16,7 +16,6 @@ $conexion=$obj->conexion();
     <!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
     <!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css">
-    <link rel="icon" href="../img/favicon.ico" type="image/png">
     <title>Ciudades</title>
   </head>
     <body>
