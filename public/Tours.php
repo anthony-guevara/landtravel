@@ -1,4 +1,8 @@
 
+<?php
+include_once('seguridad_admin.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

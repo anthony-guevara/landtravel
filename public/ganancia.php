@@ -1,4 +1,5 @@
-<?php 
+<?php
+include_once('seguridad_admin.php');
 require_once "../clases/conexion.php";
 $obj= new conectar();
 $conexion=$obj->conexion();
@@ -64,14 +65,14 @@ $conexion=$obj->conexion();
         <div class="col col-lg-12"   style="margin-bottom:3em;">  <h1><i class="fas fa-user-alt fa-2x anarajado"></i></i>Ganacias</h1>
           </div>
     
-          <?php 
-			$sql="select * from reporte_ingresos";
-			$conexion=$obj->conexion();
-      $result=mysqli_query($conexion,$sql);
+          <?php
+            $sql="select * from reporte_ingresos";
+            $conexion=$obj->conexion();
+      $result=mysqli_query($conexion, $sql);
       $number=0;
       $mostrar=mysqli_fetch_row($result);
         $number++;
-				?>
+                ?>
             
     <div class="row">
     

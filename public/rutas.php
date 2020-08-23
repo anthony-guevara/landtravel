@@ -1,8 +1,6 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <?php
 
-include_once('seguridad_admin.php');
-
   require_once "../clases/conexion.php";
   require_once "../ajax/crud-rutas.php";
 

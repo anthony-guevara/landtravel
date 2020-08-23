@@ -1,4 +1,5 @@
-<?php 
+<?php
+include_once('seguridad_admin.php');
 require_once "../clases/conexion.php";
 $obj= new conectar();
 $conexion=$obj->conexion();
@@ -83,8 +84,8 @@ $conexion=$obj->conexion();
                     </tr>
                   </thead>
                   <tbody>
-                  <?php 
-			$sql="select distinct persona.pnombre,persona.papellido,persona.nacionalidad,persona.identidad,'Crédito',round(monto.mont+(monto.mont*0.15),2) mon, monto.idf
+                  <?php
+            $sql="select distinct persona.pnombre,persona.papellido,persona.nacionalidad,persona.identidad,'Crédito',round(monto.mont+(monto.mont*0.15),2) mon, monto.idf
 
       from usuario
      inner join persona on usuario.id=persona.usuario_id
@@ -98,12 +99,11 @@ $conexion=$obj->conexion();
          inner join destino des on rut.destino=des.id) monto on monto.idfactura=factura.idfactura
      where tipo_usuario='cliente';
             ;";
-			$conexion=$obj->conexion();
-      $result=mysqli_query($conexion,$sql);
+            $conexion=$obj->conexion();
+      $result=mysqli_query($conexion, $sql);
       $number=0;
-			while ($mostrar=mysqli_fetch_row($result)) {
-        $number++;
-				?>
+            while ($mostrar=mysqli_fetch_row($result)) {
+                $number++; ?>
                      <tr>
                       <th scope="row"><?php echo $number?></th>                    
                       <td><?php echo $mostrar[3]?></td>
@@ -115,10 +115,10 @@ $conexion=$obj->conexion();
                       <td><?php echo $mostrar[4]?></td>
               
     </tr>
-    <?php 
-      }
+    <?php
+            }
       mysqli_close($conexion);
-			?>
+            ?>
                   </tbody>
                 </table>
       

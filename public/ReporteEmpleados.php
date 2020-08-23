@@ -1,4 +1,7 @@
-<?php 
+<?php
+
+include_once('seguridad_admin.php');
+    
 require_once "../clases/conexion.php";
 $obj= new conectar();
 $conexion=$obj->conexion();
@@ -109,19 +112,18 @@ $conexion=$obj->conexion();
                     </tr>
                   </thead>
                   <tbody>
-                  <?php 
-			$sql="select persona.identidad,persona.pnombre,persona.papellido,persona.identidad,usu.tipo_usuario,(pago.mensual+(pago.horas_extra*pago.extra)-pago.deducido)Salario, persona.nacionalidad from usuario usu
+                  <?php
+            $sql="select persona.identidad,persona.pnombre,persona.papellido,persona.identidad,usu.tipo_usuario,(pago.mensual+(pago.horas_extra*pago.extra)-pago.deducido)Salario, persona.nacionalidad from usuario usu
       inner join   persona  on usu.id=persona.usuario_id
       inner join   guia  on persona.id=guia.persona_id
       inner join pago on guia.id=pago.guia_id
       where  usu.tipo_usuario='guia' or  usu.tipo_usuario='admin'
             ;";
-			$conexion=$obj->conexion();
-      $result=mysqli_query($conexion,$sql);
+            $conexion=$obj->conexion();
+      $result=mysqli_query($conexion, $sql);
       $number=0;
-			while ($mostrar=mysqli_fetch_row($result)) {
-        $number++;
-				?>
+            while ($mostrar=mysqli_fetch_row($result)) {
+                $number++; ?>
                      <tr>
                       <th scope="row"><?php echo $number?></th>                    
                       <td><?php echo $mostrar[0]?></td>
@@ -131,10 +133,10 @@ $conexion=$obj->conexion();
                       <td><?php echo $mostrar[4]?></td>
                       <td>$.<?php echo $mostrar[5]?></td>
     </tr>
-    <?php 
-      }
+    <?php
+            }
       mysqli_close($conexion);
-			?>
+            ?>
                   </tbody>
                 </table>
       

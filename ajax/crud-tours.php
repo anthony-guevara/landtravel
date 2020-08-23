@@ -1,5 +1,17 @@
 <?php
     session_start();
+
+    if (isset($_SESSION["tipo"])) {
+        if (($_SESSION["tipo"]=="Admin")) {
+            //header("Location: Tours.php");
+        } else {
+            header("Location: index.php");
+        }
+    } else {
+        header("Location: index.php");
+    }
+
+    
     include_once("../bd/config.php");
     include_once("../bd/conexion_mysqli.php");
     // echo "<script>console.log('conexion a crud tours exitosa')</script>";
@@ -27,7 +39,7 @@
     $id=0;
     $update=false;
 
-    if(isset($_POST['save'])){      //agregar
+    if (isset($_POST['save'])) {      //agregar
         $nombre = $_POST['NOMBRE'];
         $costo = $_POST['COSTO'];
         $cupos = $_POST['Cupos'];
@@ -40,12 +52,12 @@
 
         //Actualizar tabla logs (agregar):
         $mysqli->query("INSERT INTO log (fecha, usuario_id, descripcion) 
-                        VALUES(NOW(),$his_id , CONCAT('El usuario ', '$his_usuario' , ' agrego un nuevo tour $nombre.'))") or die ($mysqli->error);
+                        VALUES(NOW(),$his_id , CONCAT('El usuario ', '$his_usuario' , ' agrego un nuevo tour $nombre.'))") or die($mysqli->error);
 
         header("location: ../public/crud-tours.php");
     }
 
-    if (isset($_GET['delete'])){    //eliminar
+    if (isset($_GET['delete'])) {    //eliminar
         $id = $_GET['delete'];
 
         //Actualizar tabla logs (eliminar):
@@ -53,14 +65,14 @@
         $row = $result->fetch_array();
         $NOMBRE = $row['nombre'];
         $mysqli->query("INSERT INTO log (fecha, usuario_id, descripcion) 
-                        VALUES(NOW(),$his_id , CONCAT('El usuario ', '$his_usuario' , ' elimino tour $NOMBRE.'))") or die ($mysqli->error);
+                        VALUES(NOW(),$his_id , CONCAT('El usuario ', '$his_usuario' , ' elimino tour $NOMBRE.'))") or die($mysqli->error);
 
-        $mysqli->query("DELETE FROM TOUR WHERE id=$id") or die ($mysqli->error());
+        $mysqli->query("DELETE FROM TOUR WHERE id=$id") or die($mysqli->error());
 
-        header("location: ../public/crud-tours.php");   
+        header("location: ../public/crud-tours.php");
     }
 
-    if (isset($_GET['edit'])){      //llenar modal con variables
+    if (isset($_GET['edit'])) {      //llenar modal con variables
         echo "<script>
                 $(document).ready(function(){
                     $('#modalAdd').modal();
@@ -81,7 +93,7 @@
                                 FROM tour 
                                 WHERE id = $id") or die($mysqli->error());
 
-        if(get_object_vars($result)!=NULL){
+        if (get_object_vars($result)!=null) {
             $row = $result->fetch_array();
             $NOMBRE = $row['nombre'];
             $fecha_inicio = $row['fecha_inicio'];
@@ -92,7 +104,7 @@
         }
     }
 
-    if (isset($_POST['update'])){   //actualizar
+    if (isset($_POST['update'])) {   //actualizar
         $id=$_POST['id'];
         $NOMBRE = $_POST['NOMBRE'];
         $fecha_inicio = $_POST['fecha_inicio'];
@@ -113,8 +125,7 @@
 
         //Actualizar tabla logs (actualizar):
         $mysqli->query("INSERT INTO log (fecha, usuario_id, descripcion) 
-                        VALUES(NOW(),$his_id , CONCAT('El usuario ', '$his_usuario' , ' actualizo tour $NOMBRE.'))") or die ($mysqli->error);
+                        VALUES(NOW(),$his_id , CONCAT('El usuario ', '$his_usuario' , ' actualizo tour $NOMBRE.'))") or die($mysqli->error);
 
         header("location: ../public/crud-tours.php");
     }
-?>

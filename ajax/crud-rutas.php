@@ -1,5 +1,15 @@
 <?php
     session_start();
+    if (isset($_SESSION["tipo"])) {
+        if (($_SESSION["tipo"]=="Admin")) {
+            //header("Location: Tours.php");
+        } else {
+            header("Location: index.php");
+        }
+    } else {
+        header("Location: index.php");
+    }
+    
     include_once("../bd/config.php");
     include_once("../bd/conexion_mysqli.php");
     
@@ -12,7 +22,7 @@
     $id = 0;
     $actualizar = false;
 
-    if(isset($_POST['save'])){  //agregar
+    if (isset($_POST['save'])) {  //agregar
         $viaje = $_POST['viaje_id'];
         $metodo = $_POST['metodo_id'];
         $tour = $_POST['tour_id'];
@@ -29,24 +39,24 @@
         
         //Actualizar tabla logs(agregar):
         $mysqli->query("INSERT INTO log (fecha, usuario_id, descripcion) 
-                        VALUES(NOW(),$his_id , CONCAT('El usuario ', '$his_usuario' , ' agrego una nueva ruta.'))") or die ($mysqli->error);
+                        VALUES(NOW(),$his_id , CONCAT('El usuario ', '$his_usuario' , ' agrego una nueva ruta.'))") or die($mysqli->error);
 
         header("location: ../public/rutas.php");
     }
 
-    if(isset($_GET['delete'])){ //eliminar
+    if (isset($_GET['delete'])) { //eliminar
         $id = $_GET['delete'];
 
         //Actualizar tabla logs (eliminar):
         $mysqli->query("INSERT INTO log (fecha, usuario_id, descripcion) 
-                        VALUES(NOW(),$his_id , CONCAT('El usuario ', '$his_usuario' , ' elimino ruta con id: $id.'))") or die ($mysqli->error);
+                        VALUES(NOW(),$his_id , CONCAT('El usuario ', '$his_usuario' , ' elimino ruta con id: $id.'))") or die($mysqli->error);
 
         $mysqli->query("DELETE FROM ruta WHERE id = $id") or die($mysqli->error());
 
         header("location: ../public/rutas.php");
     }
 
-    if(isset($_GET['edit'])){
+    if (isset($_GET['edit'])) {
         echo "<script>
                 $(document).ready(function(){
                     $('#modalAddRutas').modal();
@@ -65,7 +75,7 @@
         $actualizar = true;
         $result = $mysqli->query("SELECT * FROM ruta WHERE id=$id") or die($mysqli->error);
         
-        if(get_object_vars($result)!=NULL){
+        if (get_object_vars($result)!=null) {
             $row = $result->fetch_array();
             $viaje = $row['viaje_id'];
             $metodo = $row['metodo_id'];
@@ -96,7 +106,7 @@
             </script>";
     }
 
-    if(isset($_POST['update'])){
+    if (isset($_POST['update'])) {
         $id = $_POST['id'];
         $viaje = $_POST['viaje_id'];
         $metodo = $_POST['metodo_id'];
@@ -125,9 +135,7 @@
         
         //Actualizar tabla logs (actualizar):
         $mysqli->query("INSERT INTO log (fecha, usuario_id, descripcion) 
-                        VALUES(NOW(),$his_id , CONCAT('El usuario ', '$his_usuario' , ' actualizo ruta con id: $id.'))") or die ($mysqli->error);
+                        VALUES(NOW(),$his_id , CONCAT('El usuario ', '$his_usuario' , ' actualizo ruta con id: $id.'))") or die($mysqli->error);
         
         header("location: ../public/rutas.php");
     }
-
-?>

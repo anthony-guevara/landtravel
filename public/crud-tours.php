@@ -1,5 +1,8 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<?php 
+<?php
+
+
+
   require_once "../clases/conexion.php";
   require_once "../ajax/crud-tours.php";
   $obj= new conectar();
@@ -13,7 +16,8 @@
   $mysqli->set_charset("utf8");
   $result = $mysqli->query("SELECT id, NOMBRE, fecha_inicio, fecha_salida,COSTO, TipoTour,Cupos FROM tour") or die($mysqli->error);
 
-  function pre_r( $array ){
+  function pre_r($array)
+  {
       echo '<pre>';
       print_r($array);
       echo '<pre>';
@@ -81,11 +85,11 @@
                             <div class="modal-content">
                               <form action="../ajax/crud-tours.php" method="POST"> <!-- Formulario para agregar tours -->
                               <div class="modal-header">
-                                <?php 
-                                  if($update == true):
+                                <?php
+                                  if ($update == true):
                                 ?>
                                   <h5 class="modal-title" id="exampleModalLabel">Editar Tour</h5>
-                                <?php 
+                                <?php
                                   else:
                                 ?>
                                   <h5 class="modal-title" id="exampleModalLabel">Agregar Tour</h5>
@@ -133,11 +137,11 @@
                               </div>
                                   <div class="modal-footer">
                                     <button type="button" class="btn org-btn-drk"   data-dismiss="modal">Cancelar</button>
-                                    <?php 
-                                      if($update == true):
+                                    <?php
+                                      if ($update == true):
                                     ?>
                                       <button type="submit" class="btn org-btn" style="background-color:#e65b02" name="update">Actualizar</button>
-                                    <?php 
+                                    <?php
                                       else:
                                     ?>
                                       <button type="submit" class="btn org-btn" style="background-color:#e65b02" name="save">Agregar</button>
@@ -164,7 +168,7 @@
                         </thead>
                         <tbody id="contenido-tours">      
                               <!-- AGREGAR DATOS DE TABLA FORMA DINAMICA -->
-                              <?php while($row = $result->fetch_assoc()):?>
+                              <?php while ($row = $result->fetch_assoc()):?>
                                   <tr>
                                     <td id="<?php echo 'nombre'?>"><?php echo $row['NOMBRE']; ?></td>
                                     <td id="<?php echo 'nombre'?>"><?php echo $row['fecha_inicio']; ?></td>
