@@ -2,10 +2,12 @@
 require_once "../clases/conexion.php";
 $obj= new conectar();
 $conexion=$obj->conexion();
-session_start(); 
-if(isset($_SESSION["tipo"])) {
-if (($_SESSION["tipo"]=="Admin"))
-  header("Location: Tours.php");
+
+session_start();
+if (isset($_SESSION["tipo"])) {
+    if (($_SESSION["tipo"]=="Admin")) {
+        header("Location: Tours.php");
+    }
 }
 
 ?>
@@ -69,62 +71,58 @@ if (($_SESSION["tipo"]=="Admin"))
 
 
 
-              <?php 
-              if(isset($_SESSION["tipo"])){
-              $usr=$_SESSION['usuario'];
-              $sql="select tipo_usuario from usuario usu
+              <?php
+              if (isset($_SESSION["tipo"])) {
+                  $usr=$_SESSION['usuario'];
+                  $sql="select tipo_usuario from usuario usu
         inner join persona per on per.usuario_id=usu.id
         where email='$usr'";
-        $result=mysqli_query($conexion,$sql);
-        $mostrar=mysqli_fetch_row($result);
+                  $result=mysqli_query($conexion, $sql);
+                  $mostrar=mysqli_fetch_row($result);
 
 
         
-          if($mostrar[0]=="Guia"){
-      ?>
+                  if ($mostrar[0]=="Guia") {
+                      ?>
               <li class="nav-item"><a class="nav-link negro" href="guiascontrato.php">Contrato</a></li>
               <li class="nav-item"><a class="nav-link negro cwhite" href="visualizarrutas.php">Rutas Asignadas</a></li>
               <li class="nav-item"><a class="nav-link negro cwhite" href="historial-rutas.php">Historial de Rutas</a>
               </li>
               <li class="nav-item"><a class="nav-link negro cwhite" href="mensual.php">Pago Mensual</a></li>
               <?php
-          }else{?>
+                  } else {?>
               <li class="nav-item"><a class="nav-link negro" href="mostrarpaquetes.php">paquetes turisticos</a>
               <li class="nav-item"><a class="nav-link negro" href="historial.php">Historial</a></li>
               <li class="nav-item"><a class="nav-link negro" href="Contactos.php">Contactos</a></li>
               <?php
-          }
-        
-    ?>
-              <?php 
-				  
-              if(isset($_SESSION["usuario"])){
-				  ?>
+          } ?>
+              <?php
+                  
+              if (isset($_SESSION["usuario"])) {
+                  ?>
               <li class="nav-item"><a class="nav-link negro" href="logout.php">Salir</a></li>
             </ul>
 
             <div class="nav-right text-center text-lg-right py-4 py-lg-0">
               <a class="button" href="#">
                 <?php
-				  $usr=$_SESSION['usuario'];
-				  
-				            $sql="select pnombre,papellido from usuario usu
+                  $usr=$_SESSION['usuario'];
+                  
+                  $sql="select pnombre,papellido from usuario usu
 							inner join persona per on per.usuario_id=usu.id
 							where email='$usr'";
-              	$result=mysqli_query($conexion,$sql);
-			          while ($mostrar=mysqli_fetch_row($result)) {
-
-								echo $mostrar[0]." ".$mostrar[1];
-			}
-		}
-			else{
-				?>
+                  $result=mysqli_query($conexion, $sql);
+                  while ($mostrar=mysqli_fetch_row($result)) {
+                      echo $mostrar[0]." ".$mostrar[1];
+                  }
+              } else {
+                  ?>
 
 
                 <?php
-			}
-      mysqli_close($conexion);
-      }else{?>
+              }
+                  mysqli_close($conexion);
+              } else {?>
 
                 <li class="nav-item"><a class="nav-link negro" href="mostrarpaquetes.php">paquetes turisticos</a>
                   </ul>
@@ -133,7 +131,7 @@ if (($_SESSION["tipo"]=="Admin"))
                     </a>
                 </li><?php
       }
-			?>
+            ?>
               </a></li>
               </a>
             </div>

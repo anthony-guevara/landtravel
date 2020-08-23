@@ -1,10 +1,15 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<?php 
+<?php
+
+include_once('seguridad_admin.php');
+
   require_once "../clases/conexion.php";
   require_once "../ajax/crud-rutas.php";
 
   $obj= new conectar();
   $conexion=$obj->conexion();
+
+  
 
   include_once("../bd/config.php");                                                                       //OBTENER DATOS DE DB
   include_once("../bd/conexion_mysqli.php");
@@ -39,7 +44,7 @@
                             AND		r.destino   = d.id
                             AND		r.idlugar   = l.id
                             AND		r.idguia    = g.id
-                            AND		g.persona_id = p.id") or die ($mysqli->error);
+                            AND		g.persona_id = p.id") or die($mysqli->error);
 
   $rtours=$mysqli->query("SELECT	id AS tour_id,
                                   nombre AS tours
@@ -130,7 +135,7 @@
                               <form action="../ajax/crud-rutas.php" method="POST"> <!-- Formulario para agregar tours -->
                                 <input type="hidden" name="id" value="<?php echo $id; ?>">
                               <div class="modal-header">
-                                <?php if($actualizar==true):?>
+                                <?php if ($actualizar==true):?>
                                   <h5 class="modal-title" id="exampleModalLabel">Actualizar Ruta</h5>
                                 <?php else: ?>
                                   <h5 class="modal-title" id="exampleModalLabel">Agregar Ruta</h5>
@@ -143,7 +148,7 @@
                                       <label class="d-flex justify-content-start">Viaje</label>
                                       <select class="custom-select" id="s-viaje" name="viaje_id">
                                         <option value="" name="">-- --</option>
-                                        <?php while($rowv = $rviajes->fetch_assoc()):?>
+                                        <?php while ($rowv = $rviajes->fetch_assoc()):?>
                                           <option value="<?php echo $rowv['viaje_id'];?>" name=""><?php echo $rowv['viaje'];?></option>
                                         <?php endwhile;?>
                                       </select>
@@ -152,7 +157,7 @@
                                         <label class="d-flex justify-content-start">Metodo</label>
                                         <select class="custom-select" id="s-metodo" name="metodo_id">
                                           <option value="" name="">-- --</option>
-                                          <?php while($rowm = $rmet->fetch_assoc()):?>
+                                          <?php while ($rowm = $rmet->fetch_assoc()):?>
                                             <option value="<?php echo $rowm['met'];?>" name=""><?php echo $rowm['metodo'];?></option>
                                           <?php endwhile;?>
                                       </select>
@@ -167,7 +172,7 @@
                                       <label class="d-flex justify-content-start">Tour</label>
                                       <select class="custom-select" id="s-tour" name="tour_id">
                                         <option value="" name="">-- --</option>
-                                        <?php while($rowt = $rtours->fetch_assoc()):?>
+                                        <?php while ($rowt = $rtours->fetch_assoc()):?>
                                           <option value="<?php echo $rowt['tour_id'];?>"><?php echo $rowt['tours'];?></option>
                                         <?php endwhile;?>
                                       </select>
@@ -176,7 +181,7 @@
                                       <label class="d-flex justify-content-start">Origen</label>
                                       <select class="custom-select" id="s-origen" name="inicio">
                                         <option value="" name="">-- --</option>
-                                        <?php while($rowr = $ror->fetch_assoc()):?>
+                                        <?php while ($rowr = $ror->fetch_assoc()):?>
                                           <option value="<?php echo $rowr['id_or'];?>"><?php echo $rowr['origen'];?></option>
                                         <?php endwhile;?>
                                       </select>
@@ -185,7 +190,7 @@
                                       <label class="d-flex justify-content-start">Destino</label>
                                       <select class="custom-select" id="s-destino" name="destino">
                                         <option value="" name="">-- --</option>
-                                        <?php while($rowd = $rdes->fetch_assoc()):?>
+                                        <?php while ($rowd = $rdes->fetch_assoc()):?>
                                           <option value="<?php echo $rowd['id_or'];?>"><?php echo $rowd['origen'];?></option>
                                         <?php endwhile;?>
                                       </select>
@@ -204,7 +209,7 @@
                                       <label class="d-flex justify-content-start">Lugar</label>
                                       <select class="custom-select" id="s-lugar" name="idlugar">
                                         <option value="" name="">-- --</option>
-                                        <?php while($rowl = $rlug->fetch_assoc()):?>
+                                        <?php while ($rowl = $rlug->fetch_assoc()):?>
                                           <option value="<?php echo $rowl['id_lug'];?>"><?php echo $rowl['lugares'];?></option>
                                         <?php endwhile;?>
                                       </select>
@@ -215,7 +220,7 @@
                                       <label class="d-flex justify-content-start">Guia</label>
                                       <select class="custom-select" id="s-guia" name="idguia">
                                         <option value="" name="">-- --</option>
-                                        <?php while($rowl = $rguia->fetch_assoc()):?>
+                                        <?php while ($rowl = $rguia->fetch_assoc()):?>
                                           <option value="<?php echo $rowl['id_guia'];?>"><?php echo $rowl['guia'];?></option>
                                         <?php endwhile;?>
                                       </select>
@@ -228,15 +233,15 @@
                               </div>
                                   <div class="modal-footer">
                                     <button type="button" class="btn org-btn-drk"   data-dismiss="modal">Cancelar</button>
-                                    <?php 
-                                      if($actualizar==true):
+                                    <?php
+                                      if ($actualizar==true):
                                     ?>
                                       <button type="submit" class="btn org-btn" style="background-color:#e65b02" name="update">Actualizar</button>
-                                    <?php 
+                                    <?php
                                       else:
                                     ?>
                                       <button type="submit" class="btn org-btn" style="background-color:#e65b02" name="save">Guardar</button>
-                                    <?php 
+                                    <?php
                                       endif;
                                     ?>
                                   </div>
@@ -267,8 +272,8 @@
                         </thead>
                         <tbody id="tabla-rutas" class="contenido-rutas">      
                           <!-- AGREGAR DATOS DE TABLA FORMA DINAMICA -->
-                          <?php 
-                            while($row = $result->fetch_assoc()):
+                          <?php
+                            while ($row = $result->fetch_assoc()):
                           ?>
                             <tr>
                               <td id="" value=""><?php echo $row['id'];?></td>
@@ -288,7 +293,7 @@
                                 <a href="rutas.php?delete=<?php echo $row['id']?>" type="button" class="btn org-btn-drk btn-rutas">Eliminar &nbsp<i class="fas fa-trash"></i></a>
                               </td>
                             </tr>
-                          <?php 
+                          <?php
                             endwhile;
                           ?>
                         </tbody>

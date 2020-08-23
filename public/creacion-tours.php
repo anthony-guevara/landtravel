@@ -1,4 +1,8 @@
-<?php 
+<?php
+
+include_once('seguridad_admin.php');
+
+
 require_once "../clases/conexion.php";
 $obj= new conectar();
 $conexion=$obj->conexion();

@@ -1,9 +1,4 @@
 
-<?php 
-require_once "../clases/conexion.php";
-$obj= new conectar();
-$conexion=$obj->conexion();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,14 +64,14 @@ $conexion=$obj->conexion();
         
                 <h1  class="colorletra" id="titulo" style="text-align: center; margin-top: 4px; margin-bottom:4rem; ">Bitacora</h1>
                 </div>
-                <div class="tableText col col-lg-12 col-md-12 col-sm-12" style="margin-top: 10em;">
+                <div class="tableText col col-lg-12 col-md-12 col-sm-12" style="margin-top: 2em;">
 
                 <table id="tabla-bitacora" class="table table-striped table-bordered dt-responsive nowrap"
                 style="width: 100%;">
                 <thead class="estilotarjeta">
                   <tr>
                     <th>Fecha</th>
-                    <th>usuario</th>
+                    <th>Nombre</th>
                     <th>Descripcion</th>
                     
                   </tr>

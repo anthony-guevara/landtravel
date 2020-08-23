@@ -1,13 +1,13 @@
 <?php
 
 
-include_once('header.php'); 
-include_once('seguridad.php'); 
-if(isset($_SESSION["usuario"])) {
+include_once('header.php');
+include_once('seguridad.php');
+if (isset($_SESSION["usuario"])) {
     $var=$_SESSION["id"];
-   }else{
-     $var=0;
-   }
+} else {
+    $var=0;
+}
 ?>
 
   <!--================Hero Banner Area Start =================-->
@@ -27,7 +27,7 @@ if(isset($_SESSION["usuario"])) {
       <th scope="col">Fecha Inicio</th>
       <th scope="col">Fecha Fin</th>
       <th scope="col">Tipo de Tour</th>
-      <th scope="col">Ver</th>
+      <th scope="col">Costo</th>
     </tr>
   
   </thead>
@@ -74,7 +74,7 @@ if(isset($_SESSION["usuario"])) {
   <!--================Hero Banner Area End =================-->
 
 <?php
-      include_once('footer.php'); 
+      include_once('footer.php');
 ?>
 
  

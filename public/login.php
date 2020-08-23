@@ -32,7 +32,7 @@
             <label>Password</label><br>
             <input required id="login-contraseña" type="password" placeholder="********">
             <br>
-            <a href="Olvidar-Contrasenia.php">¿Olvidastes tu contraseña?</a>
+            <!-- <a href="Olvidar-Contrasenia.php">¿Olvidastes tu contraseña?</a> -->
             <br>
             <button id="iniciar-sesion"  type="button">Login</button>
             <br>
