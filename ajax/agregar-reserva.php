@@ -1,38 +1,50 @@
 <?php
 // error_reporting(0);
+
 include_once("../bd/config.php");
 include_once("../bd/conexion_mysqli.php");
 
-$datos=array((int)$_POST['usuario'], (int)$_POST['tarjeta'],$_POST['cvv'],$_POST['fechaexp'],(int)$_POST['nidtour'],(double)$_POST['prima']);
+//$datos=array((int)$_POST['usuario'], (int)$_POST['tarjeta'],$_POST['cvv'],$_POST['fechaexp'],(int)$_POST['nidtour'],(float)$_POST['prima']);
 
-for ($i=0;$i<count($datos);$i++) {
-    if ($datos[$i]=="") {
-        $datos[$i]=null;
-    }
-};
+            $usuario = (int)$_POST['usuario'];
+            $tarjeta = (int)$_POST['tarjeta'];
+            $cvv = $_POST['cvv'];
+            $fechaexp = $_POST['fechaexp'];
+            $nidtour = (int)$_POST['nidtour'];
+            $prima = (float)$_POST['prima'];
+
+
+            //echo json_encode(array(
+            //    $usuario,
+            //    $tarjeta,
+            //    $cvv,
+            //    $fechaexp,
+            //    $nidtour,
+            //    $prima,
+            //));
 
             $connexionMysqli = new ConnexionMysqli();
 
             $mysqli =  $connexionMysqli->connect();
-
             
-            $call = $mysqli->prepare('CALL SP_Reserva(?, ? , ? , ? , ?, ? , @pmensaje, @pcodigo);');
+            $call = $mysqli->prepare("CALL landtravel.SP_Reserva(?, ?, ?, ?, ?, ?, @pmensaje, @pcodigo);");
+            ##{ CALL landtravel.SP_Reserva(:nusuario,:ntarjeta,:ncvv,:nfechaexp,:nidtour,:nreserva,?,?) }
 
             $call->bind_param(
-                'iissid',
-                $datos[0],
-                $datos[1],
-                $datos[2],
-                $datos[3],
-                $datos[4],
-                $datos[5],
+                "iissid",
+                $usuario,
+                $tarjeta,
+                $cvv,
+                $fechaexp,
+                $nidtour,
+                $prima
             );
 
             
             $call->execute();
-                    
-            $select = $mysqli->query('SELECT  @pmensaje, @pcodigo');
-                    
+            
+            $select = $mysqli->query("SELECT @pmensaje, @pcodigo");
+            
             $result = $select->fetch_assoc();
 
             $codigo = $result['@pcodigo'];
@@ -44,4 +56,4 @@ for ($i=0;$i<count($datos);$i++) {
             ));
 
 
-            $mysqli -> close();
+            $mysqli->close();

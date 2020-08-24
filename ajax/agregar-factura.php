@@ -1,65 +1,47 @@
-<?php 
-error_reporting(0);
+<?php
+
 include_once("../bd/config.php");
 include_once("../bd/conexion_mysqli.php");
 
-$datos=array((int)$_POST['usuario'],(int)$_POST['tarjeta'],$_POST['cvv'],$_POST['fechaexp'],(int)$_POST['nidtour']);
-
-for($i=0;$i<count($datos);$i++){
-	if ($datos[$i]==""){
-		$datos[$i]=null;
-	}
-
-};
+//$datos=array((int)$_POST['usuario'],(int)$_POST['tarjeta'],$_POST['cvv'],$_POST['fechaexp'],(int)$_POST['nidtour']);
 
 
-			// echo json_encode($datos);
+            $usuario = (int)$_POST['usuario'];
+            $tarjeta = (int)$_POST['tarjeta'];
+            $cvv = $_POST['cvv'];
+            $fechaexp = $_POST['fechaexp'];
+            $nidtour = (int)$_POST['nidtour'];
 
-            // $sql_sp = "CALL SP_Compra($datos[0], $datos[1], $datos[2], '$datos[3]', $datos[4], @pmensaje, @pcodigo);";
-			// $ins_conexion = new Connection();
-			// $ins_conexion->connect();
-            // $ins_conexion->setConsulta($sql_sp);
-			// $qry = $ins_conexion->getResultConsulta();
-			// $return = $ins_conexion->getParametroSP("@pmensaje,@pcodigo");
-			// $mensajeSP[0] = $return['@pmensaje'];
-			// $mensajeSP[1] = $return['@pcodigo'];
+            $connexionMysqli = new ConnexionMysqli();
 
-		
-			
-			// echo json_encode($mensajeSP);
-			// mysqli_close($conexion);
+            $mysqli =  $connexionMysqli->connect();
 
+            
+            $call = $mysqli->prepare("CALL SP_Compra(?, ?, ?, ?, ?, @pmensaje, @pcodigo);");
 
-			$connexionMysqli = new ConnexionMysqli();
+            $call->bind_param(
+                "iissi",
+                $usuario,
+                $tarjeta,
+                $cvv,
+                $fechaexp,
+                $nidtour
+            );
 
-			$mysqli =  $connexionMysqli->connect();
+            
+            $call->execute();
+                    
+            $select = $mysqli->query("SELECT  @pmensaje, @pcodigo");
+                    
+            $result = $select->fetch_assoc();
 
-			
-			$call = $mysqli->prepare('CALL SP_Compra(?, ? , ? , ? , ? , @pmensaje, @pcodigo);');
+            $codigo = $result['@pcodigo'];
+            $mensaje = $result['@pmensaje'];
 
-			$call->bind_param('iissi',
-			$datos[0],
-			$datos[1],
-			$datos[2],
-			$datos[3],
-			$datos[4],
-			);
-
-			
-			$call->execute();
-					
-			$select = $mysqli->query('SELECT  @pmensaje, @pcodigo');
-					
-			$result = $select->fetch_assoc();
-
-			$codigo = $result['@pcodigo'];
-			$mensaje = $result['@pmensaje'];
-
-			echo json_encode(array(
-				$mensaje,
-				$codigo
-			));
+            echo json_encode(array(
+                $mensaje,
+                $codigo
+            ));
 
 
-			$mysqli -> close();
- ?>
+            $mysqli->close();
