@@ -16,11 +16,7 @@ if ("serviceWorker" in navigator) {
 function displayNotification() {
   if (window.Notification && Notification.permission === "granted") {
     notification();
-  }
-  // If the user hasn't told if he wants to be notified or not
-  // Note: because of Chrome, we are not sure the permission property
-  // is set, therefore it's unsafe to check for the "default" value.
-  else if (window.Notification && Notification.permission !== "denied") {
+  } else if (window.Notification && Notification.permission !== "denied") {
     Notification.requestPermission((status) => {
       if (status === "granted") {
         notification();
@@ -29,7 +25,6 @@ function displayNotification() {
       }
     });
   } else {
-    // If the user refuses to get notified
     console.log("No permitiste el acceso a notificaciones.");
   }
 }

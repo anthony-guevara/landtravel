@@ -57,7 +57,7 @@
         <ul class="sidebar-nav" id="sidebar">     
           <li><a href="rutas.php">Rutas<span class="sub_icon fas fa-route"></span></a></li>
           <li><a href="tablaciudad.php">Ciudad<span class="sub_icon fas fa-hotel"></span></a></li>
-          <li><a href="lugaresTuristicos.php">Turísticos<span class="sub_icon fas fa-map-marked-alt"></span></a></li>
+          <li><a href="lugaresturisticos.php">Turísticos<span class="sub_icon fas fa-map-marked-alt"></span></a></li>
           <li><a href="tablaPais.php">Paises<span class="sub_icon fas fa-globe-americas"></span></a></li>
           <li><a href="bitacora.php">Bitacora<span class="sub_icon fas fa-clipboard-check"></span></a></li>
           <li><a href="Tours.php">Salir<span class="sub_icon fas fa-sign-out-alt"></span></a></li>
